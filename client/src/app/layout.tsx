@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import SplashScreen from "@/components/shared/splash-screen";
+import { GsapProvider } from "@/components/provider/gsap-provider";
+import { TransitionProvider } from "@/components/provider/transition-provider";
+import { Header } from "@/components/shared/header";
+import { Footer } from "@/components/shared/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,11 +29,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SplashScreen />
+
+        <GsapProvider>
+          <TransitionProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </TransitionProvider>
+        </GsapProvider>
       </body>
     </html>
   );
