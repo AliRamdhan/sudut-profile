@@ -42,7 +42,7 @@ export function Header() {
             About
           </TransitionLink>
           <TransitionLink
-            href="/contact"
+            href="/contacts"
             className="hover:text-neutral-300 transition-colors"
           >
             Contact
