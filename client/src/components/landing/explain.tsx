@@ -39,7 +39,7 @@ const points = [
 
 const Explain = () => {
   return (
-    <section id="about" className="w-full px-5 overflow-hidden flex justify-center items-center">
+    <section id="about" className="relative px-4 sm:px-6 lg:px-8">
       <div className="flex-1 flex flex-col justify-start items-start overflow-hidden">
         <div className="self-stretch px-4 py-12 md:px-6 md:py-16 lg:py-28 flex flex-col justify-start items-start gap-2">
           <div className="self-stretch flex justify-between items-center">

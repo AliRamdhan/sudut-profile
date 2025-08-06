@@ -12,3 +12,10 @@ export interface pointItem {
   label: string;
   description: string;
 }
+
+export interface contactItem {
+  icon: ReactNode;
+  label: string;
+  description: string;
+  highlight: string;
+}

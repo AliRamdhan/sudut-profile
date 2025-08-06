@@ -1,7 +1,7 @@
 import Hero from "@/components/landing/hero";
-import Portfolio from "@/components/landing/templates";
-import Marquee from "@/components/landing/marquee";
+import Templates from "@/components/landing/templates";
 import Explain from "@/components/landing/explain";
+import Marquee from "@/components/landing/marquee";
 import Faq from "@/components/landing/faq";
 import Cta from "@/components/landing/cta";
 
@@ -10,7 +10,7 @@ export default function Home() {
     <section>
       <Hero />
       <Explain />
-      <Portfolio />
+      <Templates />
       <Marquee />
       <Faq />
       <Cta />

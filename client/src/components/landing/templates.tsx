@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 import { templates } from "@/lib/data";
 import TemplateItemCard from "../cards/template-item-card";
 
-const Portfolio = () => {
+const Templates = () => {
   return (
-    <div id="portfolio" className="relative py-20 px-4 sm:px-6 lg:px-8">
+    <section id="template" className="relative py-20 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
           Our Templates
@@ -32,7 +32,7 @@ const Portfolio = () => {
         ))}
       </div>
       <div className="mt-8 lg:mt-16 flex justify-center items-center">
-        <TransitionLink href="/#portfolio">
+        <TransitionLink href="/templates">
           <motion.button
             className="hero-button flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-full transition-transform duration-300"
             whileHover={{
@@ -45,8 +45,8 @@ const Portfolio = () => {
           </motion.button>
         </TransitionLink>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Portfolio;
+export default Templates;

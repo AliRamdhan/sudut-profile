@@ -30,7 +30,7 @@ export function Header() {
         </TransitionLink>
         <nav className="hidden md:flex items-center gap-6 text-white">
           <TransitionLink
-            href="/#portfolio"
+            href="/#template"
             className="hover:text-neutral-300 transition-colors"
           >
             Templates
