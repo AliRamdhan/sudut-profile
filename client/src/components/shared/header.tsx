@@ -33,13 +33,13 @@ export function Header() {
             href="/#portfolio"
             className="hover:text-neutral-300 transition-colors"
           >
-            Portfolio
+            Templates
           </TransitionLink>
           <TransitionLink
-            href="/blog"
+            href="/#about"
             className="hover:text-neutral-300 transition-colors"
           >
-            Blog
+            About
           </TransitionLink>
           <TransitionLink
             href="/contact"

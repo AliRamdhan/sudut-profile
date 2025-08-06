@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import SplashScreen from "@/components/shared/splash-screen";
-import { GsapProvider } from "@/components/provider/gsap-provider";
-import { TransitionProvider } from "@/components/provider/transition-provider";
+import { GsapProvider } from "@/provider/gsap-provider";
+import { TransitionProvider } from "@/provider/transition-provider";
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
 

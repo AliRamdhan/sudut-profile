@@ -9,7 +9,7 @@ import { Scene } from "@/components/scene/scene";
 import { TransitionLink } from "@/components/layout/transition-link";
 import { ArrowRight } from "lucide-react";
 
-export function Hero() {
+const Hero = () => {
   const container = useRef(null);
 
   useGSAP(
@@ -80,4 +80,6 @@ export function Hero() {
       </div>
     </div>
   );
-}
+};
+
+export default Hero;
