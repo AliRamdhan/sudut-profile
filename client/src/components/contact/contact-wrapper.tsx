@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import React from "react";
 import { Map, MessageCircleHeart, PhoneCall } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactItemCard from "@/components/cards/contact-item-card";
 
-export const contacts = [
+const contactsData = [
   {
     icon: <MessageCircleHeart className="w-6 h-6" />,
     label: "Chat to sales",
@@ -32,7 +32,7 @@ export const contacts = [
   },
 ];
 
-const Page = () => {
+const ContactWrapper = () => {
   return (
     <div className="h-full lg:h-[75vh] flex items-center justify-center pt-24 pb-12">
       <div className="container mx-auto px-4 max-w-5xl text-center">
@@ -41,7 +41,7 @@ const Page = () => {
           We&apos;d love to hear from you. Drop us a line below.
         </p>
         <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {contacts.map((contact, index) => (
+          {contactsData.map((contact, index) => (
             <motion.div
               key={contact.label}
               initial={{ opacity: 0, y: 20 }}
@@ -58,4 +58,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ContactWrapper;
