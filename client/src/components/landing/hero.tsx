@@ -1,11 +1,9 @@
 "use client";
 
-import { Suspense, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Scene } from "@/components/scene/scene";
 import { TransitionLink } from "@/components/layout/transition-link";
 import { ArrowRight } from "lucide-react";
 
@@ -45,13 +43,13 @@ const Hero = () => {
 
   return (
     <div ref={container} className="relative w-full h-screen overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <Canvas>
           <Suspense fallback={null}>
             <Scene />
           </Suspense>
         </Canvas>
-      </div>
+      </div> */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
         <h1 className="hero-title font-bold text-5xl md:text-7xl lg:text-8xl mb-6">
           {splitTitle}
@@ -65,7 +63,7 @@ const Hero = () => {
           We craft award-winning digital experiences that blend creativity with
           cutting-edge technology.
         </motion.p>
-        <TransitionLink href="/#portfolio">
+        <TransitionLink href="/#templates">
           <motion.button
             className="hero-button flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-full transition-transform duration-300"
             whileHover={{
@@ -74,7 +72,7 @@ const Hero = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Our Work <ArrowRight size={20} />
+            Explore Our Templates <ArrowRight size={20} />
           </motion.button>
         </TransitionLink>
       </div>

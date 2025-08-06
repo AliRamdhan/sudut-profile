@@ -1,15 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { TransitionLink } from "@/components/layout/transition-link";
 import { ArrowRight } from "lucide-react";
 import { templates } from "@/lib/data";
 import TemplateItemCard from "../cards/template-item-card";
+import { templateType } from "@/types/types";
 
 const Templates = () => {
+  const [templatesRand, setTemplatesRand] = useState<templateType[]>([]);
+
+  useEffect(() => {
+    const randomTemplates = [...templates]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 3);
+    setTemplatesRand(randomTemplates);
+  }, []);
   return (
-    <section id="template" className="relative py-20 px-4 sm:px-6 lg:px-8">
+    <section id="templates" className="relative py-20 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
           Our Templates
@@ -19,7 +29,7 @@ const Templates = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {templates.map((template, index) => (
+        {templatesRand.map((template, index) => (
           <motion.div
             key={template.title}
             initial={{ opacity: 0, y: 50 }}
