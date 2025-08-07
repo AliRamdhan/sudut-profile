@@ -63,7 +63,7 @@ const Hero = () => {
           We craft award-winning digital experiences that blend creativity with
           cutting-edge technology.
         </motion.p>
-        <TransitionLink href="/#templates">
+        <TransitionLink href="#templates">
           <motion.button
             className="hero-button flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-full transition-transform duration-300"
             whileHover={{

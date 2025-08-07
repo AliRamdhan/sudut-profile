@@ -34,19 +34,19 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-white">
           <TransitionLink
-            href="/template"
+            href="/h/templates"
             className="hover:text-neutral-300 transition-colors"
           >
             Templates
           </TransitionLink>
           <TransitionLink
-            href="/#about"
+            href="#about"
             className="hover:text-neutral-300 transition-colors"
           >
             About
           </TransitionLink>
           <TransitionLink
-            href="/contacts"
+            href="/h/contacts"
             className="hover:text-neutral-300 transition-colors"
           >
             Contact
@@ -85,21 +85,21 @@ export function Header() {
           >
             <div className="flex flex-col gap-4 text-lg">
               <TransitionLink
-                href="/template"
+                href="/h/templates"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Templates
               </TransitionLink>
               <TransitionLink
-                href="/#about"
+                href="#about"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </TransitionLink>
               <TransitionLink
-                href="/contacts"
+                href="/h/contacts"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

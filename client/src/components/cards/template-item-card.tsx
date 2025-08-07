@@ -22,8 +22,10 @@ const TemplateItemCard = ({ template }: TemplateItemCardProps) => {
           <p className="text-neutral-300">{template.description}</p>
         </div>
       </div>
-      <TransitionLink href={template.href}>
-        <Button className="transition duration-300 hover:scale-105">Preview Template</Button>
+      <TransitionLink href={template.href} target="_blank">
+        <Button className="transition duration-300 hover:scale-105">
+          Preview Template
+        </Button>
       </TransitionLink>
     </div>
   );

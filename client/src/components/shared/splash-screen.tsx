@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
-const SplashScreen = () => {
+interface SplashScreenProps {
+  finishLoading: () => void;
+}
+
+const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
   const [progress, setProgress] = useState(0);
   const [matrixText, setMatrixText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%";
 
@@ -36,8 +41,9 @@ const SplashScreen = () => {
     return () => {
       clearInterval(progressInterval);
       clearInterval(matrixInterval);
+      router.push("/h");
     };
-  }, []);
+  }, [finishLoading, router]);
 
   return (
     <div

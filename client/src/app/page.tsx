@@ -1,19 +1,35 @@
-import Hero from "@/components/landing/hero";
-import Templates from "@/components/landing/templates";
-import Explain from "@/components/landing/explain";
-import Marquee from "@/components/landing/marquee";
-import Faq from "@/components/landing/faq";
-import Cta from "@/components/landing/cta";
+"use client";
 
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import SplashScreen from "@/components/shared/splash-screen";
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const [splash, setSplash] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    const sudutProfileSplashTime = localStorage.getItem("sudutProfileSplashTime");
+    const currentTime = Date.now();
+    const twoMinutes = 2 * 60 * 1000;
+
+    if (sudutProfileSplashTime && currentTime - parseInt(sudutProfileSplashTime) < twoMinutes) {
+      setLoading(false);
+      router.push("/home");
+    } else {
+      setLoading(true);
+      setSplash(true);
+    }
+  }, [router]);
+
+  const finishLoading = () => {
+    localStorage.setItem("sudutProfileSplashTime", Date.now().toString());
+    setLoading(false);
+    setSplash(false);
+  };
+
   return (
-    <section>
-      <Hero />
-      <Explain />
-      <Templates />
-      <Marquee />
-      <Faq />
-      <Cta />
-    </section>
+    <div>
+      {loading && splash && <SplashScreen finishLoading={finishLoading} />}
+    </div>
   );
 }

@@ -42,7 +42,7 @@ const Templates = () => {
         ))}
       </div>
       <div className="mt-8 lg:mt-16 flex justify-center items-center">
-        <TransitionLink href="/templates">
+        <TransitionLink href="/h/templates">
           <motion.button
             className="hero-button flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-full transition-transform duration-300"
             whileHover={{

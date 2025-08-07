@@ -12,15 +12,25 @@ type TransitionLinkProps = LinkProps &
     children: ReactNode
   }
 
-export default function TransitionLink({ href, children, ...props }: TransitionLinkProps) {
+export default function TransitionLink({
+  href,
+  children,
+  target,
+  ...props
+}: TransitionLinkProps) {
   const { playTransition } = useTransitionContext()
   const pathname = usePathname()
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const hrefStr = href.toString()
+
+    // If target is _blank, let the browser handle it normally
+    if (target === "_blank") return
+
     const targetPath = hrefStr.split("#")[0]
     const targetHash = hrefStr.split("#")[1]
 
+    // In-page hash link
     if ((targetPath === "" || targetPath === pathname) && targetHash) {
       e.preventDefault()
       const targetElement = document.getElementById(targetHash)
@@ -34,6 +44,7 @@ export default function TransitionLink({ href, children, ...props }: TransitionL
       return
     }
 
+    // Normal internal route transition
     if (hrefStr !== pathname) {
       e.preventDefault()
       playTransition(hrefStr)
@@ -41,10 +52,16 @@ export default function TransitionLink({ href, children, ...props }: TransitionL
   }
 
   return (
-    <a href={href.toString()} onClick={handleClick} {...props}>
+    <a
+      href={href.toString()}
+      onClick={handleClick}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      {...props}
+    >
       {children}
     </a>
   )
 }
 
-export { TransitionLink };
+export { TransitionLink }

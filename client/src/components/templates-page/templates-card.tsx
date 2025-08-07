@@ -13,6 +13,7 @@ const TemplatesCard = ({ template }: TemplateCardProps) => {
   return (
     <TransitionLink
       href={template.href}
+      target="_blank"
       className="group relative block rounded-xl shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       {/* Image Container */}

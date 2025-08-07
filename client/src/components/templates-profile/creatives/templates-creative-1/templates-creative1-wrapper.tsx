@@ -1,12 +1,13 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import Header from "./_components/shared/header";
-import Hero from "./_components/hero";
-import Showcase from "./_components/showcase";
-import Features from "./_components/features";
-import CTA from "./_components/cta";
 
-const Page = () => {
+import { useState, useEffect, useRef } from "react";
+import Header from "./shared/templates-creative1-header";
+import Hero from "./templates-creative1-hero";
+import Showcase from "./templates-creative1-showcase";
+import Features from "./templates-creative1-features";
+import Cta from "./templates-creative1-cta";
+
+const TemplateCreative1Wrapper = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [scrollY, setScrollY] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -197,10 +198,10 @@ const Page = () => {
         <Features />
 
         {/* Creative Call to Action */}
-        <CTA />
+        <Cta />
       </main>
     </div>
   );
 };
 
-export default Page;
+export default TemplateCreative1Wrapper;
