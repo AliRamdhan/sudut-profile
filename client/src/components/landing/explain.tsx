@@ -2,38 +2,38 @@
 
 import React from "react";
 import {
-  Play,
-  Disc3,
-  Music2,
-  AudioWaveformIcon as Waveform,
+  LayoutTemplate,
+  BriefcaseBusiness,
+  BadgeCheck,
+  AlignLeft,
 } from "lucide-react";
 import PointItemCard from "@/components/cards/point-item-card";
 import { motion } from "framer-motion";
 
 const points = [
   {
-    icon: <Play className="w-6 h-6" />,
+    icon: <LayoutTemplate className="w-6 h-6" />,
     label: "Design",
     description:
-      "Tampilan visual dan layout dirancang untuk memikat perhatian serta merepresentasikan karakter perusahaan Anda secara tepat.",
+      "Visually crafted layouts that reflect your brand identity and capture attention instantly.",
   },
   {
-    icon: <Disc3 className="w-6 h-6" />,
+    icon: <BriefcaseBusiness className="w-6 h-6" />,
     label: "Professional",
     description:
-      "Konten disusun secara rapi dan sesuai dengan kaidah profesionalisme serta standar industri yang berlaku.",
+      "Content structured to meet professional standards and present your business with credibility.",
   },
   {
-    icon: <Music2 className="w-6 h-6" />,
+    icon: <BadgeCheck className="w-6 h-6" />,
     label: "Quality",
     description:
-      "Isi mencakup informasi yang tepat, relevan, dan memberikan nilai tambah bagi pembaca.",
+      "Includes accurate, relevant, and value-driven information to showcase your strengths effectively.",
   },
   {
-    icon: <Waveform className="w-6 h-6" />,
-    label: "Simple",
+    icon: <AlignLeft className="w-6 h-6" />,
+    label: "Clarity",
     description:
-      "Disusun dengan padat dan jelas—tidak bertele-tele namun cukup informatif untuk menggambarkan profil perusahaan Anda secara keseluruhan.",
+      "Clear and concise presentation that informs without overwhelming—ideal for clients, partners, and investors.",
   },
 ];
 
@@ -46,15 +46,15 @@ const Explain = () => {
             <div className="flex-1 px-4 py-8 md:px-12 lg:px-20 md:py-8 lg:py-10 overflow-hidden rounded-lg flex flex-col justify-center items-center gap-6 md:gap-8 lg:gap-11">
               <div className="w-full max-w-[1024px] text-justify text-foreground font-medium text-lg md:text-3xl lg:text-3xl">
                 <h2>
-                  Company profile adalah dokumen atau halaman yang berisi
-                  informasi lengkap mengenai sebuah perusahaan, mulai dari
-                  sejarah, visi dan misi, produk atau layanan, hingga pencapaian
-                  dan kontak.
+                  A company profile is a document or webpage that provides
+                  comprehensive information about a business—covering its
+                  history, vision and mission, products or services,
+                  achievements, and contact details.
                 </h2>
                 <h3>
-                  Tujuannya adalah memberikan gambaran menyeluruh tentang
-                  identitas dan kredibilitas perusahaan kepada calon klien,
-                  mitra, maupun investor.
+                  Its main purpose is to present a clear picture of the
+                  company&apos;s identity and credibility to potential clients,
+                  partners, and investors.
                 </h3>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
@@ -71,7 +71,7 @@ const Explain = () => {
                 ))}
               </div>
               <div className="flex justify-center items-center gap-5">
-                <div className="text-foreground text-base font-medium leading-6">
+                <div className="text-foreground text-base font-black leading-6">
                   SUDUTPROFILE
                 </div>
               </div>

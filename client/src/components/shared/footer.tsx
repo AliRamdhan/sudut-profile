@@ -18,7 +18,7 @@ export function Footer() {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-neutral-400">
-            &copy; {new Date().getFullYear()} Innovate. Create. Inspire. All
+            &copy; {new Date().getFullYear()} Tell Your Story. Build Trust. Make Impact. All
             rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">

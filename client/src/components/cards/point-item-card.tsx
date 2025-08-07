@@ -9,7 +9,7 @@ const PointItemCard = ({ point }: PointItemCardProps) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="h-full lg:h-64 bg-zinc-900/50 rounded-xl p-6 backdrop-blur-lg border border-white/10 transition-colors hover:border-white/20"
+      className="h-full lg:h-56 bg-zinc-900/50 rounded-xl p-6 backdrop-blur-lg border border-white/10 transition-colors hover:border-white/20"
     >
       <div className="mb-2 text-white/70 flex justify-center">{point.icon}</div>
       <motion.div

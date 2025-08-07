@@ -145,12 +145,13 @@ const CTA = () => {
       </div>
       <div className="relative z-10 flex flex-col justify-start items-center gap-9 max-w-4xl mx-auto">
         <div className="flex flex-col justify-start items-center gap-4 text-center">
-          <h2 className="text-foreground text-4xl md:text-5xl lg:text-[68px] font-semibold leading-tight md:leading-tight lg:leading-[76px] break-words max-w-3xl">
-            Website Company Profile Profesional
+          <h2 className="text-foreground text-4xl md:text-5xl lg:text-[68px] font-black leading-tight md:leading-tight lg:leading-[76px] break-words max-w-3xl">
+            SUDUT PROFILE
           </h2>
           <p className="text-muted-foreground text-sm md:text-base font-medium leading-[18.20px] md:leading-relaxed break-words max-w-2xl">
-            Bangun kepercayaan calon pelanggan, mitra maupun investor dan tampil lebih profesional dengan
-            website company profile yang modern, cepat, dan mobile-friendly.
+            Build trust with potential customers, partners, and investors by
+            showcasing a modern, fast, and mobile-friendly company profile
+            website that reflects your professionalism.
           </p>
         </div>
         <Link

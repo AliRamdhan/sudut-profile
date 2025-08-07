@@ -15,10 +15,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SUDUTPROFILE",
-  description: "Showcase your identity with style.",
+  title: "SUDUT PROFILE",
+  description: "Showcase your brand with style.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/icon.png",
+    shortcut: "/images/icon.png",
+    apple: "/images/icon.png",
   },
 };
 
@@ -34,6 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
+      <head>
+        <link rel="icon" href="/images/icon.png" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -1,34 +1,28 @@
 "use client";
 
 import React from "react";
-import { Map, MessageCircleHeart, PhoneCall } from "lucide-react";
+import { MessageSquare, PhoneCall } from "lucide-react";
 import { motion } from "framer-motion";
 import ContactItemCard from "@/components/cards/contact-item-card";
 
 const contactsData = [
   {
-    icon: <MessageCircleHeart className="w-6 h-6" />,
+    icon: <MessageSquare className="w-6 h-6" />,
     label: "Chat to sales",
     description: "Speak to our friendly team.",
-    highlight: "hello@merakiui.com",
+    highlight: "sudutprofile@gmail.com",
   },
-  {
-    icon: <Map className="w-6 h-6" />,
-    label: "Chat to support",
-    description: "We're here to help.",
-    highlight: "Start new chat",
-  },
-  {
-    icon: <Map className="w-6 h-6" />,
-    label: "Visit us",
-    description: "Visit our office HQ..",
-    highlight: "100 Smith Street Collingwood VIC 3066 AU",
-  },
+  // {
+  //   icon: <Map className="w-6 h-6" />,
+  //   label: "Visit us",
+  //   description: "Visit our office HQ..",
+  //   highlight: "100 Smith Street Collingwood VIC 3066 AU",
+  // },
   {
     icon: <PhoneCall className="w-6 h-6" />,
-    label: "Call us",
+    label: "Chat by WA",
     description: "Mon-Fri from 8am to 5pm.",
-    highlight: "+1 (555) 000-0000",
+    highlight: "+62 (813) 85643856",
   },
 ];
 
@@ -40,7 +34,7 @@ const ContactWrapper = () => {
         <p className="text-lg text-neutral-300 mb-12">
           We&apos;d love to hear from you. Drop us a line below.
         </p>
-        <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2">
           {contactsData.map((contact, index) => (
             <motion.div
               key={contact.label}
