@@ -48,6 +48,7 @@ function AnimatedBox({
     return () => clearInterval(interval);
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   useFrame((state, delta) => {
     if (meshRef.current) {
       currentPosition.current.lerp(targetPosition, 0.1);
