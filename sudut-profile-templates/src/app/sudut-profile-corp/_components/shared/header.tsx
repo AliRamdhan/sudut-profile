@@ -7,13 +7,16 @@ import {
   CircleDot,
   Sun,
   Moon,
-  DownloadCloudIcon,
   BookA,
+  GraduationCap,
+  Users,
+  Activity,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
+import TransitionLink from "@/components/shared/transition-link";
 
 interface HeaderProps {
   toggleTheme: () => void;
@@ -23,15 +26,6 @@ const Header = ({ toggleTheme, isDarkMode }: HeaderProps) => {
   const [activePage, setActivePage] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleNavClick = (page: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    setActivePage(page);
-    const element = document.getElementById(page);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setMobileMenuOpen(false);
-  };
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -59,42 +53,45 @@ const Header = ({ toggleTheme, isDarkMode }: HeaderProps) => {
               value={activePage}
               onValueChange={(value) => value && setActivePage(value)}
             >
-              <ToggleGroupItem
-                value="home"
-                className={cn(
-                  "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === "home"
-                    ? "text-accent-foreground bg-accent"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                )}
-                onClick={handleNavClick("home")}
-              >
-                <CircleDot size={16} className="inline-block mr-1.5" /> Home
+              <ToggleGroupItem value="home">
+                <TransitionLink href="/sudut-profile-corp">
+                  <CircleDot size={16} className="inline-block mr-1.5" /> Home
+                </TransitionLink>
               </ToggleGroupItem>
-              <ToggleGroupItem
-                value="download"
-                className={cn(
-                  "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === "download"
-                    ? "text-accent-foreground bg-accent"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                )}
-                onClick={handleNavClick("download")}
-              >
-                <DownloadCloudIcon size={16} className="inline-block mr-1.5" />{" "}
-                Digital Download
+
+              <ToggleGroupItem value="activities">
+                <TransitionLink href="/sudut-profile-corp/activities">
+                  <Activity size={16} className="inline-block mr-1.5" />{" "}
+                  Activities
+                </TransitionLink>
               </ToggleGroupItem>
+
+              <ToggleGroupItem value="talents">
+                <TransitionLink href="/sudut-profile-corp/talents">
+                  <Users size={16} className="inline-block mr-1.5" /> Talents
+                </TransitionLink>
+              </ToggleGroupItem>
+
+              <ToggleGroupItem value="blogs">
+                <TransitionLink href="/sudut-profile-corp/blogs">
+                  <BookA size={16} className="inline-block mr-1.5" /> Blogs
+                </TransitionLink>
+              </ToggleGroupItem>
+
               <ToggleGroupItem
-                value="blog"
+                value="courses"
                 className={cn(
                   "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === "blog"
+                  activePage === "courses"
                     ? "text-accent-foreground bg-accent"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 )}
-                onClick={handleNavClick("blog")}
+                asChild
               >
-                <BookA size={16} className="inline-block mr-1.5" /> Blog
+                <TransitionLink href="/sudut-profile-corp/courses">
+                  <GraduationCap size={16} className="inline-block mr-1.5" />{" "}
+                  Courses
+                </TransitionLink>
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
@@ -104,42 +101,44 @@ const Header = ({ toggleTheme, isDarkMode }: HeaderProps) => {
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-20 left-4 right-4 bg-background/95 backdrop-blur-md py-4 px-6 border border-border rounded-2xl shadow-lg z-50">
             <div className="flex flex-col gap-4">
-              <a
-                href="#home"
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === "home"
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-                onClick={handleNavClick("home")}
+              <TransitionLink
+                href="/sudut-profile-corp"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <CircleDot size={16} className="inline-block mr-1.5" /> Home
-              </a>
-              <a
-                href="#download"
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === "download"
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-                onClick={handleNavClick("download")}
-              >
-                <DownloadCloudIcon size={16} className="inline-block mr-1.5" />{" "}
-                Digital Download
-              </a>
-              <a
-                href="#blog"
-                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === "blog"
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-                onClick={handleNavClick("blog")}
-              >
-                <BookA size={16} className="inline-block mr-1.5" /> Blog
-              </a>
+              </TransitionLink>
 
-              {/* Add theme toggle for mobile */}
+              <TransitionLink
+                href="/sudut-profile-corp/activities"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Activity size={16} className="inline-block mr-1.5" />{" "}
+                Activities
+              </TransitionLink>
+
+              <TransitionLink
+                href="/sudut-profile-corp/talents"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Users size={16} className="inline-block mr-1.5" /> Talents
+              </TransitionLink>
+
+              <TransitionLink
+                href="/sudut-profile-corp/blogs"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <BookA size={16} className="inline-block mr-1.5" /> Blogs
+              </TransitionLink>
+
+              <TransitionLink
+                href="/sudut-profile-corp/courses"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <GraduationCap size={16} className="inline-block mr-1.5" />{" "}
+                Courses
+              </TransitionLink>
+
+              {/* Theme toggle for mobile */}
               <div className="flex items-center justify-between px-3 py-2">
                 <span className="text-sm text-muted-foreground">Theme</span>
                 <div className="flex items-center gap-2">
@@ -187,7 +186,7 @@ const Header = ({ toggleTheme, isDarkMode }: HeaderProps) => {
               }`}
             />
           </div>
-          <Button variant={'outline'} className="px-6 py-2 rounded-full">
+          <Button variant={"outline"} className="px-6 py-2 rounded-full">
             LOGIN
           </Button>
         </div>
