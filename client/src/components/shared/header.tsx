@@ -34,13 +34,13 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-white">
           <TransitionLink
-            href="/h/templates"
+            href="/h/Showcases"
             className="hover:text-neutral-300 transition-colors"
           >
-            Templates
+            Showcases
           </TransitionLink>
           <TransitionLink
-            href="#about"
+            href="/h#about"
             className="hover:text-neutral-300 transition-colors"
           >
             About
@@ -54,7 +54,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <TransitionLink href="/contact">
+          <TransitionLink href="/h/contacts">
             <motion.button
               className="bg-white text-black font-semibold py-2 px-5 rounded-full"
               whileHover={{ scale: 1.05 }}
@@ -85,14 +85,14 @@ export function Header() {
           >
             <div className="flex flex-col gap-4 text-lg">
               <TransitionLink
-                href="/h/templates"
+                href="/h/showcases"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Templates
+                Showcases
               </TransitionLink>
               <TransitionLink
-                href="#about"
+                href="/h#about"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -106,7 +106,7 @@ export function Header() {
                 Contact
               </TransitionLink>
               <TransitionLink
-                href="/contact"
+                href="/h/contacts"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <button className="bg-white text-black font-semibold py-2 px-4 rounded-full w-full text-center">

@@ -1,4 +1,4 @@
-export const templates = [
+export const showcases = [
   {
     title: "Project Cyberscape",
     description: "A journey into a futuristic digital realm.",

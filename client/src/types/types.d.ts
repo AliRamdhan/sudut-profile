@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface templateType {
+export interface showcaseType {
   title: string;
   description: string;
   imgSrc: string;

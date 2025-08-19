@@ -145,10 +145,15 @@ const Hero = () => {
           </svg>
         </div>
         <h1 className="hero-title font-bold text-5xl md:text-7xl lg:text-8xl mb-6">
-          OUR TEMPLATES
+          OUR SHOWCASES
         </h1>
+        <p className="max-w-2xl text-lg text-neutral-400">
+          This showcase represents sample company profile websites. Each design
+          can be fully customized to reflect your brand identity, or simply used
+          as a source of inspiration.
+        </p>
         <div className="pt-8">
-          <TransitionLink href={"#our-templates"}>
+          <TransitionLink href={"#our-showcases"}>
             <p className="animate-bounce">Click to scroll</p>
           </TransitionLink>
         </div>

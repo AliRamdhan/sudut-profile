@@ -2,25 +2,25 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { templateType } from "@/types/types";
+import { showcaseType } from "@/types/types";
 import TransitionLink from "../layout/transition-link";
 
-interface TemplateCardProps {
-  template: templateType;
+interface ShowcaseCardProps {
+  showcase: showcaseType;
 }
 
-const TemplatesCard = ({ template }: TemplateCardProps) => {
+const ShowcaseCard = ({ showcase }: ShowcaseCardProps) => {
   return (
     <TransitionLink
-      href={template.href}
+      href={showcase.href}
       target="_blank"
       className="group relative block rounded-xl shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       {/* Image Container */}
       <div className="relative overflow-hidden rounded-t-xl">
         <img
-          src={template.imgSrc || "/placeholder.svg"}
-          alt={template.title}
+          src={showcase.imgSrc || "/placeholder.svg"}
+          alt={showcase.title}
           className="w-full h-full object-cover transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
         />
 
@@ -36,18 +36,18 @@ const TemplatesCard = ({ template }: TemplateCardProps) => {
       <div className="p-4">
         <div className="flex items-center justify-between">
           <h3 className="text-xl font-semibold tracking-tight">
-            {template.title}
+            {showcase.title}
           </h3>
           <div className="transition-transform duration-200 group-hover:translate-x-0">
             <ArrowRight className="h-5 w-5 text-gray-500 transition duration-300 group-hover:text-gray-700 group-hover:rotate-90" />
           </div>
         </div>
         <p className="mt-1 text-left text-sm text-muted-foreground">
-          {template.description}
+          {showcase.description}
         </p>
       </div>
     </TransitionLink>
   );
 };
 
-export default TemplatesCard;
+export default ShowcaseCard;

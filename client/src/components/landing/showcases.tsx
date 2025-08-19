@@ -5,45 +5,45 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { TransitionLink } from "@/components/layout/transition-link";
 import { ArrowRight } from "lucide-react";
-import { templates } from "@/lib/data";
-import TemplateItemCard from "../cards/template-item-card";
-import { templateType } from "@/types/types";
+import { showcases } from "@/lib/data";
+import ShowcaseCard from "@/components/cards/showcase-card";
+import { showcaseType } from "@/types/types";
 
-const Templates = () => {
-  const [templatesRand, setTemplatesRand] = useState<templateType[]>([]);
+const Showcases = () => {
+  const [showcaseRand, setShowcaseRand] = useState<showcaseType[]>([]);
 
   useEffect(() => {
-    const randomTemplates = [...templates]
+    const randomShowcase = [...showcases]
       .sort(() => 0.5 - Math.random())
       .slice(0, 3);
-    setTemplatesRand(randomTemplates);
+    setShowcaseRand(randomShowcase);
   }, []);
   return (
     <section id="templates" className="relative py-20 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-          Our Work Speaks
+          Our Work Showcases
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-neutral-400">
-          A curated collection of company profile templates that highlight
-          clarity, design, and professionalism.
+          A selection of company profile showcases designed to demonstrate
+          professionalism, brand alignment, and impactful presentation.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {templatesRand.map((template, index) => (
+        {showcaseRand.map((showcase, index) => (
           <motion.div
-            key={template.title}
+            key={showcase.title}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <TemplateItemCard template={template} />
+            <ShowcaseCard showcase={showcase} />
           </motion.div>
         ))}
       </div>
       <div className="mt-8 lg:mt-16 flex justify-center items-center">
-        <TransitionLink href="/h/templates">
+        <TransitionLink href="/h/showcases">
           <motion.button
             className="hero-button flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-full transition-transform duration-300"
             whileHover={{
@@ -52,7 +52,7 @@ const Templates = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Our Templates <ArrowRight size={20} />
+            Explore Our Showcases <ArrowRight size={20} />
           </motion.button>
         </TransitionLink>
       </div>
@@ -60,4 +60,4 @@ const Templates = () => {
   );
 };
 
-export default Templates;
+export default Showcases;

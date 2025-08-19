@@ -1,5 +1,5 @@
 import Hero from "@/components/templates-page/hero";
-import TemplatesWrapper from "@/components/templates-page/templates-wrapper";
+import TemplatesWrapper from "@/components/templates-page/showcases-wrapper";
 import React from "react";
 
 const Page = () => {

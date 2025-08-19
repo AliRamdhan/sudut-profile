@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import TransitionLink from "../layout/transition-link";
 
 const CTA = () => {
   return (
@@ -154,18 +154,14 @@ const CTA = () => {
             website that reflects your professionalism.
           </p>
         </div>
-        <Link
-          href="https://vercel.com/home"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <TransitionLink href="/h/contacts" rel="noopener noreferrer">
           <Button
             className="px-[30px] py-2 bg-secondary text-secondary-foreground text-base font-medium leading-6 rounded-[99px] shadow-[0px_0px_0px_4px_rgba(255,255,255,0.13)] hover:bg-secondary/90 transition-all duration-200"
             size="lg"
           >
             Talk to us
           </Button>
-        </Link>
+        </TransitionLink>
       </div>
     </section>
   );
