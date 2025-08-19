@@ -7,6 +7,57 @@ import Vehicles from "./_components/templates-logistics1-vehicles";
 import Testimonials from "./_components/templates-logistics1-clients";
 
 const Page = () => {
+  const services = [
+    {
+      src: "/images/logistics/templates-logistic1-shipping-solutions.jpg",
+      alt: "Freight Forwarding",
+      title: "Freight Forwarding Services",
+      desc: "Streamline your global shipping with our comprehensive freight forwarding solutions. Air, sea, or land transport, we manage it all.",
+    },
+    {
+      src: "/images/logistics/templates-logistic1-shipping-warehouse.png",
+      alt: "Warehouse",
+      title: "Warehousing and Distribution",
+      desc: "Secure, organize, and distribute your cargo with our state-of-the-art facilities. Includes inventory management and logistics support.",
+    },
+    {
+      src: "/images/logistics/templates-logistic1-shipping-customers.jpg",
+      alt: "Customs Clearance",
+      title: "Customs Clearance and Documentation",
+      desc: "Let us handle the complexity of customs regulations. We prepare all necessary documents and ensure smooth border crossings.",
+    },
+  ];
+
+  const features = [
+    {
+      Icon: Globe,
+      title: "Worldwide Transport",
+      subtitle: "Any destination you need",
+      desc: "We organise domestic and international deliveries of collective, complete, and partial shipments.",
+      border: "border-b lg:border-r lg:border-b",
+    },
+    {
+      Icon: Package,
+      title: "Storing Your Cargo",
+      subtitle: "2000 m2 warehouse",
+      desc: "Our capacity gives us freedom to handle your cargo from storage to delivery—small scale to large scale.",
+      border: "border-b lg:border-l lg:border-b",
+    },
+    {
+      Icon: ShieldCheck,
+      title: "100% Guaranteed",
+      subtitle: "We stand by our service",
+      desc: "Safe and on-time delivery is our priority. With modern vehicles and expert staff, we guarantee it.",
+      border: "border-b lg:border-r lg:border-t",
+    },
+    {
+      Icon: Wrench,
+      title: "Vehicle Support",
+      subtitle: "We service your machines",
+      desc: "From trucks to vans, we provide service, maintenance, and registration support for your vehicles.",
+      border: "border-b lg:border-l lg:border-t",
+    },
+  ];
   return (
     <div className="flex flex-col">
       <div className="flex-1">
@@ -15,23 +66,26 @@ const Page = () => {
           <Image
             src="/images/logistics/templates-logistic1-hero.jpg"
             alt="Truck and warehouse"
-            fill
-            className="object-cover object-center"
-            priority
+            className="w-full h-full object-cover object-center"
+            width={1024}
+            height={1024}
           />
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center px-4 md:px-6">
-            <div className="text-center text-white space-y-4">
-              <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold px-4">
+            <div className="flex flex-col justify-center items-center text-center text-white space-y-4">
+              <h1 className="text-4xl sm:text-7xl md:text-9xl font-bold lg:font-black lg:tracking-wide px-4">
                 STORAGE IN HOUSE
               </h1>
 
-              <p className="text-lg md:text-xl">
+              <p className="max-w-3xl text-lg md:text-3xl">
                 We take pride on our efficiency. When it comes to our local
                 storage capabilities, 100% secure 2000m2.
               </p>
-              <div className="flex justify-center space-x-4">
-                <TransitionLink href="services" target="_blank">
-                  <Button className="text-lg px-12 py-4 rounded-lg">
+              <div className="flex justify-center mt-8">
+                <TransitionLink href="#features">
+                  <Button
+                    variant={"ghost"}
+                    className="border text-lg px-12 py-4 transition-all duration-300 hover:scale-105"
+                  >
                     Learn More
                   </Button>
                 </TransitionLink>
@@ -41,146 +95,71 @@ const Page = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-12 md:py-20 bg-black text-white">
-          <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-3 lg:gap-12 gap-8">
-            <div className="flex flex-col justify-center space-y-4 text-center lg:text-left">
+        <section id="services" className="py-12 md:py-20 bg-gray-100">
+          <div className="container mx-auto px-4 md:px-6 space-y-8">
+            <div className="flex flex-col justify-center space-y-4 text-center lg:text-left py-10">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 WHAT WE OFFER
               </h2>
-              <p className="max-w-[600px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[600px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Expert maintenance and repairs to keep your car running
                 smoothly. Book now for reliable service at the best price!
               </p>
             </div>
 
             <div className="flex flex-col lg:flex-row gap-6 col-span-2">
-              <div className="flex flex-col items-center justify-center space-y-4 rounded-xl bg-white p-6 text-gray-900 shadow-lg min-w-[280px] md:min-w-[320px] lg:min-w-[360px] snap-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
-                  <Image
-                    src="/images/logistics/templates-logistic1-shipping-solutions.jpg"
-                    width={48}
-                    height={48}
-                    alt="Freight Forwarding Icon"
-                    className="w-full h-full"
-                  />
+              {services.map((service) => (
+                <div
+                  key={service.title}
+                  className="flex flex-col items-center justify-center space-y-4 rounded-xl bg-white p-6 text-gray-900 shadow-lg min-w-[280px] md:min-w-[320px] lg:min-w-[360px] snap-center"
+                >
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
+                    <Image
+                      src={service.src}
+                      width={80}
+                      height={80}
+                      alt={service.alt}
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center">
+                    {service.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-center">
-                  Freight Forwarding Services
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  Streamline your global shipping with our comprehensive freight
-                  forwarding solutions. Whether it&apos;s air, sea, or land
-                  transport, we man...
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-4 rounded-xl bg-white p-6 text-gray-900 shadow-lg min-w-[280px] md:min-w-[320px] lg:min-w-[360px] snap-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
-                  <Image
-                    src="/images/logistics/templates-logistic1-shipping-warehouse.png"
-                    width={48}
-                    height={48}
-                    alt="Warehouse Icon"
-                    className="w-full h-full"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-center">
-                  Warehousing and Distribution
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  Secure, organize, and distribute your cargo efficiently with
-                  our state-of-the-art warehousing facilities. Our services
-                  include inv...
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-4 rounded-xl bg-white p-6 text-gray-900 shadow-lg min-w-[280px] md:min-w-[320px] lg:min-w-[360px] snap-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
-                  <Image
-                    src="/images/logistics/templates-logistic1-shipping-customers.jpg"
-                    width={48}
-                    height={48}
-                    alt="Customs Clearance Icon"
-                    className="w-full h-full"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-center">
-                  Customs Clearance and Documentation
-                </h3>
-                <p className="text-sm text-gray-600 text-center">
-                  Navigating customs regulations can be complex—let us handle it
-                  for you. Our customs clearance services include preparing all
-                  nec...
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section id="features" className="py-12 md:py-20 bg-white">
+        <section
+          id="features"
+          className="w-full h-full lg:h-[90vh] py-12 md:py-20 bg-white flex justify-center items-center"
+        >
           <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex items-start space-x-4">
-                <Globe className="h-8 w-8 text-[#007bff] flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    World wide transport
-                  </h3>
-                  <p className="text-gray-500 text-sm">
-                    Any destination you need
-                  </p>
-                  <p className="mt-2 text-gray-600">
-                    In accordance with your needs we organise domestic and
-                    international deliveries of collective, complete and partial
-                    shipments.
-                  </p>
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0">
+              {features.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="flex items-center p-2.5 border-b lg:border-r lg:border-b"
+                >
+                  <div className="flex items-start space-x-4">
+                    <feature.Icon className="h-8 w-8 text-[#007bff] flex-shrink-0" />
+
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-500 text-sm">
+                        {feature.subtitle}
+                      </p>
+                      <p className="mt-2 text-gray-600">{feature.desc}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <Package className="h-8 w-8 text-[#007bff] flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Storing your cargo
-                  </h3>
-                  <p className="text-gray-500 text-sm">2000 m2 warehouse</p>
-                  <p className="mt-2 text-gray-600">
-                    Our capacities give us the freedom to take care of your
-                    cargo from storage to delivery. From small cargo to cargo of
-                    grand scale.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <ShieldCheck className="h-8 w-8 text-[#007bff] flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    100% guaranteed
-                  </h3>
-                  <p className="text-gray-500 text-sm">
-                    We stand by our service
-                  </p>
-                  <p className="mt-2 text-gray-600">
-                    Safe and on time delivery of your goods is our primary
-                    concern. with top notch staff highly modernised vehicles we
-                    are confident we can do it.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <Wrench className="h-8 w-8 text-[#007bff] flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Support for your vehicles
-                  </h3>
-                  <p className="text-gray-500 text-sm">
-                    we can service your machines
-                  </p>
-                  <p className="mt-2 text-gray-600">
-                    Having problems with your Truck, Van or any kind of
-                    transportation vehicles. We cover everything from service to
-                    registration.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="lg:col-span-1 flex flex-col items-center text-center space-y-4">
               <Image
@@ -188,7 +167,7 @@ const Page = () => {
                 alt="Person operating a pallet jack in a warehouse"
                 width={400}
                 height={300}
-                className="object-cover w-full h-[300px]"
+                className="object-cover w-full h-[325px]"
               />
               <h3 className="text-xl font-bold text-gray-800">
                 2000m2 STORAGE
@@ -231,34 +210,38 @@ const Page = () => {
         {/* Vehicle Park */}
         <Vehicles />
 
+        {/* Clients That Trust Us */}
+        <Testimonials />
+
         {/* CTA Banner */}
-        <section id="cta" className="relative h-[400px] w-full overflow-hidden">
+        <section id="cta" className="relative h-[640px] w-full overflow-hidden">
           <Image
             src="/images/logistics/templates-logistic1-cta.jpg"
             alt="Power lines and a white semi-truck on a highway at sunset"
             fill
-            className="object-fill object-center"
+            className="object-fit object-center"
           />
-          <div className="absolute inset-0 bg-black/50 flex flex-col items-start justify-center px-4 md:px-6 text-center text-white space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+          j
+          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4 md:px-6 text-center text-white space-y-4">
+            <h2 className="text-3xl md:text-6xl font-bold leading-tight max-w-4xl">
               REACH YOUR DESTINATION 100% SURE AND SAFE
             </h2>
-            <p className="text-lg md:text-xl">
+            <p className="text-lg md:text-2xl max-w-xl">
               We will take care of your cargo or your passenger and deliver them
               safe and on time
             </p>
-            <div className="w-full flex items-center justify-center lg:items-start lg:justify-start">
+            <div className="w-full flex items-center justify-center mt-8">
               <TransitionLink href="https://wa.me/6202390310" target="_blank">
-                <Button className="text-lg px-12 py-4 rounded-lg">
+                <Button
+                  variant={"ghost"}
+                  className="text-xl px-12 py-4 rounded-lg border"
+                >
                   Contact Us
                 </Button>
               </TransitionLink>
             </div>
           </div>
         </section>
-
-        {/* Clients That Trust Us */}
-        <Testimonials />
       </div>
     </div>
   );

@@ -1,12 +1,13 @@
 "use client";
 
+import React, { useState } from "react";
 import TransitionLink from "@/components/shared/transition-link";
 import { Button } from "@/components/ui/button";
+import { AnimatePresence, motion } from "framer-motion";
 import { Clock, Mail, Phone, Search, Truck, Menu, X } from "lucide-react";
-import React, { useState } from "react";
 
 const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-black text-white">
@@ -86,19 +87,13 @@ const Header = () => {
 
       {/* Main nav */}
       <div className="container py-4 shadow-sm mx-auto flex items-center justify-between px-4 md:px-6">
-        <TransitionLink href="#" className="flex items-center space-x-2">
+        <TransitionLink href="#home" className="flex items-center space-x-2">
           <Truck className="h-6 w-6 text-gray-300" />
-          <span className="text-xl font-bold">SUDUT PROFILE</span>
+          <span className="text-xl font-bold">SUDUT PROFILE LOGISTICS</span>
         </TransitionLink>
 
         {/* Desktop menu */}
         <nav className="hidden md:flex items-center space-x-6">
-          <TransitionLink
-            href="#home"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            HOME
-          </TransitionLink>
           <TransitionLink
             href="#vehicles"
             className="text-gray-100 hover:text-gray-300 font-medium"
@@ -110,12 +105,6 @@ const Header = () => {
             className="text-gray-100 hover:text-gray-300 font-medium"
           >
             SERVICES
-          </TransitionLink>
-          <TransitionLink
-            href="#about-us"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            ABOUT US
           </TransitionLink>
           <TransitionLink
             href="#cta"
@@ -128,6 +117,7 @@ const Header = () => {
             variant="ghost"
             size="icon"
             className="text-gray-100 hover:text-gray-300"
+            aria-label="Search Input"
           >
             <Search className="h-5 w-5" />
           </Button>
@@ -135,15 +125,16 @@ const Header = () => {
 
         {/* Mobile controls */}
         <div className="flex items-center gap-2 md:hidden">
-          <Button variant="ghost" size="icon">
+          <Button variant="ghost" size="icon" aria-label="Search Input">
             <Search className="h-5 w-5" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            aria-label="Toggle Mobile Menu"
           >
-            {mobileOpen ? (
+            {isMobileOpen ? (
               <X className="h-5 w-5" />
             ) : (
               <Menu className="h-5 w-5" />
@@ -153,40 +144,40 @@ const Header = () => {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2">
-          <TransitionLink
-            href="#home"
-            className="text-gray-100 hover:text-gray-300 font-medium"
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md p-6 text-white rounded-b-xl"
           >
-            HOME
-          </TransitionLink>
-          <TransitionLink
-            href="#vehicles"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            VEHICLE FLEET
-          </TransitionLink>
-          <TransitionLink
-            href="#services"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            SERVICES
-          </TransitionLink>
-          <TransitionLink
-            href="#about-us"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            ABOUT US
-          </TransitionLink>
-          <TransitionLink
-            href="#cta"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            CONTACT US
-          </TransitionLink>
-        </div>
-      )}
+            <div className="flex flex-col gap-4 text-lg">
+              <TransitionLink
+                href="#vehicles"
+                className="text-gray-100 hover:text-gray-300 font-medium pb-4 border-b"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                VEHICLE FLEET
+              </TransitionLink>
+              <TransitionLink
+                href="#services"
+                className="text-gray-100 hover:text-gray-300 font-medium pb-4 border-b"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                SERVICES
+              </TransitionLink>
+              <TransitionLink
+                href="#cta"
+                className="text-gray-100 hover:text-gray-300 font-medium pb-4 border-b"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                CONTACT US
+              </TransitionLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
