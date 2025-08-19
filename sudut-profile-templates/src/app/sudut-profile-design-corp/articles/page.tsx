@@ -1,10 +1,99 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Cta from "../_components/cta";
 import TransitionLink from "@/components/shared/transition-link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const Page = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const featuredPost = {
+    title: "Exploring the Power of Minimalism in Visual Design",
+    excerpt:
+      "In the fast-paced, visually overwhelming world we live in, it's no surprise that minimalism has become a powerful trend in the realm of visual design.",
+    image: "/images/sudut-profile-design-corp/design-1.jpg",
+  };
+
+  const blogPosts = [
+    {
+      title:
+        "The Power of Typography in Visual Design: Enhancing Communication and Impact",
+      excerpt:
+        "Uncover the significance of typography in visual design and learn how to leverage its power to effectively communicate messages and evoke emotions.",
+      image: "/images/sudut-profile-design-corp/design-2.jpg",
+      date: "May 5, 2023",
+      slug: "typography-power",
+    },
+    {
+      title:
+        "Designing for User Experience: Creating Intuitive and Engaging Interfaces",
+      excerpt:
+        "Explore the realm of user experience (UX) design and discover how to craft interfaces that are not only aesthetically pleasing but also intuitive and engaging for users.",
+      image: "/images/sudut-profile-design-corp/design-3.jpg",
+      date: "May 3, 2023",
+      slug: "user-experience-design",
+    },
+    {
+      title: "Mastering the Art of Color Theory: A Visual Designer's Guide",
+      excerpt:
+        "Dive into the fascinating world of color theory and learn how to create captivating visual designs by understanding the principles of color harmonies, psychology, and combinations.",
+      image: "/images/sudut-profile-design-corp/design-1.jpg",
+      date: "May 5, 2023",
+      slug: "color-theory-guide",
+    },
+  ];
+
+  const latestInsights = [
+    {
+      title:
+        "The Power of Typography in Visual Design: Enhancing Communication and Impact",
+      date: "May 5, 2023",
+      description:
+        "Uncover the significance of typography in visual design and learn how to leverage its power to effectively communicate messages and evoke emotions. This blog post will cover typography fundamentals, font pairing stra...",
+    },
+    {
+      title:
+        "Designing for User Experience: Creating Intuitive and Engaging Interfaces",
+      date: "May 3, 2023",
+      description:
+        "Explore the realm of user experience (UX) design and discover how to craft interfaces that are not only aesthetically pleasing but also intuitive and engaging for users. This blog post will explore UX design principle...",
+    },
+    {
+      title: "Mastering the Art of Color Theory: A Visual Designer's Guide",
+      date: "May 5, 2023",
+      description:
+        "Dive into the fascinating world of color theory and learn how to create captivating visual designs by understanding the principles of color harmonies, psychology, and combinations.",
+    },
+  ];
+
+  const additionalInsights = [
+    {
+      title: "The Psychology of Visual Hierarchy in Web Design",
+      date: "April 28, 2023",
+      description:
+        "Learn how to guide users through your designs using visual hierarchy principles. This comprehensive guide covers spacing, typography, color, and layout techniques to create intuitive user experiences.",
+    },
+    {
+      title: "Creating Accessible Design Systems for Modern Applications",
+      date: "April 25, 2023",
+      description:
+        "Explore the fundamentals of building inclusive design systems that work for everyone. From color contrast to keyboard navigation, discover how to make your designs accessible from the ground up.",
+    },
+    {
+      title: "The Future of Motion Design in Digital Interfaces",
+      date: "April 22, 2023",
+      description:
+        "Discover how thoughtful animation and micro-interactions can enhance user experience. This post explores the latest trends in motion design and how to implement them effectively in your projects.",
+    },
+  ];
+
+  const displayedInsights = showMore
+    ? [...latestInsights, ...additionalInsights]
+    : latestInsights;
+
   return (
     <div>
       {/* Projects Section */}
@@ -19,251 +108,103 @@ const Page = () => {
         {/* Projects Grid */}
         <div className="w-full h-full">
           {/* Hero Article */}
-          <article className="mb-16">
-            <div className="grid lg:grid-cols-2 gap-8 items-start">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/logistics/templates-logistic1-client2.jpg"
-                  alt="Aerial view of Kuara Resort in Southern Lombok"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 text-sm">
-                  <time className="text-blue-600">June 24, 2025</time>
-                  <span className="text-blue-600">Press Release</span>
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-normal text-gray-800 leading-tight">
-                  Mirah Investment & Development Achieves Key Milestone with the
-                  Soft Launch of Kuara Resort in Southern Lombok.
-                </h2>
-                <TransitionLink
-                  href="articles/kuara-resort-launch"
-                  className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                >
-                  Read Article →
-                </TransitionLink>
-              </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative mb-20">
+              {/* <img
+                src={featuredPost.image || "/placeholder.svg"}
+                alt={featuredPost.title}
+                className="w-full h-80 object-cover rounded-2xl"
+              /> */}
+              <Image
+                src={featuredPost.image || "/placeholder.svg"}
+                alt="Aerial view of Kuara Resort in Southern Lombok"
+                width={1024}
+                height={1024}
+                className="w-full h-80 object-cover rounded-2xl"
+              />
             </div>
-          </article>
-
-          {/* Article Grid */}
-          <div className="grid md:grid-cols-3 gap-8 pb-16">
-            {/* Articles */}
-            <div className="grid grid-cols-1 justify-between items-center gap-8">
-              {/* Article 1*/}
-              <article className="space-y-8">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4 text-sm">
-                    <time className="text-blue-600">May 23, 2025</time>
-                    <span className="text-blue-600">Press Release</span>
-                  </div>
-                  <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                    <em className="font-serif italic">
-                      Introducing Klara Ocean Place:
-                    </em>{" "}
-                    Batu Belig&apos;s Newest Serviced Apartment Landmark
-                  </h3>
-                  <TransitionLink
-                    href="articles/klara-ocean-place-full"
-                    className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                  >
-                    Read Article →
-                  </TransitionLink>
-                </div>
-              </article>
-
-              {/* Article 2 */}
-              <article className="space-y-8">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4 text-sm">
-                    <time className="text-blue-600">May 5, 2025</time>
-                    <span className="text-blue-600">Press Release</span>
-                  </div>
-                  <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                    After Record Sell-Out, FINNS Bali Resort Launches Stage 2
-                    Sales
-                  </h3>
-                  <TransitionLink
-                    href="articles/finns-bali-stage-2"
-                    className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                  >
-                    Read Article →
-                  </TransitionLink>
-                </div>
-              </article>
-
-              <article className="space-y-8">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4 text-sm">
-                    <time className="text-blue-600">June 17, 2025</time>
-                    <span className="text-blue-600">Press Release</span>
-                  </div>
-                  <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                    Cocana Resort Named Top 10% of Hotels Worldwide – Award
-                    Tripadvisor Travelers&apos; Choice Award
-                  </h3>
-                  <TransitionLink
-                    href="articles/cocana-resort-award"
-                    className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                  >
-                    Read Article →
-                  </TransitionLink>
-                </div>
-              </article>
+            <div>
+              <h3 className="text-3xl font-bold mb-4 leading-tight">
+                {featuredPost.title}
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {featuredPost.excerpt}
+              </p>
+              <TransitionLink
+                href="articles/kuara-resort-launch"
+                className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
+              >
+                <Button
+                  variant="outline"
+                  className="rounded-full px-6 py-2 bg-transparent"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </TransitionLink>
             </div>
-
-            {/* Article 2 */}
-            <article className="space-y-4">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/logistics/templates-logistic1-client2.jpg"
-                  alt="Klara Ocean Place interior"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-4 text-sm">
-                  <time className="text-blue-600">April 14, 2025</time>
-                  <span className="text-blue-600">Press Release</span>
-                </div>
-                <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                  Cocana Resort Wins &apos;Best Earner&lsquo; Award from Expedia
-                  Group
-                </h3>
-                <TransitionLink
-                  href="articles/cocana-best-earner"
-                  className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                >
-                  Read Article →
-                </TransitionLink>
-              </div>
-            </article>
-
-            {/* Article 3 */}
-            <article className="space-y-4">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/logistics/templates-logistic1-client2.jpg"
-                  alt="FINNS Bali Resort Stage 2 Sales"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-4 text-sm">
-                  <time className="text-blue-600">May 23, 2025</time>
-                  <span className="text-blue-600">Press Release</span>
-                </div>
-                <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                  <em className="font-serif italic">
-                    Introducing Klara Ocean Place:
-                  </em>{" "}
-                  Batu Belig&apos;s Newest Serviced Apartment Landmark
-                </h3>
-                <TransitionLink
-                  href="articles/klara-ocean-place"
-                  className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                >
-                  Read Article →
-                </TransitionLink>
-              </div>
-            </article>
           </div>
 
-          {/* Article Grid */}
-          <div className="container py-10 mx-auto">
-            <div className="lg:flex lg:-mx-6">
-              <div className="lg:w-3/4 lg:px-6">
-                <img
-                  className="object-cover object-center w-full h-80 xl:h-[28rem] rounded-xl"
-                  src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  alt="Design Insight"
-                />
-
-                <div className="space-y-4 mt-4">
-                  <div className="flex items-center gap-4 text-sm">
-                    <time className="text-blue-600">June 24, 2025</time>
-                    <span className="text-blue-600">Press Release</span>
-                  </div>
-                  <h2 className="text-3xl lg:text-4xl font-normal text-gray-800 leading-tight">
-                    Mirah Investment & Development Achieves Key Milestone with
-                    the Soft Launch of Kuara Resort in Southern Lombok.
-                  </h2>
-                  <TransitionLink
-                    href="articles/kuara-resort-launch"
-                    className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                  >
-                    Read Article →
-                  </TransitionLink>
+          {/* Blog Posts Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+            {blogPosts.map((post, index) => (
+              <TransitionLink
+                key={index}
+                href={`articles/${
+                  post.slug || "designing-for-user-experience"
+                }`}
+                className="group cursor-pointer"
+              >
+                <div className="relative mb-4">
+                  <img
+                    src={post.image || "/placeholder.svg"}
+                    alt={post.title}
+                    className="w-full h-64 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              </div>
+                <h3 className="text-xl font-bold mb-3 leading-tight group-hover:text-gray-600 transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {post.excerpt}
+                </p>
+              </TransitionLink>
+            ))}
+          </div>
 
-              <div className="mt-8 lg:w-1/4 lg:mt-0 lg:px-6 space-y-8">
-                <article className="space-y-8">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 text-sm">
-                      <time className="text-blue-600">June 17, 2025</time>
-                      <span className="text-blue-600">Press Release</span>
-                    </div>
-                    <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                      Cocana Resort Named Top 10% of Hotels Worldwide – Award
-                      Tripadvisor Travelers&apos; Choice Award
+          {/* Latest Insights List */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-12">My Latest Insights</h2>
+            <div className="space-y-12">
+              {displayedInsights.map((insight, index) => (
+                <div
+                  key={index}
+                  className="grid lg:grid-cols-2 gap-8 items-start"
+                >
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 leading-tight">
+                      {insight.title}
                     </h3>
-                    <TransitionLink
-                      href="articles/cocana-resort-award"
-                      className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                    >
-                      Read Article →
-                    </TransitionLink>
+                    <p className="text-gray-500 text-sm mb-4">{insight.date}</p>
                   </div>
-                </article>
-
-                <hr className="my-6 border-gray-200 dark:border-gray-700" />
-
-                <article className="space-y-8">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 text-sm">
-                      <time className="text-blue-600">June 17, 2025</time>
-                      <span className="text-blue-600">Press Release</span>
-                    </div>
-                    <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                      Cocana Resort Named Top 10% of Hotels Worldwide – Award
-                      Tripadvisor Travelers&apos; Choice Award
-                    </h3>
-                    <TransitionLink
-                      href="articles/cocana-resort-award"
-                      className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                    >
-                      Read Article →
-                    </TransitionLink>
+                  <div>
+                    <p className="text-gray-600 leading-relaxed">
+                      {insight.description}
+                    </p>
                   </div>
-                </article>
-                <hr className="my-6 border-gray-200 dark:border-gray-700" />
-
-                <article className="space-y-8">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 text-sm">
-                      <time className="text-blue-600">June 17, 2025</time>
-                      <span className="text-blue-600">Press Release</span>
-                    </div>
-                    <h3 className="text-xl font-normal text-gray-800 leading-tight">
-                      Cocana Resort Named Top 10% of Hotels Worldwide – Award
-                      Tripadvisor Travelers&apos; Choice Award
-                    </h3>
-                    <TransitionLink
-                      href="articles/cocana-resort-award"
-                      className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
-                    >
-                      Read Article →
-                    </TransitionLink>
-                  </div>
-                </article>
-              </div>
+                </div>
+              ))}
             </div>
+          </div>
+
+          {/* Show More Button */}
+          <div className="text-center">
+            <Button
+              variant="outline"
+              className="rounded-full px-8 py-3 bg-transparent"
+              onClick={() => setShowMore(!showMore)}
+            >
+              {showMore ? "Show less" : "Show more"}
+            </Button>
           </div>
         </div>
       </section>

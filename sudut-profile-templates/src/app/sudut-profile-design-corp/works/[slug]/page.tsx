@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -52,19 +52,50 @@ const Page = ({ params }: { params: { slug: string } }) => {
       {/* Main Content */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         {/* Hero Section */}
-        <div className="w-full mb-16">
-          <p className="text-gray-600 mb-4">Portfolio</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            {project.title}
-          </h1>
-          <div className="aspect-[4/2] bg-gray-100 rounded-2xl overflow-hidden">
-            <Image
-              src={project.heroImage}
-              alt={project.title}
-              width={1024}
-              height={1024}
-              className="w-full h-full object-cover object-center"
-            />
+        <div className="grid lg:grid-cols-3 gap-12 mb-16">
+          <div className="lg:col-span-2">
+            <p className="text-gray-600 mb-4">Portfolio</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+              {project.title}
+            </h1>
+            <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
+              <Image
+                src={project.heroImage}
+                alt={project.title}
+                width={1024}
+                height={1024}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+
+          {/* Project Details Sidebar */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Date</h3>
+              <p className="text-gray-600">{project.date}</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Client Name</h3>
+              <p className="text-gray-600">{project.client}</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Services</h3>
+              <div className="space-y-2">
+                {project.services.map((service, index) => (
+                  <p key={index} className="text-gray-600">
+                    {service}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-full">
+              Visit Website
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
 

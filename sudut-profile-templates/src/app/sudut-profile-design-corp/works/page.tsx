@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Cta from "../_components/cta";
+import TransitionLink from "@/components/shared/transition-link";
 
 const Page = () => {
   return (
@@ -41,7 +42,10 @@ const Page = () => {
           </div>
 
           {/* File Not Found */}
-          <div className="group cursor-pointer">
+          <TransitionLink
+            href={`works/spotify-redesign`}
+            className="group cursor-pointer"
+          >
             <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
               <Image
                 src="/images/sudut-profile-design-corp/close-faces-portrait.png"
@@ -62,10 +66,13 @@ const Page = () => {
                 <span>Lifestyle</span>
               </div>
             </div>
-          </div>
+          </TransitionLink>
 
           {/* Comes Back */}
-          <div className="group cursor-pointer">
+          <TransitionLink
+            href={`works/spotify-redesign`}
+            className="group cursor-pointer"
+          >
             <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
               <Image
                 src="/images/sudut-profile-design-corp/placeholder-v74tb.png"
@@ -86,10 +93,13 @@ const Page = () => {
                 <span>Lifestyle</span>
               </div>
             </div>
-          </div>
+          </TransitionLink>
 
           {/* Callaway */}
-          <div className="group cursor-pointer">
+          <TransitionLink
+            href={`works/spotify-redesign`}
+            className="group cursor-pointer"
+          >
             <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
               <Image
                 src="/images/sudut-profile-design-corp/athletic-portrait.png"
@@ -110,10 +120,13 @@ const Page = () => {
                 <span>Branding</span>
               </div>
             </div>
-          </div>
+          </TransitionLink>
 
           {/* Trimming Jingle */}
-          <div className="group cursor-pointer">
+          <TransitionLink
+            href={`works/spotify-redesign`}
+            className="group cursor-pointer"
+          >
             <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
               <Image
                 src="/images/sudut-profile-design-corp/person-blue-gesture.png"
@@ -134,7 +147,7 @@ const Page = () => {
                 <span>Branding</span>
               </div>
             </div>
-          </div>
+          </TransitionLink>
         </div>
       </section>
 
