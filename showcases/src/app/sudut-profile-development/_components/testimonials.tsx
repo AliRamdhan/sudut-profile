@@ -52,15 +52,11 @@ const testimonials = [
   },
 ];
 
-export function TestimonialSection() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export function Testimonials() {
   const [loaded, setLoaded] = useState(false);
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
-    },
     created() {
       setLoaded(true);
     },
@@ -95,110 +91,98 @@ export function TestimonialSection() {
         className="object-cover object-center"
         priority
       />
-      <div className="absolute w-full h-full bg-gradient-to-t from-gray-800/80 to-transparent mx-auto">
-        <div className="w-full h-full flex justify-start items-center">
+      <div className="absolute w-full h-full bg-gradient-to-t from-gray-800/80 to-transparent mx-auto p-8">
+        <div className="w-full h-full flex justify-start items-center px-20">
           <div className="max-w-7xl">
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 font-sans">
-                Discover why our clients love us
+                Why Our Clients Trust Us
               </h2>
               <p className="text-xl text-gray-100 max-w-2xl mx-auto font-sans">
-                Real stories from real users who have transformed their business
-                with our platform
+                Genuine experiences from partners and investors who have
+                achieved growth and success through our developments and
+                strategic opportunities.
               </p>
             </div>
 
             {/* Slider Container */}
-            <div className="relative">
-              <div ref={sliderRef} className="keen-slider">
-                {testimonials.map((testimonial) => (
-                  <div key={testimonial.id} className="keen-slider__slide">
-                    <Card className="h-full bg-white/50 backdrop-blur-md border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
-                      <CardContent className="p-8">
-                        {/* Rating Stars */}
-                        <div className="flex gap-1 mb-6">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-5 h-5 fill-black text-black"
-                            />
-                          ))}
-                        </div>
+            <div className="w-full flex flex-col justify-center items-center space-y-4">
+              <div className="max-w-5xl">
+                <div ref={sliderRef} className="keen-slider">
+                  {testimonials.map((testimonial) => (
+                    <div key={testimonial.id} className="keen-slider__slide">
+                      <Card className="h-full bg-white/50 backdrop-blur-md border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <CardContent className="p-8">
+                          {/* Rating Stars */}
+                          <div className="flex gap-1 mb-6">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className="w-5 h-5 fill-yellow-600 text-yellow-600"
+                              />
+                            ))}
+                          </div>
 
-                        {/* Testimonial Content */}
-                        <blockquote className="text-lg text-foreground mb-8 leading-relaxed font-sans">
-                          &apos;{testimonial.content}&apos;
-                        </blockquote>
+                          {/* Testimonial Content */}
+                          <blockquote className="text-lg text-foreground mb-8 leading-relaxed font-sans">
+                            &apos;{testimonial.content}&apos;
+                          </blockquote>
 
-                        {/* Author Info */}
-                        <div className="flex items-center gap-4">
-                          <Avatar className="w-12 h-12">
-                            <AvatarImage
-                              src={testimonial.avatar || "/placeholder.svg"}
-                              alt={testimonial.author}
-                            />
-                            <AvatarFallback className="bg-black text-white font-semibold">
-                              {testimonial.author
-                                .split(" ")
-                                .map((n) => n[0])
-                                .join("")}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div>
-                            <div className="font-semibold text-foreground font-sans">
-                              {testimonial.author}
-                            </div>
-                            <div className="text-sm text-gray-800 font-sans">
-                              {testimonial.role} at {testimonial.company}
+                          {/* Author Info */}
+                          <div className="flex items-center gap-4">
+                            <Avatar className="w-12 h-12">
+                              <AvatarImage
+                                src={testimonial.avatar || "/placeholder.svg"}
+                                alt={testimonial.author}
+                              />
+                              <AvatarFallback className="bg-black text-white font-semibold">
+                                {testimonial.author
+                                  .split(" ")
+                                  .map((n) => n[0])
+                                  .join("")}
+                              </AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <div className="font-semibold text-foreground font-sans">
+                                {testimonial.author}
+                              </div>
+                              <div className="text-sm text-gray-800 font-sans">
+                                {testimonial.role} at {testimonial.company}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Navigation Buttons */}
-              {loaded && instanceRef.current && (
-                <>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-black hover:text-white hover:border-black transition-all duration-200 shadow-lg"
-                    onClick={() => instanceRef.current?.prev()}
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-black hover:text-white hover:border-black transition-all duration-200 shadow-lg"
-                    onClick={() => instanceRef.current?.next()}
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </Button>
-                </>
-              )}
+              <div className="w-full flex justify-end items-center gap-x-4">
+                {/* Navigation Buttons */}
+                {loaded && instanceRef.current && (
+                  <>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-black hover:text-white hover:border-black transition-all duration-200 shadow-lg"
+                      onClick={() => instanceRef.current?.prev()}
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-black hover:text-white hover:border-black transition-all duration-200 shadow-lg"
+                      onClick={() => instanceRef.current?.next()}
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </Button>
+                  </>
+                )}
+              </div>
             </div>
-
-            {/* Dots Navigation */}
-            {loaded && instanceRef.current && (
-              <div className="flex justify-center gap-2 mt-8">
-                {testimonials.map((_, idx) => (
-                  <button
-                    key={idx}
-                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                      currentSlide === idx
-                        ? "bg-black scale-110"
-                        : "bg-muted hover:bg-black/50"
-                    }`}
-                    onClick={() => instanceRef.current?.moveToIdx(idx)}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </div>

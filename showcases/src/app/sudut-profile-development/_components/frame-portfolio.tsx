@@ -1,15 +1,12 @@
 "use client";
 import { Slider } from "@/components/ui/slider";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 interface FramePortfolioProps {
   video: string;
   width: number | string;
   height: number | string;
   className?: string;
-  corner: string;
-  edgeHorizontal: string;
-  edgeVertical: string;
   mediaSize: number;
   borderThickness: number;
   borderSize: number;
@@ -18,9 +15,6 @@ interface FramePortfolioProps {
   onBorderSizeChange: (value: number) => void;
   showControls: boolean;
   label: string;
-  showFrame: boolean;
-  autoplayMode: "all" | "hover";
-  isHovered: boolean;
 }
 
 export function FramePortfolio({
@@ -28,9 +22,6 @@ export function FramePortfolio({
   width,
   height,
   className = "",
-  corner,
-  edgeHorizontal,
-  edgeVertical,
   mediaSize,
   borderThickness,
   borderSize,
@@ -39,23 +30,8 @@ export function FramePortfolio({
   onBorderSizeChange,
   showControls,
   label,
-  showFrame,
-  autoplayMode,
-  isHovered,
 }: FramePortfolioProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (autoplayMode === "all") {
-      videoRef.current?.play();
-    } else if (autoplayMode === "hover") {
-      if (isHovered) {
-        videoRef.current?.play();
-      } else {
-        videoRef.current?.pause();
-      }
-    }
-  }, [isHovered, autoplayMode]);
 
   return (
     <div
@@ -69,15 +45,10 @@ export function FramePortfolio({
       <div className="relative w-full h-full overflow-hidden">
         {/* Video with Border */}
         <div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center w-full h-full left-0 top-0 p-0"
           style={{
             zIndex: 1,
             transition: "all 0.3s ease-in-out",
-            padding: showFrame ? `${borderThickness}px` : "0",
-            width: showFrame ? `${borderSize}%` : "100%",
-            height: showFrame ? `${borderSize}%` : "100%",
-            left: showFrame ? `${(100 - borderSize) / 2}%` : "0",
-            top: showFrame ? `${(100 - borderSize) / 2}%` : "0",
           }}
         >
           <div
@@ -94,92 +65,17 @@ export function FramePortfolio({
               loop
               muted
               playsInline
-              autoPlay={
-                autoplayMode === "all" ||
-                (autoplayMode === "hover" && isHovered)
-              }
+              autoPlay={false} // autoplay dimatikan
               ref={videoRef}
               onMouseEnter={(e) => {
-                if (autoplayMode === "hover") {
-                  e.currentTarget.play();
-                }
+                e.currentTarget.play(); // play ketika hover
               }}
               onMouseLeave={(e) => {
-                if (autoplayMode === "hover") {
-                  e.currentTarget.pause();
-                }
+                e.currentTarget.pause(); // pause ketika leave
               }}
             />
           </div>
         </div>
-
-        {/* Frame Elements (Higher z-index) */}
-        {showFrame && (
-          <div className="absolute inset-0" style={{ zIndex: 2 }}>
-            {/* Corners */}
-            <div
-              className="absolute top-0 left-0 w-16 h-16 bg-contain bg-no-repeat"
-              style={{ backgroundImage: `url(${corner})` }}
-            />
-            <div
-              className="absolute top-0 right-0 w-16 h-16 bg-contain bg-no-repeat"
-              style={{
-                backgroundImage: `url(${corner})`,
-                transform: "scaleX(-1)",
-              }}
-            />
-            <div
-              className="absolute bottom-0 left-0 w-16 h-16 bg-contain bg-no-repeat"
-              style={{
-                backgroundImage: `url(${corner})`,
-                transform: "scaleY(-1)",
-              }}
-            />
-            <div
-              className="absolute bottom-0 right-0 w-16 h-16 bg-contain bg-no-repeat"
-              style={{
-                backgroundImage: `url(${corner})`,
-                transform: "scale(-1, -1)",
-              }}
-            />
-
-            {/* Edges */}
-            <div
-              className="absolute top-0 left-16 right-16 h-16"
-              style={{
-                backgroundImage: `url(${edgeHorizontal})`,
-                backgroundSize: "auto 64px",
-                backgroundRepeat: "repeat-x",
-              }}
-            />
-            <div
-              className="absolute bottom-0 left-16 right-16 h-16"
-              style={{
-                backgroundImage: `url(${edgeHorizontal})`,
-                backgroundSize: "auto 64px",
-                backgroundRepeat: "repeat-x",
-                transform: "rotate(180deg)",
-              }}
-            />
-            <div
-              className="absolute left-0 top-16 bottom-16 w-16"
-              style={{
-                backgroundImage: `url(${edgeVertical})`,
-                backgroundSize: "64px auto",
-                backgroundRepeat: "repeat-y",
-              }}
-            />
-            <div
-              className="absolute right-0 top-16 bottom-16 w-16"
-              style={{
-                backgroundImage: `url(${edgeVertical})`,
-                backgroundSize: "64px auto",
-                backgroundRepeat: "repeat-y",
-                transform: "scaleX(-1)",
-              }}
-            />
-          </div>
-        )}
       </div>
 
       {/* Controls */}

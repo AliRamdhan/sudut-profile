@@ -4,13 +4,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-300 py-12 md:py-20">
+    <footer className="py-12 md:py-20">
       <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-white">ABOUT US</h3>
+          <h3 className="text-xl font-bold">ABOUT US</h3>
           <TransitionLink href="#" className="flex items-center space-x-2">
             <Truck className="h-6 w-6 text-[#007bff]" />
-            <span className="text-xl font-bold text-white">Transport</span>
+            <span className="text-xl font-bold">Transport</span>
           </TransitionLink>
           <p className="text-sm">
             For more then 30 years, Transport has been a reliable partner in the
@@ -18,7 +18,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-white">NAVIGATION</h3>
+          <h3 className="text-xl font-bold">NAVIGATION</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <TransitionLink href="#" className="hover:text-[#007bff]">
@@ -60,7 +60,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-white">TRANSPORT OFFICE</h3>
+          <h3 className="text-xl font-bold">TRANSPORT OFFICE</h3>
           <div className="space-y-2 text-sm">
             <div className="flex items-start space-x-2">
               <MapPin className="h-4 w-4 flex-shrink-0 mt-1" />
@@ -87,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="space-y-4">
-          <h3 className="text-xl font-bold text-white">WORKING HOURS</h3>
+          <h3 className="text-xl font-bold">WORKING HOURS</h3>
           <p className="text-sm">
             We work 7 days a week, every day including major holidays. Contact
             us for any info.
