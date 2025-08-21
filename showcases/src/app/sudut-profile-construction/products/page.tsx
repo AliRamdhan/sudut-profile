@@ -8,10 +8,10 @@ const Page = () => {
     <div className="bg-gray-50">
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Construction Products
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our Trusted Construction Products
           </h2>
-          <p className="max-w-3xl mx-auto text-gray-700 mb-12">
+          <p className="max-w-3xl text-lg mx-auto text-gray-700 mb-16">
             Explore our extensive range of high-quality construction materials
             and equipment, carefully curated to empower your projects&apos;
             success.
@@ -26,9 +26,8 @@ const Page = () => {
                   <Image
                     src={product.image}
                     alt={product.label}
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300">
                     <p className="text-white text-center px-4">

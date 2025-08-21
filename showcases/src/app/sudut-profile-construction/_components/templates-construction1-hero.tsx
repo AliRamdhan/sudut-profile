@@ -12,18 +12,18 @@ export function Hero() {
         className="object-cover object-center"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-500/80 to-transparent flex items-center justify-center text-center px-4">
-        <div className="max-w-4xl space-y-6">
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-800/80 to-transparent flex items-center justify-center text-center px-4">
+        <div className="max-w-md lg:max-w-4xl space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-wide text-gray-900 leading-tight">
             Building Your Vision with Precision
           </h1>
-          <p className="text-lg md:text-xl text-gray-100">
+          <p className="text-lg md:text-xl text-white">
             We are Struktura, your trusted partner in the world of construction.
             With a legacy of excellence and a commitment to quality, we turn
             your visions into reality.
           </p>
           <TransitionLink href={"#why-choose-us"}>
-            <Button className="px-8 py-3 text-lg rounded-full bg-gray-900 text-white hover:bg-gray-800 mt-8">
+            <Button variant={`ghost`} className="px-8 py-3 text-lg rounded-full text-white mt-8 border">
               Learn more
             </Button>
           </TransitionLink>

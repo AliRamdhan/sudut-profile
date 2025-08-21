@@ -37,15 +37,15 @@ export function Products() {
   return (
     <section id="products" className="w-full py-12 md:py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
           Elevate Your Projects with Our Products
         </h2>
-        <p className="max-w-3xl mx-auto text-gray-700 mb-12">
+        <p className="max-w-3xl text-lg mx-auto text-gray-700 mb-16">
           Enhance your construction endeavors with our extensive range of
           high-quality construction materials and equipment, carefully curated
           to empower your projects&apos; success.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {products.map((product) => (
             <div
               key={product.label}
@@ -55,9 +55,8 @@ export function Products() {
                 <Image
                   src={product.image}
                   alt={product.label}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300">
                   <p className="text-white text-center px-4">
@@ -84,7 +83,7 @@ export function Products() {
             </div>
           ))}
         </div>
-        <TransitionLink href={'sample-1/products'}>
+        <TransitionLink href={"sudut-profile-construction/products"}>
           <Button
             variant="outline"
             className="border-gray-400 text-gray-700 hover:bg-gray-100 bg-transparent"

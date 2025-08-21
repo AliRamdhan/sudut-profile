@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import TransitionLink from "@/components/shared/transition-link";
 
 export const portfolios = [
   {
     label: "Kardian Office Tower Construction",
+    slug: "kardian-office-tower-construction",
     image: "/images/construction/construction-portfolio-1.jpg",
     description:
       "Construction of a 40-story, state-of-the-art office tower in the heart of the downtown financial district. The project includes modern office spaces, retail outlets, and advanced energy-efficient systems.",
@@ -13,6 +15,7 @@ export const portfolios = [
   },
   {
     label: "Bridge Reconstruction Interstate Highway",
+    slug: "bridge-reconstruction-interstate-highway",
     image: "/images/construction/construction-portfolio-2.jpg",
     description:
       "Reconstruction and widening of a vital interstate highway bridge to enhance traffic flow and safety. The project includes the demolition of the existing structure and the installation of a new, wider bridge.",
@@ -22,6 +25,7 @@ export const portfolios = [
   },
   {
     label: "Residential Housing Development",
+    slug: "residential-housing-development",
     image: "/images/construction/construction-portfolio-3.jpg",
     description:
       "Development of a suburban residential community consisting of 150 single-family homes and associated infrastructure, including roads, utilities, and recreational areas.",
@@ -30,20 +34,22 @@ export const portfolios = [
     price: "Rp. 180M",
   },
 ];
-
 export function Portfolios() {
   return (
-    <section id="portfolios" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+    <section
+      id="portfolios"
+      className="w-full py-12 md:py-24 lg:py-32 bg-gray-50"
+    >
       <div className="container mx-auto px-4 md:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
           Our Remarkable Project Portfolio
         </h2>
-        <p className="max-w-3xl mx-auto text-gray-700 mb-12">
+        <p className="max-w-3xl text-lg mx-auto text-gray-700 mb-16">
           Explore our extensive portfolio showcasing the breadth of our
           expertise, from iconic structures to sustainable solutions, all
           meticulously crafted to perfection.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {portfolios.map((portfolio) => (
             <div
               key={portfolio.label}
@@ -77,16 +83,28 @@ export function Portfolios() {
                     {portfolio.price}
                   </div>
                 </div>
-                <Button
-                  variant="outline"
-                  className="w-full border-gray-400 text-gray-700 hover:bg-gray-100 bg-transparent"
+                <TransitionLink
+                  href={`sudut-profile-construction/portfolios/${portfolio.slug}`}
                 >
-                  Read more
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full border-gray-400 text-gray-700 hover:bg-gray-100 bg-transparent"
+                  >
+                    Read more
+                  </Button>
+                </TransitionLink>
               </div>
             </div>
           ))}
         </div>
+        <TransitionLink href={"sudut-profile-construction/portofolios"}>
+          <Button
+            variant="outline"
+            className="border-gray-400 text-gray-700 hover:bg-gray-100 bg-transparent"
+          >
+            View all portofolios
+          </Button>
+        </TransitionLink>
       </div>
     </section>
   );

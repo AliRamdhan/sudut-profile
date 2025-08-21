@@ -70,3 +70,86 @@ export const productsData = [
       "Produk finishing seperti cat, lem, sealant, grout, dan aksesoris interior untuk hasil akhir yang rapi dan estetis.",
   },
 ];
+
+export const portfolios = [
+  {
+    label: "Kardian Office Tower Construction",
+    slug: "kardian-office-tower-construction",
+    image: "/images/construction/construction-portfolio-1.jpg",
+    description:
+      "Construction of a 40-story, state-of-the-art office tower in the heart of the downtown financial district. The project includes modern office spaces, retail outlets, and advanced energy-efficient systems.",
+    location: "Tegal, Indonesia",
+    duration: "36 months",
+    price: "Rp. 180M",
+  },
+  {
+    label: "Bridge Reconstruction Interstate Highway",
+    slug: "bridge-reconstruction-interstate-highway",
+    image: "/images/construction/construction-portfolio-2.jpg",
+    description:
+      "Reconstruction and widening of a vital interstate highway bridge to enhance traffic flow and safety. The project includes the demolition of the existing structure and the installation of a new, wider bridge.",
+    location: "Bekasi, Indonesia",
+    duration: "36 months",
+    price: "Rp. 180M",
+  },
+  {
+    label: "Residential Housing Development",
+    slug: "residential-housing-development",
+    image: "/images/construction/construction-portfolio-3.jpg",
+    description:
+      "Development of a suburban residential community consisting of 150 single-family homes and associated infrastructure, including roads, utilities, and recreational areas.",
+    location: "Jakarta, Indonesia",
+    duration: "36 months",
+    price: "Rp. 180M",
+  },
+  {
+    label: "Luxury Hotel & Resort Complex",
+    slug: "luxury-hotel-resort-complex",
+    image: "/images/construction/construction-portfolio-4.jpg",
+    description:
+      "Design and construction of a luxury beachfront hotel and resort complex featuring 200 guest rooms, villas, restaurants, swimming pools, and wellness facilities.",
+    location: "Bali, Indonesia",
+    duration: "30 months",
+    price: "Rp. 250M",
+  },
+  {
+    label: "University Campus Expansion",
+    slug: "university-campus-expansion",
+    image: "/images/construction/construction-portfolio-5.jpg",
+    description:
+      "Expansion of a major university campus, including the construction of new lecture halls, student dormitories, libraries, and sports facilities.",
+    location: "Yogyakarta, Indonesia",
+    duration: "24 months",
+    price: "Rp. 120M",
+  },
+  {
+    label: "Renewable Energy Power Plant",
+    slug: "renewable-energy-power-plant",
+    image: "/images/construction/construction-portfolio-6.jpg",
+    description:
+      "Construction of a large-scale solar power plant with cutting-edge technology to supply renewable energy to more than 50,000 households.",
+    location: "Surabaya, Indonesia",
+    duration: "28 months",
+    price: "Rp. 300M",
+  },
+  {
+    label: "Airport Terminal Modernization",
+    slug: "airport-terminal-modernization",
+    image: "/images/construction/construction-portfolio-7.jpg",
+    description:
+      "Upgrading and modernization of an existing airport terminal, including new passenger lounges, security checkpoints, and automated baggage handling systems.",
+    location: "Medan, Indonesia",
+    duration: "36 months",
+    price: "Rp. 500M",
+  },
+  {
+    label: "Smart City Infrastructure Development",
+    slug: "smart-city-infrastructure-development",
+    image: "/images/construction/construction-portfolio-8.jpg",
+    description:
+      "Comprehensive smart city infrastructure project featuring intelligent traffic systems, green parks, digital utilities, and public transport facilities.",
+    location: "Bandung, Indonesia",
+    duration: "48 months",
+    price: "Rp. 750M",
+  },
+];

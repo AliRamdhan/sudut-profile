@@ -7,7 +7,7 @@ import { Solutions } from "./templates-construction1-solutions";
 import { Products } from "./templates-construction1-products";
 import { Portfolios } from "./templates-construction1-portfolio";
 import { Testimonials } from "./templates-construction1-testimonials";
-import { UpcomingProjects } from "./templates-construction1-upcoming-projects";
+import { Cta } from "./templates-construction1-cta";
 
 const TemplateConstructionWrapper = () => {
   return (
@@ -19,7 +19,7 @@ const TemplateConstructionWrapper = () => {
       <Products />
       <Portfolios />
       <Testimonials />
-      <UpcomingProjects />
+      <Cta />
     </div>
   );
 };

@@ -46,8 +46,8 @@ export function Testimonials() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Voices of Satisfaction</h2>
-        <p className="max-w-3xl mx-auto text-gray-700 mb-12">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Client Voices of Satisfaction</h2>
+        <p className="max-w-3xl text-lg mx-auto text-gray-700 mb-16">
           Listen to delighted clients who&apos;ve experienced Struktura&apos;s exceptional craftsmanship and
           professionalism
         </p>
@@ -55,7 +55,7 @@ export function Testimonials() {
           <Card className="max-w-2xl w-full p-8 text-left bg-gray-50 border-none shadow-none relative">
             <CardContent className="p-0">
               <Quote className="w-10 h-10 text-gray-400 mb-4" />
-              <p className="text-lg text-gray-800 mb-6">{currentTestimonial.quote}</p>
+              <p className="h-36 text-lg text-gray-800 mb-6">{currentTestimonial.quote}</p>
               <div className="font-semibold text-gray-900">{currentTestimonial.name}</div>
               <div className="text-gray-600 text-sm">{currentTestimonial.title}</div>
             </CardContent>

@@ -1,8 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Building, Mail, Phone, MapPin } from "lucide-react";
-import TransitionLink from "@/components/shared/transition-link";
+"use client";
 
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Building, Mail, Phone, MapPin, Menu, X } from "lucide-react";
+import TransitionLink from "@/components/shared/transition-link";
+import { AnimatePresence, motion } from "framer-motion";
 export function Header() {
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="bg-gray-900 text-gray-300 text-xs py-2 px-4 md:px-8 flex justify-between items-center">
@@ -111,39 +115,33 @@ export function Header() {
       </div>
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
         <TransitionLink
-          href="#"
+          href="/sudut-profile-construction"
           className="flex items-center gap-2 text-lg font-bold text-gray-900"
         >
           <Building className="w-6 h-6" />
-          Struktura
+          Sudut Profile Constructions
         </TransitionLink>
         <nav className="hidden md:flex items-center space-x-6">
           <TransitionLink
-            href="/construction/sample-1"
-            className="text-gray-600 hover:text-gray-900 font-medium"
-          >
-            Home
-          </TransitionLink>
-          <TransitionLink
-            href="/construction/sample-1#aboutLegacy"
+            href="/sudut-profile-construction/#aboutLegacy"
             className="text-gray-600 hover:text-gray-900 font-medium"
           >
             About us
           </TransitionLink>
           <TransitionLink
-            href="/construction/sample-1#portfolios"
+            href="/sudut-profile-construction/portfolios"
             className="text-gray-600 hover:text-gray-900 font-medium"
           >
             Portfolio
           </TransitionLink>
           <TransitionLink
-            href="/construction/sample-1#solutions"
+            href="/sudut-profile-construction/services"
             className="text-gray-600 hover:text-gray-900 font-medium"
           >
             Services
           </TransitionLink>
           <TransitionLink
-            href="/construction/sample-1#products"
+            href="/sudut-profile-construction/products"
             className="text-gray-600 hover:text-gray-900 font-medium"
           >
             Products
@@ -155,26 +153,62 @@ export function Header() {
         >
           Get in touch
         </Button>
-        <Button variant="ghost" size="icon" className="md:hidden">
-          <span className="sr-only">Toggle navigation</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-6 w-6"
-          >
-            <line x1="4" x2="20" y1="12" y2="12"></line>
-            <line x1="4" x2="20" y1="6" y2="6"></line>
-            <line x1="4" x2="20" y1="18" y2="18"></line>
-          </svg>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          aria-label="Toggle Mobile Menu"
+          className="md:hidden"
+        >
+          {isMobileOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
         </Button>
       </div>
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            className="md:hidden absolute top-full left-0 right-0 bg-white px-16 py-8"
+          >
+            <div className="flex flex-col gap-4 text-lg">
+              <TransitionLink
+                href="/sudut-profile-construction/#aboutLegacy"
+                className="text-gray-600 hover:text-gray-900 font-medium pb-4 border-b"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                About us
+              </TransitionLink>
+              <TransitionLink
+                href="/sudut-profile-construction/portfolios"
+                className="text-gray-600 hover:text-gray-900 font-medium pb-4 border-b"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                Portfolio
+              </TransitionLink>
+              <TransitionLink
+                href="/sudut-profile-construction/services"
+                className="text-gray-600 hover:text-gray-900 font-medium pb-4 border-b"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                Services
+              </TransitionLink>
+              <TransitionLink
+                href="/sudut-profile-construction/products"
+                className="text-gray-600 hover:text-gray-900 font-medium pb-4 border-b"
+                onClick={() => setIsMobileOpen(false)}
+              >
+                Products
+              </TransitionLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
