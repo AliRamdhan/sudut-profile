@@ -129,10 +129,10 @@ export function Header() {
             About us
           </TransitionLink>
           <TransitionLink
-            href="/sudut-profile-construction/portfolios"
+            href="/sudut-profile-construction/works"
             className="text-gray-600 hover:text-gray-900 font-medium"
           >
-            Portfolio
+            Works
           </TransitionLink>
           <TransitionLink
             href="/sudut-profile-construction/services"
@@ -185,11 +185,11 @@ export function Header() {
                 About us
               </TransitionLink>
               <TransitionLink
-                href="/sudut-profile-construction/portfolios"
+                href="/sudut-profile-construction/works"
                 className="text-gray-600 hover:text-gray-900 font-medium pb-4 border-b"
                 onClick={() => setIsMobileOpen(false)}
               >
-                Portfolio
+                Works
               </TransitionLink>
               <TransitionLink
                 href="/sudut-profile-construction/services"

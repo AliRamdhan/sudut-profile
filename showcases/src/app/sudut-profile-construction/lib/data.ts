@@ -71,7 +71,7 @@ export const productsData = [
   },
 ];
 
-export const portfolios = [
+export const works = [
   {
     label: "Kardian Office Tower Construction",
     slug: "kardian-office-tower-construction",
