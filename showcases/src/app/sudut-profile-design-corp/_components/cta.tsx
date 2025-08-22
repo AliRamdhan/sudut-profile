@@ -21,14 +21,14 @@ const Cta = () => {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-20">
-          <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8">
-            Start Project
-          </Button>
           <Button
             variant="outline"
             className="rounded-full px-8 bg-transparent"
           >
             Contact Us
+          </Button>
+          <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8">
+            Start Project
           </Button>
           <Button
             variant="outline"

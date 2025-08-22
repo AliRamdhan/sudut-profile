@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import TransitionLink from "@/components/shared/transition-link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // Blog post data
 const blogPosts = {
@@ -97,7 +99,7 @@ const recommendedPosts = [
 ];
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug as keyof typeof blogPosts];
+  const post = blogPosts["user-experience-design" as keyof typeof blogPosts];
 
   if (!post) {
     notFound();
@@ -112,10 +114,28 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             {post.title}
           </h1>
-          <p className="text-gray-600 mb-8 text-lg max-w-3xl mx-auto">
-            {post.content.intro}
-          </p>
-          <p className="text-gray-500 text-sm">{post.date}</p>
+          <div className="flex justify-between items-center gap-x-2">
+            <div className="flex items-center gap-4">
+              <Avatar className="w-12 h-12">
+                <AvatarImage src={"/images/shared/avatar.jpg"} />
+                <AvatarFallback>
+                  {" "}
+                  <p className="text-gray-600">
+                    <span className="font-bold italic">Sudut Profile</span>{" "}
+                    DesignCorp
+                  </p>
+                </AvatarFallback>
+              </Avatar>
+              <div className="text-left">
+                <p className="text-gray-600">
+                  <span className="font-bold italic">Sudut Profile</span>{" "}
+                  DesignCorp
+                </p>
+                <p className="text-gray-600 text-sm">Author</p>
+              </div>
+            </div>
+            <p className="text-gray-500 text-sm">{post.date}</p>
+          </div>
         </div>
 
         {/* Hero Image */}
@@ -127,6 +147,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             height={1024}
             className="w-full h-96 object-cover rounded-2xl"
           />
+          <p className="text-center text-sm italic text-gray-600 my-8 text-lg max-w-4xl mx-auto">
+            {post.content.intro}
+          </p>
         </div>
 
         {/* Article Content */}

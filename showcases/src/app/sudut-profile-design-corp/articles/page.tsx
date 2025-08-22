@@ -102,7 +102,9 @@ const Page = () => {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-2">
             INSIGHTS
           </h1>
-          <p className="text-sm text-gray-600">BROADCAST TV</p>
+          <p className="text-lg text-gray-600">
+            Creative Insights from Our Work
+          </p>
         </div>
 
         {/* Projects Grid */}
@@ -110,17 +112,12 @@ const Page = () => {
           {/* Hero Article */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative mb-20">
-              {/* <img
-                src={featuredPost.image || "/placeholder.svg"}
-                alt={featuredPost.title}
-                className="w-full h-80 object-cover rounded-2xl"
-              /> */}
               <Image
                 src={featuredPost.image || "/placeholder.svg"}
                 alt="Aerial view of Kuara Resort in Southern Lombok"
                 width={1024}
                 height={1024}
-                className="w-full h-80 object-cover rounded-2xl"
+                className="w-full h-full lg:h-80 object-cover rounded-2xl"
               />
             </div>
             <div>

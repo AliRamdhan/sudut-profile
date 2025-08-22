@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Timeline from "./_components/timeline";
-import AboutuS from "./_components/about";
+import Aboutus from "./_components/about";
 import TransitionLink from "@/components/shared/transition-link";
 import Cta from "./_components/cta";
 
@@ -11,9 +11,12 @@ const Page = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
-        <div className="max-w-4xl">
-          <p className="text-gray-600 mb-4">Welcome to DesignCorp</p>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
+        <div className="max-w-5xl">
+          <p className="text-gray-600 mb-4">
+            Welcome to <span className="font-bold italic">Sudut Profile</span>{" "}
+            DesignCorp
+          </p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
             Crafting digital
             <br />
             experiences with emphasis
@@ -29,13 +32,15 @@ const Page = () => {
       {/* Selected Works */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-2xl font-semibold">Our Portfolio</h2>
-          <TransitionLink href={"sudut-profile-design-corp/projects"}>
+          <h2 className="text-3xl font-semibold">
+            Our <span className="italic underline"> Works</span>
+          </h2>
+          <TransitionLink href={"sudut-profile-design-corp/works"}>
             <Button
               variant="outline"
               className="rounded-full bg-transparent transition-all duration-300 hover:scale-105"
             >
-              View all projects
+              View all works
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Button>
           </TransitionLink>
@@ -96,114 +101,129 @@ const Page = () => {
       </section>
 
       {/* About Section */}
-      <AboutuS />
+      <Aboutus />
 
       {/* Business Cards Section */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <div className="space-y-8">
-          {/* Spotify Project */}
-          <div className="bg-gray-50 rounded-3xl p-8">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h3 className="text-2xl md:text-5xl font-bold mb-2">
-                  WEB DESIGN
-                </h3>
-                <p className="text-lg text-gray-600">Sleek Web Experience</p>
+          {/* Web Design Business */}
+          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
+            <TransitionLink
+              href={`/sudut-profile-design-corp/services/web-design`}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl md:text-5xl font-bold mb-2">
+                    WEB DESIGN
+                  </h3>
+                  <p className="text-lg text-gray-600">Sleek Web Experience</p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-black group-hover:text-white"
+                >
+                  <ArrowUpRight className="h-4 w-4" />
+                </Button>
               </div>
-              <Button
-                variant="outline"
-                className="w-12 h-12 rounded-full bg-transparent transition-all duration-300 hover:scale-125"
-              >
-                <ArrowUpRight />
-              </Button>
-            </div>
-            <div className="rounded-2xl h-[540px] flex items-center justify-center">
-              <Image
-                src={"/images/sudut-profile-design-corp/design-2.jpg"}
-                alt="Design Portfolio"
-                className="w-full h-full object-cover object-center rounded-2xl"
-                width={1024}
-                height={1024}
-              />
-            </div>
+              <div className="rounded-2xl h-[540px] flex items-center justify-center">
+                <Image
+                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
+                  alt="Design Portfolio"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+            </TransitionLink>
           </div>
 
-          {/* Figma Project */}
-          <div className="bg-gray-50 rounded-3xl p-8">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">UI/UX</h3>
-                <p className="text-gray-600">Refined UI/UX Design</p>
+          {/* UI / UX Business */}
+          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
+            <TransitionLink href={`/sudut-profile-design-corp/services/ui-ux`}>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">UI/UX</h3>
+                  <p className="text-gray-600">Refined UI/UX Design</p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-black group-hover:text-white"
+                >
+                  <ArrowUpRight className="h-4 w-4" />
+                </Button>
               </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full bg-transparent transition-all duration-300 hover:scale-105"
-              >
-                <ArrowUpRight className="h-4 w-4" />
-              </Button>
-            </div>
-            <div className="rounded-2xl h-[540px] flex items-center justify-center">
-              <Image
-                src={"/images/sudut-profile-design-corp/design-2.jpg"}
-                alt="Design Portfolio"
-                className="w-full h-full object-cover object-center rounded-2xl"
-                width={1024}
-                height={1024}
-              />
-            </div>
+              <div className="rounded-2xl h-[540px] flex items-center justify-center">
+                <Image
+                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
+                  alt="Design Portfolio"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+            </TransitionLink>
           </div>
 
-          {/* Wallet Project */}
-          <div className="bg-gray-50 rounded-3xl p-8">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Product Design</h3>
-                <p className="text-gray-600">Minimalist Product Design</p>
+          {/* Product Design Business */}
+          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
+            <TransitionLink
+              href={`/sudut-profile-design-corp/services/product-design`}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Product Design</h3>
+                  <p className="text-gray-600">Minimalist Product Design</p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-black group-hover:text-white"
+                >
+                  <ArrowUpRight className="h-4 w-4" />
+                </Button>
               </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full bg-transparent transition-all duration-300 hover:scale-105"
-              >
-                <ArrowUpRight className="h-4 w-4" />
-              </Button>
-            </div>
-            <div className="rounded-2xl h-[540px] flex items-center justify-center">
-              <Image
-                src={"/images/sudut-profile-design-corp/design-2.jpg"}
-                alt="Design Portfolio"
-                className="w-full h-full object-cover object-center rounded-2xl"
-                width={1024}
-                height={1024}
-              />
-            </div>
+              <div className="rounded-2xl h-[540px] flex items-center justify-center">
+                <Image
+                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
+                  alt="Design Portfolio"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+            </TransitionLink>
           </div>
 
-          {/* Wooter Project */}
-          <div className="bg-gray-50 rounded-3xl p-8">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Branding</h3>
-                <p className="text-gray-600">Minimalist Brand Identity</p>
+          {/* Branding Business */}
+          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
+            <TransitionLink
+              href={`/sudut-profile-design-corp/services/branding`}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Branding</h3>
+                  <p className="text-gray-600">Minimalist Brand Identity</p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-black group-hover:text-white"
+                >
+                  <ArrowUpRight className="h-4 w-4" />
+                </Button>
               </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full bg-transparent transition-all duration-300 hover:scale-105"
-              >
-                <ArrowUpRight className="h-4 w-4" />
-              </Button>
-            </div>
-            <div className="rounded-2xl h-[540px] flex items-center justify-center">
-              <Image
-                src={"/images/sudut-profile-design-corp/design-2.jpg"}
-                alt="Design Portfolio"
-                className="w-full h-full object-cover object-center rounded-2xl"
-                width={1024}
-                height={1024}
-              />
-            </div>
+              <div className="rounded-2xl h-[540px] flex items-center justify-center">
+                <Image
+                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
+                  alt="Design Portfolio"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+            </TransitionLink>
           </div>
         </div>
       </section>
@@ -211,87 +231,95 @@ const Page = () => {
       {/* Timeline Section */}
       <Timeline />
 
-      {/* Awards & Recognition */}
-      <section className="px-6 py-20 max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-2xl font-semibold">Awards & Recognition</h2>
-          <TransitionLink href={"sudut-profile-design-corp/awards"}>
-            <Button variant="outline" className="rounded-full bg-transparent transition-all duration-300 hover:scale-105">
-              View all awards
-              <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Button>
-          </TransitionLink>
-        </div>
-
-        <div className="space-y-6">
-          <div className="flex items-center justify-between py-4 border-b border-gray-200">
-            <div>
-              <h3 className="font-semibold">Agency of the Year</h3>
-              <p className="text-gray-600">Awwwards</p>
-            </div>
-            <div className="text-right">
-              <p className="font-semibold">Best Digital Agency</p>
-              <p className="text-gray-600">2023 • Awwwards</p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between py-4 border-b border-gray-200">
-            <div>
-              <h3 className="font-semibold">Excellence in Design</h3>
-              <p className="text-gray-600">CSS Design Awards</p>
-            </div>
-            <div className="text-right">
-              <p className="font-semibold">Innovation Award</p>
-              <p className="text-gray-600">2023 • CSS Awards</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Insights */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-2xl font-semibold">Insights</h2>
+          <h2 className="text-3xl font-semibold">
+            Our <span className="italic underline"> Insights</span>
+          </h2>
           <TransitionLink href={"sudut-profile-design-corp/articles"}>
-            <Button variant="outline" className="rounded-full bg-transparent transition-all duration-300 hover:scale-105">
+            <Button
+              variant="outline"
+              className="rounded-full bg-transparent transition-all duration-300 hover:scale-105"
+            >
               View all insights
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Button>
           </TransitionLink>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <article className="space-y-4">
-            <div className="w-full h-48 bg-gray-100 rounded-2xl"></div>
-            <h3 className="font-semibold">
-              Mastering the Art of Color Theory in Digital Design
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Understanding how colors work together to create emotional
-              responses in digital interfaces.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <article className="space-y-4 p-2.5 pb-8 border rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <TransitionLink
+              href={`sudut-profile-design-corp/articles/kuara-resort-launch`}
+            >
+              <div className="w-full h-72 rounded-2xl mb-4">
+                <Image
+                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
+                  alt="Design Portfolio"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+              <div className="px-2 space-y-2">
+                <h3 className="font-semibold">
+                  Mastering the Art of Color Theory in Digital Design
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Understanding how colors work together to create emotional
+                  responses in digital interfaces.
+                </p>
+              </div>
+            </TransitionLink>
           </article>
-
-          <article className="space-y-4">
-            <div className="w-full h-48 bg-gray-100 rounded-2xl"></div>
-            <h3 className="font-semibold">
-              Designing for User Experience: A Complete Guide
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Key principles and methodologies for creating user-centered
-              digital experiences.
-            </p>
+          <article className="space-y-4 p-2.5 pb-8 border rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <TransitionLink
+              href={`sudut-profile-design-corp/articles/kuara-resort-launch`}
+            >
+              <div className="w-full h-72 rounded-2xl mb-4">
+                <Image
+                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
+                  alt="Design Portfolio"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+              <div className="px-2 space-y-2">
+                <h3 className="font-semibold">
+                  Designing for User Experience: A Complete Guide
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Key principles and methodologies for creating user-centered
+                  digital experiences.
+                </p>
+              </div>
+            </TransitionLink>
           </article>
-
-          <article className="space-y-4">
-            <div className="w-full h-48 bg-gray-100 rounded-2xl"></div>
-            <h3 className="font-semibold">
-              The Power of Typography in Brand Identity
-            </h3>
-            <p className="text-gray-600 text-sm">
-              How typography choices can make or break your brand&apos;s visual
-              identity.
-            </p>
+          <article className="space-y-4 p-2.5 pb-8 border rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <TransitionLink
+              href={`sudut-profile-design-corp/articles/kuara-resort-launch`}
+            >
+              <div className="w-full h-72 rounded-2xl mb-4">
+                <Image
+                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
+                  alt="Design Portfolio"
+                  className="w-full h-full object-cover object-center rounded-2xl"
+                  width={1024}
+                  height={1024}
+                />
+              </div>
+              <div className="px-2 space-y-2">
+                <h3 className="font-semibold">
+                  The Power of Typography in Brand Identity
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  How typography choices can make or break your brand&apos;s
+                  visual identity.
+                </p>
+              </div>
+            </TransitionLink>
           </article>
         </div>
       </section>

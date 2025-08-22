@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRightCircle } from "lucide-react";
 
-export default function AboutuS() {
+export default function Aboutus() {
   return (
     <section className="w-full py-20 border">
       <div className="w-full px-4 sm:px-6 lg:px-8">

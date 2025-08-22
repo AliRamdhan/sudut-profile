@@ -9,52 +9,70 @@ import {
   useInView,
 } from "framer-motion";
 
-const timelineEvents = [
+const timelines = [
   {
     year: 2018,
-    title: "Flowers & Saints Founded",
+    title: "Sudut Profile Design Corp Founded",
     description:
-      "Our journey began with a passion for minimal design and floral artistry.",
+      "Started as a small design-focused company with a passion for minimalism and creative solutions.",
     details:
-      "Founded by Jane Doe and John Smith, Flowers & Saints started as a small studio in Sydney's Surry Hills, combining their love for minimalist design and botanical beauty.",
+      "Sudut Profile Design Corp was founded in Jakarta by a group of multidisciplinary designers. The company initially focused on branding, minimal web design, and floral-inspired aesthetics.",
   },
   {
     year: 2019,
-    title: "First Major Exhibition",
+    title: "Expanded into Full-Service Agency",
     description:
-      "Showcased our unique blend of digital art and floral arrangements at the Sydney Design Festival.",
+      "Grew beyond design into a full-service creative agency with broader capabilities.",
     details:
-      "Our exhibition 'Digital Bloom' attracted over 10,000 visitors and received critical acclaim for its innovative approach to merging technology with natural elements.",
+      "During this period, Sudut Profile Design Corp expanded services to include UI/UX, strategy, marketing, and digital product design, securing its first large-scale corporate projects.",
   },
   {
     year: 2020,
-    title: "Launch of Online Store",
+    title: "Launch of Online Services",
     description:
-      "Expanded our reach by bringing our creations to the digital world.",
+      "Brought our creativity to the digital space and adapted to global changes.",
     details:
-      "In response to global changes, we pivoted to e-commerce, offering our unique designs and virtual floral workshops to a worldwide audience.",
+      "The agency pivoted toward remote collaboration, launching online branding consultations, e-commerce web development, and virtual creative workshops to serve clients worldwide.",
   },
   {
     year: 2021,
-    title: "Collaboration with Top Brands",
+    title: "Collaboration with Global Brands",
     description:
-      "Partnered with leading lifestyle brands to create exclusive collections.",
+      "Partnered with international companies to create exclusive design and branding collections.",
     details:
-      "Our collaborations included limited edition prints with Australian fashion label Zimmermann and a bespoke fragrance line with Aesop.",
+      "Delivered high-profile projects for lifestyle and fashion brands in Asia and Australia, while also handling digital campaigns for startups in Europe and North America.",
   },
   {
     year: 2022,
     title: "International Recognition",
-    description: "Received the prestigious International Floral Design Award.",
+    description:
+      "Recognized for innovation and design excellence at global creative showcases.",
     details:
-      "Our 'Ethereal Echoes' installation, which combined holographic projections with live flowers, won the gold medal at the Chelsea Flower Show.",
+      "Sudut Profile Design Corp received design awards and was featured in international publications, highlighting its blend of minimalism, technology, and brand storytelling.",
   },
   {
     year: 2023,
-    title: "Expansion to Physical Stores",
-    description: "Opened our first flagship store in the heart of Sydney.",
+    title: "Leading Creative Agency",
+    description:
+      "Acknowledged as one of the top creative agencies in Southeast Asia.",
     details:
-      "Our Bondi Beach location features an immersive retail experience, blending digital installations with a curated selection of floral arrangements and lifestyle products.",
+      "Opened a flagship creative studio in Jakarta, combining digital installations with immersive client experiences. Received multiple industry awards for design and branding excellence.",
+  },
+  {
+    year: 2024,
+    title: "Global Expansion & Strategic Partnerships",
+    description:
+      "Scaled operations and formed partnerships to strengthen our international presence.",
+    details:
+      "Launched satellite offices in Singapore and Sydney to better serve regional clients. Partnered with tech companies to explore AI-driven design workflows and data-powered brand strategies.",
+  },
+  {
+    year: 2025,
+    title: "Future-Ready Creative Ecosystem",
+    description:
+      "Building the future of creative innovation through technology and sustainability.",
+    details:
+      "Sudut Profile Design Corp is set to launch an AI-powered creative lab and sustainability-driven design initiatives, shaping the next era of branding, product design, and digital experiences.",
   },
 ];
 
@@ -97,7 +115,7 @@ export default function Timeline() {
     <section ref={containerRef} className="py-20 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="text-left mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -106,7 +124,8 @@ export default function Timeline() {
             Our Journey
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            The evolution of Flowers & Saints through the years
+            The evolution of <span className="italic font-bold">Sudut Profile</span> DesignCorp through the
+            years
           </p>
         </motion.div>
 
@@ -128,7 +147,7 @@ export default function Timeline() {
             />
           </motion.div>
 
-          {timelineEvents.map((event, index) => (
+          {timelines.map((event, index) => (
             <TimelineEvent
               key={event.year}
               event={event}
@@ -151,7 +170,7 @@ function TimelineEvent({
   isExpanded,
   onToggle,
 }: {
-  event: (typeof timelineEvents)[0];
+  event: (typeof timelines)[0];
   index: number;
   isExpanded: boolean;
   onToggle: () => void;

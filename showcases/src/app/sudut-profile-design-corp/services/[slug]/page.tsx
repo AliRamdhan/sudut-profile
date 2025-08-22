@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -39,9 +39,10 @@ const portfolioProjects = {
   },
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Page = ({ params }: { params: { slug: string } }) => {
   const project =
-    portfolioProjects[params.slug as keyof typeof portfolioProjects];
+    portfolioProjects["spotify-redesign" as keyof typeof portfolioProjects];
 
   if (!project) {
     notFound();
@@ -53,7 +54,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
       <section className="max-w-7xl mx-auto px-6 py-20">
         {/* Hero Section */}
         <div className="w-full mb-16">
-          <p className="text-gray-600 mb-4">Portfolio</p>
+          <p className="text-gray-600 mb-4">SERVICES</p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
             {project.title}
           </h1>
@@ -69,113 +70,111 @@ const Page = ({ params }: { params: { slug: string } }) => {
         </div>
 
         {/* Content Sections */}
-        <div className="grid lg:grid-cols-3 gap-12 mb-16">
+        <div className="mb-16">
           <div className="lg:col-span-2 space-y-12">
             {/* About */}
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">About</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 pb-4 border-b">
+                Overview
+              </h2>
               <p className="text-gray-600 leading-relaxed">{project.about}</p>
             </section>
 
             {/* Our Clients */}
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 pb-4 border-b">
                 Our Clients
               </h2>
               <p className="text-gray-600 leading-relaxed">{project.clients}</p>
-            </section>
-
-            {/* Challenge */}
-            <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Challenge
-              </h2>
-              <p className="text-gray-600 leading-relaxed">
-                {project.challenge}
-              </p>
-            </section>
-
-            {/* Results */}
-            <section>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Results</h2>
-              <div className="grid grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {project.results.totalRaised}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    Total raised in funding so far
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {project.results.conversionRate}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    Conversion rate with new design
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {project.results.dailyUsers}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    Daily users engaging monthly
-                  </p>
-                </div>
-              </div>
             </section>
           </div>
         </div>
 
         {/* Visual Showcase */}
         <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 uppercase mb-4">
+            Completed <span className="italic underline">Projects</span>
+          </h2>
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="aspect-[3/4] bg-gray-100 rounded-2xl overflow-hidden">
-              <Image
-                src={project.images[0] || "/placeholder.svg"}
-                alt="Mobile interface"
-                width={1024}
-                height={1024}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
-              <Image
-                src={project.images[1] || "/placeholder.svg"}
-                alt="Desktop interface"
-                width={1024}
-                height={1024}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </div>
-          <div className="aspect-[2/1] bg-gray-100 rounded-2xl overflow-hidden">
-            <Image
-              src={project.images[2] || "/placeholder.svg"}
-              alt="Dashboard analytics"
-              width={1024}
-              height={1024}
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-        </div>
+            <TransitionLink
+              href={`works/spotify-redesign`}
+              className="group cursor-pointer"
+            >
+              <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
+                <Image
+                  src="/images/sudut-profile-design-corp/placeholder-v74tb.png"
+                  width={1024}
+                  height={1024}
+                  alt="Comes Back project"
+                  className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
+                />
+                <div className="absolute top-4 right-4 w-16 h-16 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                  <ArrowUpRight className="w-8 h-8" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-1">COMES BACK</h3>
+                <p className="text-sm text-gray-600 mb-2">2022</p>
+                <div className="flex gap-2 text-xs text-gray-500">
+                  <span>Automotive</span>
+                  <span>Lifestyle</span>
+                </div>
+              </div>
+            </TransitionLink>
 
-        {/* Testimonial */}
-        <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-          <blockquote className="text-lg text-gray-700 mb-6 italic">
-            &quot;{project.testimonial.quote}&quot;
-          </blockquote>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-            <div>
-              <p className="font-semibold text-gray-900">
-                {project.testimonial.author}
-              </p>
-              <p className="text-gray-600 text-sm">
-                {project.testimonial.position}
-              </p>
-            </div>
+            <TransitionLink
+              href={`works/spotify-redesign`}
+              className="group cursor-pointer"
+            >
+              <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
+                <Image
+                  src="/images/sudut-profile-design-corp/close-faces-portrait.png"
+                  width={1024}
+                  height={1024}
+                  alt="File Not Found project"
+                  className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
+                />
+                <div className="absolute top-4 right-4 w-16 h-16 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                  <ArrowUpRight className="w-8 h-8" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-1">FILE NOT FOUND</h3>
+                <p className="text-sm text-gray-600 mb-2">2019</p>
+                <div className="flex gap-2 text-xs text-gray-500">
+                  <span>Feature</span>
+                  <span>Lifestyle</span>
+                </div>
+              </div>
+            </TransitionLink>
+
+            <TransitionLink
+              href={`works/spotify-redesign`}
+              className="group cursor-pointer col-span-2"
+            >
+              <div className="relative">
+                <div className="aspect-[4/2] bg-gray-100 rounded-2xl overflow-hidden">
+                  <Image
+                    src={project.heroImage}
+                    alt={project.title}
+                    width={1024}
+                    height={1024}
+                    className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute top-4 right-4 w-16 h-16 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                  <ArrowUpRight className="w-8 h-8" />
+                </div>
+              </div>
+              <div className="mt-4">
+                <h3 className="text-lg font-bold mb-1">FILE NOT FOUND</h3>
+                <p className="text-sm text-gray-600 mb-2">2019</p>
+                <div className="flex gap-2 text-xs text-gray-500">
+                  <span>Feature</span>
+                  <span>Lifestyle</span>
+                </div>
+              </div>
+            </TransitionLink>
           </div>
         </div>
 
@@ -184,8 +183,8 @@ const Page = ({ params }: { params: { slug: string } }) => {
 
       <section className="max-w-7xl mx-auto mb-8">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">
-            What&apos;s next?
+          <h2 className="text-2xl font-bold text-gray-900 uppercase">
+            Our Other <span className="italic underline"> Projects</span>
           </h2>
           <Link
             href="/works"

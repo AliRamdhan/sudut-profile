@@ -4,20 +4,9 @@ import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-const animation = { duration: 10000, easing: (t: number) => t };
+const animation = { duration: 25000, easing: (t: number) => t };
 
-const companies = [
-  "dojo",
-  "rackspace",
-  "pipefy",
-  "teamwork.",
-  "django",
-  "portal",
-  "spring",
-  "portal",
-];
-
-const ClientSlider = () => {
+const AboutUsSlider = () => {
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     renderMode: "performance",
@@ -29,13 +18,13 @@ const ClientSlider = () => {
     breakpoints: {
       "(min-width: 1024px)": {
         slides: {
-          perView: 5,
+          perView: 3,
           spacing: 16,
         },
       },
       "(min-width: 1280px)": {
         slides: {
-          perView: 6,
+          perView: 3,
           spacing: 16,
         },
       },
@@ -52,16 +41,19 @@ const ClientSlider = () => {
   });
   return (
     <div ref={sliderRef} className="keen-slider mb-24">
-      {[...companies, ...companies].map((company, index) => (
-        <div
+      {[...Array(8)].map((_, index) => (
+        <p
           key={index}
-          className="keen-slider__slide text-2xl font-medium text-gray-400"
+          className="keen-slider__slide text-3xl sm:text-4xl md:text-5xl font-bold text-transparent"
+          style={{
+            WebkitTextStroke: "1px rgb(156 163 175)", // tailwind gray-400
+          }}
         >
-          {company}
-        </div>
+          <span className="font-bold italic">Sudut Profile</span> DesignCorp
+        </p>
       ))}
     </div>
   );
 };
 
-export default ClientSlider;
+export default AboutUsSlider;

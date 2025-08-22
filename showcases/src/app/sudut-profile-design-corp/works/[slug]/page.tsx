@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import TransitionLink from "@/components/shared/transition-link";
+import DocumentationSlider from "./_components/documentation_slider";
 
 const portfolioProjects = {
   "spotify-redesign": {
@@ -54,7 +55,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
         {/* Hero Section */}
         <div className="grid lg:grid-cols-3 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <p className="text-gray-600 mb-4">Portfolio</p>
+            <p className="text-gray-600 mb-4">WORKS</p>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
               {project.title}
             </h1>
@@ -70,7 +71,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
           </div>
 
           {/* Project Details Sidebar */}
-          <div className="space-y-8">
+          <div className="lg:sticky lg:top-0 lg:self-start space-y-8 py-8">
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">Date</h3>
               <p className="text-gray-600">{project.date}</p>
@@ -97,10 +98,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </div>
-        </div>
 
-        {/* Content Sections */}
-        <div className="grid lg:grid-cols-3 gap-12 mb-16">
           <div className="lg:col-span-2 space-y-12">
             {/* About */}
             <section>
@@ -159,67 +157,27 @@ const Page = ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
 
+        {/* Content Sections */}
+        <div className="grid lg:grid-cols-3 gap-12 mb-16"></div>
+
         {/* Visual Showcase */}
         <div className="mb-16">
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="aspect-[3/4] bg-gray-100 rounded-2xl overflow-hidden">
-              <Image
-                src={project.images[0] || "/placeholder.svg"}
-                alt="Mobile interface"
-                width={1024}
-                height={1024}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
-              <Image
-                src={project.images[1] || "/placeholder.svg"}
-                alt="Desktop interface"
-                width={1024}
-                height={1024}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </div>
-          <div className="aspect-[2/1] bg-gray-100 rounded-2xl overflow-hidden">
-            <Image
-              src={project.images[2] || "/placeholder.svg"}
-              alt="Dashboard analytics"
-              width={1024}
-              height={1024}
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+            WORKS <span className="italic underline">DOCUMENTATION</span>
+          </h2>
+          <DocumentationSlider
+            project={portfolioProjects["spotify-redesign"]}
+          />
         </div>
-
-        {/* Testimonial */}
-        <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-          <blockquote className="text-lg text-gray-700 mb-6 italic">
-            &quot;{project.testimonial.quote}&quot;
-          </blockquote>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-            <div>
-              <p className="font-semibold text-gray-900">
-                {project.testimonial.author}
-              </p>
-              <p className="text-gray-600 text-sm">
-                {project.testimonial.position}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* What&apos;s Next */}
       </section>
 
       <section className="max-w-7xl mx-auto mb-8">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">
-            What&apos;s next?
+            Other Project&apos;s?
           </h2>
           <Link
-            href="/works"
+            href="/sudut-profile-design-corp/works"
             className="text-gray-600 hover:text-gray-900 flex items-center gap-2"
           >
             View All Works

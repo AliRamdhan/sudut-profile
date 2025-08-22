@@ -11,9 +11,9 @@ const Page = () => {
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <div className="mb-8">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-2">
-            PROJECTS
+            WORKS
           </h1>
-          <p className="text-sm text-gray-600">BROADCAST TV</p>
+          <p className="text-lg text-gray-600">Showcasing our work across media platforms</p>
         </div>
 
         {/* Projects Grid */}
