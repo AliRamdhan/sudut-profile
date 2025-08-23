@@ -7,42 +7,10 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import TransitionLink from "@/components/shared/transition-link";
 import DocumentationSlider from "./_components/documentation_slider";
-
-const portfolioProjects = {
-  "spotify-redesign": {
-    title: "Unleash Your Potential and Push Beyond Limits",
-    client: "Spotify",
-    date: "May 3, 2023",
-    services: ["Website Design", "Mobile Design"],
-    heroImage: "/images/sudut-profile-design-corp/sleek-black-remote.png",
-    about:
-      "At Spotify, we believe in making themes fun and convenient. That's why we've developed a cutting-edge mobile app and dashboard that allows you to effortlessly track and manage your team activities. Whether you're a team leader looking to boost productivity or a team member wanting to stay connected, our platform provides the tools you need. Spotify interface that empowers you to tap your workload, set personal goals, and monitor your achievements. Whether you prefer working from the office or remotely, our solution adapts to your work environment, delivers insights into your performance, advance content, capture business, and much more.",
-    clients:
-      "Our passionate clients, who are passionate about maintaining an active lifestyle, inspired us to create Spotify. They sought an all-in-one solution that could seamlessly monitor their progress, provide valuable insights, and help them achieve their fitness goals. By listening to their feedback, we've delivered.",
-    challenge:
-      "To ensure a holistic experience, Spotify also offers a personalized dashboard accessible from any device. This dashboard gives you an overview of your team's performance, tracks your progress, and identifies areas for improvement. You can view connect with fellow team enthusiasts, share your accomplishments, and embark on challenges together.",
-    results: {
-      totalRaised: "$22.8M",
-      conversionRate: "+24%",
-      dailyUsers: "~400K",
-    },
-    testimonial: {
-      quote:
-        "Working with Ivan was a game-changer for our business. His keen eye for detail and deep understanding of user experience resulted in designs that not only looked stunning but also enhanced the overall usability of our product.",
-      author: "Jacob McCurry",
-      position: "CEO of rackspace",
-    },
-    images: [
-      "/images/sudut-profile-design-corp/close-faces-portrait.png",
-      "/images/sudut-profile-design-corp/design-1.jpg",
-      "/images/sudut-profile-design-corp/athletic-portrait.png",
-    ],
-  },
-};
+import { works, worksDetail } from "../../_lib/data";
 
 const Page = ({ params }: { params: { slug: string } }) => {
-  const project =
-    portfolioProjects[params.slug as keyof typeof portfolioProjects];
+  const project = worksDetail[params.slug as keyof typeof worksDetail];
 
   if (!project) {
     notFound();
@@ -59,7 +27,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
               {project.title}
             </h1>
-            <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
+            <div className="aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden">
               <Image
                 src={project.heroImage}
                 alt={project.title}
@@ -128,30 +96,18 @@ const Page = ({ params }: { params: { slug: string } }) => {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Results</h2>
               <div className="grid grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {project.results.totalRaised}
+                {Object.entries(project.results).map(([key, value], index) => (
+                  <div key={index} className="text-center">
+                    <div className={`text-3xl font-bold text-gray-900 mb-2`}>
+                      {value}
+                    </div>
+                    <p className="text-gray-600 text-base">
+                      {key
+                        .replace(/([A-Z])/g, " $1")
+                        .replace(/^./, (str) => str.toUpperCase())}
+                    </p>
                   </div>
-                  <p className="text-gray-600 text-sm">
-                    Total raised in funding so far
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {project.results.conversionRate}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    Conversion rate with new design
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 mb-2">
-                    {project.results.dailyUsers}
-                  </div>
-                  <p className="text-gray-600 text-sm">
-                    Daily users engaging monthly
-                  </p>
-                </div>
+                ))}
               </div>
             </section>
           </div>
@@ -165,9 +121,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
             WORKS <span className="italic underline">DOCUMENTATION</span>
           </h2>
-          <DocumentationSlider
-            project={portfolioProjects["spotify-redesign"]}
-          />
+          <DocumentationSlider project={project} />
         </div>
       </section>
 
@@ -189,9 +143,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
             <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
               <div className="aspect-[4/3] mb-4">
                 <Image
-                  src={
-                    "/images/sudut-profile-design-corp/close-faces-portrait.png"
-                  }
+                  src={works[2].heroImage}
                   alt="Desktop interface"
                   width={1024}
                   height={1024}
@@ -200,11 +152,15 @@ const Page = ({ params }: { params: { slug: string } }) => {
               </div>
               <div className="w-full flex justify-between items-center">
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Payrolle</h3>
-                  <p className="text-gray-600 text-sm">Web Design</p>
+                  <h3 className="font-bold text-gray-900 mb-2">
+                    {works[2].title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {works[2].mainService}
+                  </p>
                 </div>
                 <TransitionLink
-                  href="/sudut-profile-design-corp/works/kuara-resort-launch"
+                  href={`/sudut-profile-design-corp/works/${works[2].slug}`}
                   className="inline-flex items-center text-sm text-gray-600 transition-all duration-500 delay-300 group-hover:text-gray-800 transition-colors group-hover:scale-110"
                 >
                   <Button
@@ -218,12 +174,10 @@ const Page = ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
           <div className="group">
-            <div className="bg-gray-50 rounded-2xl p-6 group-hover:bg-gray-100 transition-colors">
+            <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
               <div className="aspect-[4/3] mb-4">
                 <Image
-                  src={
-                    "/images/sudut-profile-design-corp/athletic-portrait.png"
-                  }
+                  src={works[3].heroImage}
                   alt="Desktop interface"
                   width={1024}
                   height={1024}
@@ -232,11 +186,15 @@ const Page = ({ params }: { params: { slug: string } }) => {
               </div>
               <div className="w-full flex justify-between items-center">
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Payrolle</h3>
-                  <p className="text-gray-600 text-sm">Web Design</p>
+                  <h3 className="font-bold text-gray-900 mb-2">
+                    {works[3].title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {works[3].mainService}
+                  </p>
                 </div>
                 <TransitionLink
-                  href="/sudut-profile-design-corp/works/kuara-resort-launch"
+                  href={`/sudut-profile-design-corp/works/${works[3].slug}`}
                   className="inline-flex items-center text-sm text-gray-600 transition-all duration-500 delay-300 group-hover:text-gray-800 transition-colors group-hover:scale-110"
                 >
                   <Button

@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Cta from "../_components/cta";
 import TransitionLink from "@/components/shared/transition-link";
+import { works } from "../_lib/data";
 
 const Page = () => {
   return (
@@ -13,7 +14,9 @@ const Page = () => {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-2">
             WORKS
           </h1>
-          <p className="text-lg text-gray-600">Showcasing our work across media platforms</p>
+          <p className="text-lg text-gray-600">
+            Showcasing our work across media platforms
+          </p>
         </div>
 
         {/* Projects Grid */}
@@ -41,113 +44,44 @@ const Page = () => {
             </div>
           </div>
 
-          {/* File Not Found */}
-          <TransitionLink
-            href={`works/spotify-redesign`}
-            className="group cursor-pointer"
-          >
-            <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
-              <Image
-                src="/images/sudut-profile-design-corp/close-faces-portrait.png"
-                width={1024}
-                height={1024}
-                alt="File Not Found project"
-                className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
-              />
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUpRight className="w-4 h-4" />
+          {works.map((work, index) => (
+            <TransitionLink
+              key={index}
+              href={`works/${work.slug}`}
+              className="group cursor-pointer"
+            >
+              <div
+                className={`relative overflow-hidden bg-gray-100 aspect-square mb-4`}
+              >
+                <Image
+                  src={work.heroImage}
+                  width={1024}
+                  height={1024}
+                  alt={`${work.title} work`}
+                  className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
+                />
+                <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <ArrowUpRight className="w-4 h-4" />
+                </div>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-1">FILE NOT FOUND</h3>
-              <p className="text-sm text-gray-600 mb-2">2019</p>
-              <div className="flex gap-2 text-xs text-gray-500">
-                <span>Feature</span>
-                <span>Lifestyle</span>
-              </div>
-            </div>
-          </TransitionLink>
 
-          {/* Comes Back */}
-          <TransitionLink
-            href={`works/spotify-redesign`}
-            className="group cursor-pointer"
-          >
-            <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
-              <Image
-                src="/images/sudut-profile-design-corp/placeholder-v74tb.png"
-                width={1024}
-                height={1024}
-                alt="Comes Back project"
-                className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
-              />
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUpRight className="w-4 h-4" />
+              <div>
+                <h3
+                  className={`${
+                    index === 0 ? "text-xl" : "text-lg"
+                  } font-bold mb-1`}
+                >
+                  {work.title.toUpperCase()}
+                </h3>
+                <p className="text-sm text-gray-600 mb-2">{work.year}</p>
+                <div className="flex gap-2 text-xs text-gray-500">
+                  {work.categories.map((cat, i) => (
+                    <span key={i}>{cat}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-1">COMES BACK</h3>
-              <p className="text-sm text-gray-600 mb-2">2022</p>
-              <div className="flex gap-2 text-xs text-gray-500">
-                <span>Automotive</span>
-                <span>Lifestyle</span>
-              </div>
-            </div>
-          </TransitionLink>
-
-          {/* Callaway */}
-          <TransitionLink
-            href={`works/spotify-redesign`}
-            className="group cursor-pointer"
-          >
-            <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
-              <Image
-                src="/images/sudut-profile-design-corp/athletic-portrait.png"
-                width={1024}
-                height={1024}
-                alt="Callaway project"
-                className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
-              />
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUpRight className="w-4 h-4" />
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-1">CALLAWAY</h3>
-              <p className="text-sm text-gray-600 mb-2">2021</p>
-              <div className="flex gap-2 text-xs text-gray-500">
-                <span>Automotive</span>
-                <span>Branding</span>
-              </div>
-            </div>
-          </TransitionLink>
-
-          {/* Trimming Jingle */}
-          <TransitionLink
-            href={`works/spotify-redesign`}
-            className="group cursor-pointer"
-          >
-            <div className="relative overflow-hidden bg-gray-100 aspect-square mb-4">
-              <Image
-                src="/images/sudut-profile-design-corp/person-blue-gesture.png"
-                width={1024}
-                height={1024}
-                alt="Trimming Jingle project"
-                className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-105"
-              />
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <ArrowUpRight className="w-4 h-4" />
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-1">TRIMMING JINGLE</h3>
-              <p className="text-sm text-gray-600 mb-2">2023</p>
-              <div className="flex gap-2 text-xs text-gray-500">
-                <span>Film</span>
-                <span>Branding</span>
-              </div>
-            </div>
-          </TransitionLink>
+            </TransitionLink>
+          ))}
         </div>
       </section>
 

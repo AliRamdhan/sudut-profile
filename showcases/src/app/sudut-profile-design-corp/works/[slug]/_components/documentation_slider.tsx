@@ -30,13 +30,13 @@ export default function DocumentationSlider({ project }: { project: any }) {
             key={index}
             className="keen-slider__slide flex items-center justify-center bg-gray-100 rounded-2xl overflow-hidden"
           >
-            <div className="aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden">
+            <div className="aspect-[3/4] bg-gray-100 rounded-2xl overflow-hidden">
               <Image
                 src={img || "/placeholder.svg"}
                 alt={`Project image ${index + 1}`}
                 width={1024}
                 height={1024}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-fit object-center"
               />
             </div>
           </div>

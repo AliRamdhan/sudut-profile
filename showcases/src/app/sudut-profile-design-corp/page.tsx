@@ -5,6 +5,7 @@ import Timeline from "./_components/timeline";
 import Aboutus from "./_components/about";
 import TransitionLink from "@/components/shared/transition-link";
 import Cta from "./_components/cta";
+import { services, works } from "./_lib/data";
 
 const Page = () => {
   return (
@@ -47,56 +48,24 @@ const Page = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div
-            className="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80')",
-            }}
-          >
-            <div className="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
-              <h2 className="mt-4 text-xl font-semibold text-white capitalize">
-                Best website collections
-              </h2>
-              <p className="mt-2 text-lg tracking-wider text-blue-400 uppercase ">
-                Website
-              </p>
+          {works.slice(0, 4).map((work) => (
+            <div
+              key={work.slug}
+              className="overflow-hidden bg-cover rounded-lg cursor-pointer h-[400px] group"
+              style={{
+                backgroundImage: `url(${work.heroImage})`,
+              }}
+            >
+              <div className="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
+                <h2 className="mt-4 text-xl font-semibold text-white capitalize">
+                  {work.title}
+                </h2>
+                <p className="mt-2 text-lg tracking-wider text-blue-400 uppercase ">
+                  {work.mainService}
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div
-            className="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80')",
-            }}
-          >
-            <div className="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
-              <h2 className="mt-4 text-xl font-semibold text-white capitalize">
-                Block of Ui kit collections
-              </h2>
-              <p className="mt-2 text-lg tracking-wider text-blue-400 uppercase ">
-                Ui kit
-              </p>
-            </div>
-          </div>
-
-          <div
-            className="overflow-hidden bg-cover rounded-lg cursor-pointer h-96 group"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')",
-            }}
-          >
-            <div className="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800/60 group-hover:opacity-100">
-              <h2 className="mt-4 text-xl font-semibold text-white capitalize">
-                Ton&apos;s of mobile mockup
-              </h2>
-              <p className="mt-2 text-lg tracking-wider text-blue-400 uppercase">
-                Mockups
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -107,39 +76,46 @@ const Page = () => {
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <div className="space-y-8">
           {/* Web Design Business */}
-          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
-            <TransitionLink
-              href={`/sudut-profile-design-corp/services/web-design`}
+          {services.map((service) => (
+            <div
+              key={service.slug}
+              className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl"
             >
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl md:text-5xl font-bold mb-2">
-                    WEB DESIGN
-                  </h3>
-                  <p className="text-lg text-gray-600">Sleek Web Experience</p>
+              <TransitionLink
+                href={`/sudut-profile-design-corp/services/${service.slug}`}
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-2xl md:text-5xl font-bold mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="max-w-3xl text-lg text-gray-600">
+                      {service.about}
+                    </p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-black group-hover:text-white"
+                  >
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Button>
                 </div>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-transparent transition-all duration-300 group-hover:scale-150 group-hover:bg-black group-hover:text-white"
-                >
-                  <ArrowUpRight className="h-4 w-4" />
-                </Button>
-              </div>
-              <div className="rounded-2xl h-[540px] flex items-center justify-center">
-                <Image
-                  src={"/images/sudut-profile-design-corp/design-2.jpg"}
-                  alt="Design Portfolio"
-                  className="w-full h-full object-cover object-center rounded-2xl"
-                  width={1024}
-                  height={1024}
-                />
-              </div>
-            </TransitionLink>
-          </div>
+                <div className="rounded-2xl h-[640px] flex items-center justify-center">
+                  <Image
+                    src={service.heroImage}
+                    alt="Design Portfolio"
+                    className="w-full h-full object-cover object-center rounded-2xl"
+                    width={1024}
+                    height={1024}
+                  />
+                </div>
+              </TransitionLink>
+            </div>
+          ))}
 
           {/* UI / UX Business */}
-          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
+          {/* <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
             <TransitionLink href={`/sudut-profile-design-corp/services/ui-ux`}>
               <div className="flex items-center justify-between mb-6">
                 <div>
@@ -164,10 +140,10 @@ const Page = () => {
                 />
               </div>
             </TransitionLink>
-          </div>
+          </div> */}
 
           {/* Product Design Business */}
-          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
+          {/* <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
             <TransitionLink
               href={`/sudut-profile-design-corp/services/product-design`}
             >
@@ -194,10 +170,10 @@ const Page = () => {
                 />
               </div>
             </TransitionLink>
-          </div>
+          </div> */}
 
           {/* Branding Business */}
-          <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
+          {/* <div className="group bg-gray-50 rounded-3xl p-8 group-hover:shadow-xl">
             <TransitionLink
               href={`/sudut-profile-design-corp/services/branding`}
             >
@@ -224,7 +200,7 @@ const Page = () => {
                 />
               </div>
             </TransitionLink>
-          </div>
+          </div> */}
         </div>
       </section>
 

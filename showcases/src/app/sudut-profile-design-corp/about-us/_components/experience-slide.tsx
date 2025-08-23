@@ -40,7 +40,7 @@ export default function ExperienceTimeline() {
   return (
     <div className="space-y-8 mt-8">
       {experiences.map((exp, index) => (
-        <div key={index} className="border-b border-gray-200 pb-4">
+        <div key={index} className="border-b border-gray-200 pb-4 transition-all duration-500 hover:scale-105">
           {/* Header Row */}
           <button
             className="w-full flex justify-between items-center py-4 cursor-pointer"

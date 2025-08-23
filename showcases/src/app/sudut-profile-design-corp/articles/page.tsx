@@ -6,89 +6,14 @@ import Cta from "../_components/cta";
 import TransitionLink from "@/components/shared/transition-link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
+import {
+  latestInsights,
+  additionalInsights,
+  blogPosts,
+  featuredPost,
+} from "../_lib/data";
 const Page = () => {
   const [showMore, setShowMore] = useState(false);
-
-  const featuredPost = {
-    title: "Exploring the Power of Minimalism in Visual Design",
-    excerpt:
-      "In the fast-paced, visually overwhelming world we live in, it's no surprise that minimalism has become a powerful trend in the realm of visual design.",
-    image: "/images/sudut-profile-design-corp/design-1.jpg",
-  };
-
-  const blogPosts = [
-    {
-      title:
-        "The Power of Typography in Visual Design: Enhancing Communication and Impact",
-      excerpt:
-        "Uncover the significance of typography in visual design and learn how to leverage its power to effectively communicate messages and evoke emotions.",
-      image: "/images/sudut-profile-design-corp/design-2.jpg",
-      date: "May 5, 2023",
-      slug: "typography-power",
-    },
-    {
-      title:
-        "Designing for User Experience: Creating Intuitive and Engaging Interfaces",
-      excerpt:
-        "Explore the realm of user experience (UX) design and discover how to craft interfaces that are not only aesthetically pleasing but also intuitive and engaging for users.",
-      image: "/images/sudut-profile-design-corp/design-3.jpg",
-      date: "May 3, 2023",
-      slug: "user-experience-design",
-    },
-    {
-      title: "Mastering the Art of Color Theory: A Visual Designer's Guide",
-      excerpt:
-        "Dive into the fascinating world of color theory and learn how to create captivating visual designs by understanding the principles of color harmonies, psychology, and combinations.",
-      image: "/images/sudut-profile-design-corp/design-1.jpg",
-      date: "May 5, 2023",
-      slug: "color-theory-guide",
-    },
-  ];
-
-  const latestInsights = [
-    {
-      title:
-        "The Power of Typography in Visual Design: Enhancing Communication and Impact",
-      date: "May 5, 2023",
-      description:
-        "Uncover the significance of typography in visual design and learn how to leverage its power to effectively communicate messages and evoke emotions. This blog post will cover typography fundamentals, font pairing stra...",
-    },
-    {
-      title:
-        "Designing for User Experience: Creating Intuitive and Engaging Interfaces",
-      date: "May 3, 2023",
-      description:
-        "Explore the realm of user experience (UX) design and discover how to craft interfaces that are not only aesthetically pleasing but also intuitive and engaging for users. This blog post will explore UX design principle...",
-    },
-    {
-      title: "Mastering the Art of Color Theory: A Visual Designer's Guide",
-      date: "May 5, 2023",
-      description:
-        "Dive into the fascinating world of color theory and learn how to create captivating visual designs by understanding the principles of color harmonies, psychology, and combinations.",
-    },
-  ];
-
-  const additionalInsights = [
-    {
-      title: "The Psychology of Visual Hierarchy in Web Design",
-      date: "April 28, 2023",
-      description:
-        "Learn how to guide users through your designs using visual hierarchy principles. This comprehensive guide covers spacing, typography, color, and layout techniques to create intuitive user experiences.",
-    },
-    {
-      title: "Creating Accessible Design Systems for Modern Applications",
-      date: "April 25, 2023",
-      description:
-        "Explore the fundamentals of building inclusive design systems that work for everyone. From color contrast to keyboard navigation, discover how to make your designs accessible from the ground up.",
-    },
-    {
-      title: "The Future of Motion Design in Digital Interfaces",
-      date: "April 22, 2023",
-      description:
-        "Discover how thoughtful animation and micro-interactions can enhance user experience. This post explores the latest trends in motion design and how to implement them effectively in your projects.",
-    },
-  ];
 
   const displayedInsights = showMore
     ? [...latestInsights, ...additionalInsights]
@@ -128,7 +53,7 @@ const Page = () => {
                 {featuredPost.excerpt}
               </p>
               <TransitionLink
-                href="articles/kuara-resort-launch"
+                href={`articles/${featuredPost.slug}`}
                 className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
               >
                 <Button
