@@ -5,45 +5,17 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import TransitionLink from "@/components/shared/transition-link";
-import { works } from "../../lib/data";
+import { works, solutionsDetail, solutions } from "../../lib/data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-const portfolioProjects = {
-  "spotify-redesign": {
-    title: "Unleash Your Potential and Push Beyond Limits",
-    client: "Spotify",
-    date: "May 3, 2023",
-    services: ["Website Design", "Mobile Design"],
-    heroImage: "/images/sudut-profile-design-corp/sleek-black-remote.png",
-    about:
-      "At Spotify, we believe in making themes fun and convenient. That's why we've developed a cutting-edge mobile app and dashboard that allows you to effortlessly track and manage your team activities. Whether you're a team leader looking to boost productivity or a team member wanting to stay connected, our platform provides the tools you need. Spotify interface that empowers you to tap your workload, set personal goals, and monitor your achievements. Whether you prefer working from the office or remotely, our solution adapts to your work environment, delivers insights into your performance, advance content, capture business, and much more.",
-    clients:
-      "Our passionate clients, who are passionate about maintaining an active lifestyle, inspired us to create Spotify. They sought an all-in-one solution that could seamlessly monitor their progress, provide valuable insights, and help them achieve their fitness goals. By listening to their feedback, we've delivered.",
-    challenge:
-      "To ensure a holistic experience, Spotify also offers a personalized dashboard accessible from any device. This dashboard gives you an overview of your team's performance, tracks your progress, and identifies areas for improvement. You can view connect with fellow team enthusiasts, share your accomplishments, and embark on challenges together.",
-    results: {
-      totalRaised: "$22.8M",
-      conversionRate: "+24%",
-      dailyUsers: "~400K",
-    },
-    testimonial: {
-      quote:
-        "Working with Ivan was a game-changer for our business. His keen eye for detail and deep understanding of user experience resulted in designs that not only looked stunning but also enhanced the overall usability of our product.",
-      author: "Jacob McCurry",
-      position: "CEO of rackspace",
-    },
-    images: [
-      "/images/sudut-profile-design-corp/close-faces-portrait.png",
-      "/images/sudut-profile-design-corp/design-1.jpg",
-      "/images/sudut-profile-design-corp/athletic-portrait.png",
-    ],
-  },
-};
+import { notFound } from "next/navigation";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Page = ({ params }: { params: { slug: string } }) => {
-  const project =
-    portfolioProjects["spotify-redesign" as keyof typeof portfolioProjects];
+  const project = solutionsDetail[params.slug as keyof typeof solutionsDetail];
+
+  if (!project) {
+    notFound();
+  }
 
   return (
     <div>
@@ -134,7 +106,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                     {works[0].price}
                   </div>
                 </div>
-                <TransitionLink href={`portfolios/${works[0].slug}`}>
+                <TransitionLink href={`/sudut-profile-construction/works/${works[0].slug}`}>
                   <Button
                     variant="outline"
                     className="w-full border-gray-400 text-gray-700 hover:bg-gray-100 bg-transparent"
@@ -173,7 +145,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
                     {works[1].price}
                   </div>
                 </div>
-                <TransitionLink href={`portfolios/${works[1].slug}`}>
+                <TransitionLink href={`/sudut-profile-construction/works/${works[1].slug}`}>
                   <Button
                     variant="outline"
                     className="w-full border-gray-400 text-gray-700 hover:bg-gray-100 bg-transparent"
@@ -256,87 +228,63 @@ const Page = ({ params }: { params: { slug: string } }) => {
       <section className="max-w-7xl mx-auto mb-8">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">
-            What&apos;s next?
+            What&apos;s other solution?
           </h2>
           <Link
-            href="/sudut-profile-construction/works"
+            href="/sudut-profile-construction/services"
             className="text-gray-600 hover:text-gray-900 flex items-center gap-2"
           >
-            View All Works
+            View all solutions
             <ArrowRight />
           </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="group">
-            <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
-              <div className="aspect-[4/3] mb-4">
-                <Image
-                  src={works[1].image}
-                  alt={works[1].label}
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="w-full flex justify-between items-center">
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2">
-                    {" "}
-                    {works[4].label}
-                  </h3>
-                  <p className="max-w-md text-gray-600 text-sm">
-                    {" "}
-                    {works[4].description}
-                  </p>
-                </div>
-                <TransitionLink
-                  href={`/sudut-profile-construction/works/${works[4].slug}`}
-                  className="inline-flex items-center text-sm text-gray-600 transition-all duration-500 delay-300 group-hover:text-gray-800 transition-colors group-hover:scale-110"
-                >
-                  <Button
-                    variant="outline"
-                    className="rounded-full px-6 py-2 bg-transparent"
-                  >
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </TransitionLink>
-              </div>
+          <div className="relative group overflow-hidden rounded-xl shadow-lg">
+            <Image
+              src={solutions[0].image}
+              alt={solutions[0].label}
+              width={600}
+              height={400}
+              className="w-full h-64 lg:h-[56vh] object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {solutions[0].label}
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">
+                {solutions[0].description}
+              </p>
+              <TransitionLink
+                href={`services/${solutions[0].slug}`}
+                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+              >
+                Learn more
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </TransitionLink>
             </div>
           </div>
-          <div className="group">
-            <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
-              <div className="aspect-[4/3] mb-4">
-                <Image
-                  src={works[3].image}
-                  alt={works[3].label}
-                  width={1024}
-                  height={1024}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="w-full flex justify-between items-center">
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2">
-                    {" "}
-                    {works[5].label}
-                  </h3>
-                  <p className="max-w-md text-gray-600 text-sm">
-                    {" "}
-                    {works[5].description}
-                  </p>
-                </div>
-                <TransitionLink
-                  href={`/sudut-profile-construction/works/${works[5].slug}`}
-                  className="inline-flex items-center text-sm text-gray-600 transition-all duration-500 delay-300 group-hover:text-gray-800 transition-colors group-hover:scale-110"
-                >
-                  <Button
-                    variant="outline"
-                    className="rounded-full px-6 py-2 bg-transparent"
-                  >
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </TransitionLink>
-              </div>
+          <div className="relative group overflow-hidden rounded-xl shadow-lg">
+            <Image
+              src={solutions[2].image}
+              alt={solutions[2].label}
+              width={600}
+              height={400}
+              className="w-full h-64 lg:h-[56vh] object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {solutions[1].label}
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">
+                {solutions[1].description}
+              </p>
+              <TransitionLink
+                href={`services/${solutions[1].slug}`}
+                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+              >
+                Learn more
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </TransitionLink>
             </div>
           </div>
         </div>

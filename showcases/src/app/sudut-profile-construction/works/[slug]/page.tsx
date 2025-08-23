@@ -5,80 +5,16 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import TransitionLink from "@/components/shared/transition-link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { works } from "../../lib/data";
+import { works, constructionProject } from "../../lib/data";
+import { notFound } from "next/navigation";
 
-const constructionProject = {
-  title: "Skyline Corporate Tower - Modern Office Complex",
-  client: "Metropolitan Development Group",
-  date: "January 15, 2024",
-  services: [
-    "Commercial Construction",
-    "Project Management",
-    "Sustainable Design",
-  ],
-  heroImage: "/images/construction/skyline-works/skyline-hero.jpg",
-  overview:
-    "The Skyline Corporate Tower represents a landmark achievement in sustainable commercial construction. This 32-story mixed-use development combines cutting-edge design with environmentally conscious building practices. Located in the heart of downtown, the project features 850,000 square feet of premium office space, retail areas, and underground parking facilities. Our team delivered this complex project on time and 5% under budget while achieving LEED Platinum certification.",
-  scope:
-    "The project scope encompassed complete design-build services for a 32-story commercial tower including structural engineering, MEP systems, facade installation, interior fit-out, and site development. Key deliverables included 600,000 sq ft of office space, 50,000 sq ft of retail space, 200,000 sq ft of parking, rooftop amenities, and full site infrastructure including utilities, landscaping, and access roads.",
-  specification:
-    "Construction utilized high-performance concrete with 60% recycled content, energy-efficient curtain wall systems with triple-glazed windows, advanced HVAC systems with smart building controls, LED lighting throughout, and integrated renewable energy systems including rooftop solar arrays. The building meets all local seismic requirements and exceeds energy efficiency standards by 40%.",
-  stakeholders:
-    "Key project stakeholders included Metropolitan Development Group (client), City Planning Department, Environmental Protection Agency, local community groups, tenant representatives, and our construction consortium of 15 specialized subcontractors. Regular stakeholder meetings ensured alignment on project goals, timeline, and community impact throughout the 28-month construction period.",
-  timeline: {
-    phases: [
-      {
-        phase: "Pre-Construction & Permits",
-        duration: "4 months",
-        status: "Completed",
-      },
-      {
-        phase: "Foundation & Structure",
-        duration: "8 months",
-        status: "Completed",
-      },
-      {
-        phase: "Envelope & MEP Systems",
-        duration: "10 months",
-        status: "Completed",
-      },
-      { phase: "Interior Fit-out", duration: "4 months", status: "Completed" },
-      {
-        phase: "Final Inspections & Handover",
-        duration: "2 months",
-        status: "Completed",
-      },
-    ],
-    totalDuration: "28 months",
-    completionDate: "May 2024",
-  },
-  budget: {
-    totalValue: "$185M",
-    costPerSqFt: "$218",
-    savings: "5% under budget",
-    contingency: "3% utilized",
-  },
-  results: {
-    occupancyRate: "95%",
-    tenantSatisfaction: "4.8/5",
-    energyPerformance: "+40% efficiency",
-    awards: ["Best Commercial Project 2024", "Sustainability Excellence Award"],
-  },
-  testimonial: {
-    quote:
-      "The team delivered exceptional results on our most ambitious project to date. Their commitment to sustainability, safety, and quality craftsmanship resulted in a building that exceeds all our expectations and sets a new standard for commercial development in our city.",
-    author: "Sarah Chen",
-    position: "CEO, Metropolitan Development Group",
-  },
-  images: [
-    "/images/construction/skyline-works/skyline-process.jpg",
-    "/images/construction/skyline-works/skyline-team.jpg",
-    "/images/construction/skyline-works/skyline-construction.jpg",
-    "/images/construction/skyline-works/skyline-foundation.jpg",
-  ],
-};
+const Page = ({ params }: { params: { slug: string } }) => {
+  const project =
+    constructionProject[params.slug as keyof typeof constructionProject];
 
-const Page = () => {
+  if (!project) {
+    notFound();
+  }
   return (
     <div>
       {/* Main Content */}
@@ -92,32 +28,28 @@ const Page = () => {
               </p>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              {constructionProject.title}
+              {project.title}
             </h1>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-gray-500" />
-                <span className="text-gray-600">
-                  {constructionProject.date}
-                </span>
+                <span className="text-gray-600">{project.date}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-gray-500" />
-                <span className="text-gray-600">
-                  {constructionProject.client}
-                </span>
+                <span className="text-gray-600">{project.client}</span>
               </div>
               <div className="flex items-center gap-2">
                 <DollarSign className="h-5 w-5 text-gray-500" />
                 <span className="text-gray-600">
-                  {constructionProject.budget.totalValue}
+                  {project.budget.totalValue}
                 </span>
               </div>
             </div>
             <div className="aspect-[6/3] bg-gray-100 rounded-2xl overflow-hidden">
               <Image
-                src={constructionProject.heroImage || "/placeholder.svg"}
-                alt={constructionProject.title}
+                src={project.heroImage || "/placeholder.svg"}
+                alt={project.title}
                 width={1200}
                 height={600}
                 className="w-full h-full object-cover object-center"
@@ -137,7 +69,7 @@ const Page = () => {
                 </h2>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                {constructionProject.overview}
+                {project.overview}
               </p>
             </section>
 
@@ -148,9 +80,7 @@ const Page = () => {
                   Scope
                 </h2>
               </div>
-              <p className="text-gray-600 leading-relaxed">
-                {constructionProject.scope}
-              </p>
+              <p className="text-gray-600 leading-relaxed">{project.scope}</p>
             </section>
 
             {/* Specification */}
@@ -161,7 +91,7 @@ const Page = () => {
                 </h2>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                {constructionProject.specification}
+                {project.specification}
               </p>
             </section>
 
@@ -173,7 +103,7 @@ const Page = () => {
                 </h2>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                {constructionProject.stakeholders}
+                {project.stakeholders}
               </p>
             </section>
 
@@ -186,7 +116,7 @@ const Page = () => {
               </div>
               <div className="bg-gray-50 rounded-2xl p-6">
                 <div className="grid gap-4">
-                  {constructionProject.timeline.phases.map((phase, index) => (
+                  {project.timeline.phases.map((phase, index) => (
                     <div
                       key={index}
                       className="flex items-center justify-between p-4 bg-white rounded-lg transition-all duration-300 hover:scale-105"
@@ -208,9 +138,9 @@ const Page = () => {
                 <div className="mt-4 pt-4 border-t border-gray-200">
                   <p className="text-gray-600">
                     <strong>Total Duration:</strong>{" "}
-                    {constructionProject.timeline.totalDuration} |
+                    {project.timeline.totalDuration} |
                     <strong> Completed:</strong>{" "}
-                    {constructionProject.timeline.completionDate}
+                    {project.timeline.completionDate}
                   </p>
                 </div>
               </div>
@@ -226,7 +156,7 @@ const Page = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
               <Image
-                src={constructionProject.images[0] || "/placeholder.svg"}
+                src={project.images[0] || "/placeholder.svg"}
                 alt="Construction progress"
                 width={600}
                 height={800}
@@ -235,7 +165,7 @@ const Page = () => {
             </div>
             <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
               <Image
-                src={constructionProject.images[2] || "/placeholder.svg"}
+                src={project.images[2] || "/placeholder.svg"}
                 alt="Construction progress"
                 width={800}
                 height={600}
@@ -246,7 +176,7 @@ const Page = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
               <Image
-                src={constructionProject.images[1] || "/placeholder.svg"}
+                src={project.images[1] || "/placeholder.svg"}
                 alt="Construction team"
                 width={600}
                 height={800}
@@ -255,7 +185,7 @@ const Page = () => {
             </div>
             <div className="aspect-[3/2] bg-gray-100 rounded-2xl overflow-hidden">
               <Image
-                src={constructionProject.images[3] || "/placeholder.svg"}
+                src={project.images[3] || "/placeholder.svg"}
                 alt="Construction foundation"
                 width={800}
                 height={600}
@@ -266,54 +196,23 @@ const Page = () => {
         </div>
 
         {/* Result & Impact */}
-        <div className="bg-blue-50 rounded-2xl p-8 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Result & Impact
-          </h2>
-          <div className="grid md:grid-cols-4 gap-6 mb-6">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-blue-600">
-                {constructionProject.results.occupancyRate}
-              </p>
-              <p className="text-gray-600">Occupancy Rate</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-600">
-                {constructionProject.results.tenantSatisfaction}
-              </p>
-              <p className="text-gray-600">Tenant Satisfaction</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-purple-600">
-                {constructionProject.results.energyPerformance}
-              </p>
-              <p className="text-gray-600">Energy Efficiency</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-orange-600">2</p>
-              <p className="text-gray-600">Industry Awards</p>
-            </div>
-          </div>
-        </div>
 
         {/* Testimonial */}
         <div className="bg-gray-50 rounded-2xl p-8 mb-16">
           <p className="text-lg text-gray-700 mb-6 italic">
-            &quot;{constructionProject.testimonial.quote}&quot;
+            &quot;{project.testimonial.quote}&quot;
           </p>
           <div className="flex items-center gap-4">
             <Avatar className="w-12 h-12">
               <AvatarImage src={"/images/shared/avatar.jpg"} />
-              <AvatarFallback>
-                {constructionProject.testimonial.author}
-              </AvatarFallback>
+              <AvatarFallback>{project.testimonial.author}</AvatarFallback>
             </Avatar>
             <div>
               <p className="font-semibold text-gray-900">
-                {constructionProject.testimonial.author}
+                {project.testimonial.author}
               </p>
               <p className="text-gray-600 text-sm">
-                {constructionProject.testimonial.position}
+                {project.testimonial.position}
               </p>
             </div>
           </div>
@@ -339,8 +238,8 @@ const Page = () => {
             <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
               <div className="aspect-[4/3] mb-4">
                 <Image
-                  src={works[1].image}
-                  alt={works[1].label}
+                  src={works[4].image}
+                  alt={works[4].label}
                   width={1024}
                   height={1024}
                   className="w-full h-full object-cover object-center"
@@ -386,15 +285,15 @@ const Page = () => {
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">
                     {" "}
-                    {works[5].label}
+                    {works[3].label}
                   </h3>
                   <p className="max-w-md text-gray-600 text-sm">
                     {" "}
-                    {works[5].description}
+                    {works[3].description}
                   </p>
                 </div>
                 <TransitionLink
-                  href={`/sudut-profile-construction/works/${works[5].slug}`}
+                  href={`/sudut-profile-construction/works/${works[3].slug}`}
                   className="inline-flex items-center text-sm text-gray-600 transition-all duration-500 delay-300 group-hover:text-gray-800 transition-colors group-hover:scale-110"
                 >
                   <Button

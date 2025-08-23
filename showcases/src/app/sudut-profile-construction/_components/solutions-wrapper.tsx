@@ -3,30 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "@/components/shared/transition-link";
 import { Button } from "@/components/ui/button";
-
-export const solutions = [
-  {
-    label: "Design and Planning Services",
-    slug: "design-planning",
-    image: "/images/construction/construction-solutions-1.jpg",
-    description:
-      "Our expert design and planning services ensure meticulous execution.",
-  },
-  {
-    label: "Construction and Building",
-    slug: "construction-building",
-    image: "/images/construction/construction-solutions-2.jpg",
-    description:
-      "From groundbreaking to the finishing touches, we bring your vision to life with precision.",
-  },
-  {
-    label: "Renovation and Remodeling",
-    slug: "renovation-remodeling",
-    image: "/images/construction/construction-solutions-3.jpg",
-    description:
-      "Enhance existing spaces or rejuvenate structures with tailored solutions.",
-  },
-];
+import { solutions } from "../lib/data";
 
 export function Solutions() {
   return (
@@ -44,7 +21,7 @@ export function Solutions() {
           project requirements, ensuring success at every step.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {solutions.map((solution) => (
+          {solutions.slice(0, 3).map((solution) => (
             <div
               key={solution.slug}
               className="relative group overflow-hidden rounded-xl shadow-lg"

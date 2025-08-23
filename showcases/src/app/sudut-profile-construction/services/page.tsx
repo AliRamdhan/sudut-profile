@@ -2,58 +2,7 @@ import React from "react";
 import Image from "next/image";
 import TransitionLink from "@/components/shared/transition-link";
 import { ArrowRight } from "lucide-react";
-
-export const solutions = [
-  {
-    label: "Design and Planning Services",
-    slug: "design-planning",
-    image: "/images/construction/construction-solutions-1.jpg",
-    description:
-      "Our expert design and planning services ensure meticulous execution.",
-  },
-  {
-    label: "Construction and Building",
-    slug: "construction-building",
-    image: "/images/construction/construction-solutions-2.jpg",
-    description:
-      "From groundbreaking to the finishing touches, we bring your vision to life with precision.",
-  },
-  {
-    label: "Renovation and Remodeling",
-    slug: "renovation-remodeling",
-    image: "/images/construction/construction-solutions-3.jpg",
-    description:
-      "Enhance existing spaces or rejuvenate structures with tailored solutions.",
-  },
-  {
-    label: "Interior Design",
-    slug: "interior-design",
-    image: "/images/construction/construction-solutions-4.jpg",
-    description:
-      "Transform your space with modern, functional, and aesthetic interior design.",
-  },
-  {
-    label: "Project Management",
-    slug: "project-management",
-    image: "/images/construction/construction-solutions-5.jpg",
-    description:
-      "Efficient project management to ensure on-time delivery and cost control.",
-  },
-  {
-    label: "Landscaping and Outdoor",
-    slug: "landscaping-outdoor",
-    image: "/images/construction/construction-solutions-6.jpg",
-    description:
-      "Design and build outdoor spaces that blend beauty and functionality.",
-  },
-  {
-    label: "Facility Maintenance",
-    slug: "facility-maintenance",
-    image: "/images/construction/construction-solutions-7.jpg",
-    description:
-      "Comprehensive maintenance services to keep your facilities running smoothly.",
-  },
-];
+import { solutions } from "../lib/data";
 
 const Page = () => {
   return (
