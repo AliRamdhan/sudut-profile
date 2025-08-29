@@ -1,6 +1,7 @@
 import React from "react";
 import BlogCard from "./blog_card";
 import Pagination from "@/components/shared/pagination";
+import { blogs } from "../../_lib/data";
 
 const BlogWrapper = () => {
   return (
@@ -24,13 +25,10 @@ const BlogWrapper = () => {
         </div>
       </div>
 
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+        {blogs.map((blog) => (
+          <BlogCard key={blog.id} blog={blog} />
+        ))}
       </ul>
 
       <div className="mt-16">

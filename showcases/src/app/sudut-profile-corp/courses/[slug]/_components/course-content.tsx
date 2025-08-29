@@ -1,26 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { Play } from "lucide-react";
 
-export function CourseContent() {
+interface CourseContentProps {
+  contents: string[];
+}
+export function CourseContent({ contents }: CourseContentProps) {
   return (
     <div>
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Deskripsi Kelas</h2>
 
       <div className="space-y-4 text-gray-700 mb-8">
-        <p>
-          Raditya Dika adalah seorang penulis yang telah berkarya selama 16
-          tahun menjadi penulis buku dan skenario film, membuat cerita untuk
-          berbagai macam medium.
-        </p>
-        <p>
-          Kali ini Raditya Dika mengeluarkan video pembelajaran menulis yang
-          bisa kalian akses secara streaming dengan total durasi 1 jam.
-        </p>
-        <p>
-          Kelas ini cocok untuk kalian yang ingin belajar menulis cerpen, novel,
-          atau pun film. Video bisa kalian akses 14 hari setelah pembelian,
-          setelah itu tidak bisa lagi.
-        </p>
+        {contents.map((content, index) => (
+          <p key={index}>{content}</p>
+        ))}
         <p>Ini adalah video pembukaan kelas yang bisa kalian tonton gratis.</p>
       </div>
 

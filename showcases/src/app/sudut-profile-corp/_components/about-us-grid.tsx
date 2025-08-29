@@ -8,35 +8,35 @@ const AboutUs = () => {
       title: "Talent Discovery & Development",
       description:
         "Sudut Corp berfokus pada menemukan bakat-bakat baru dan mendukung mereka melalui program pengembangan berkelanjutan.",
-      image: "/images/sudut-profile-suruh/benefit-fast.jpg",
+      image: "/images/sudut-profile-corp/talent-management.jpg",
       alt: "Talent Discovery & Development",
     },
     {
       title: "Event & Performance Management",
       description:
         "Kami membantu mengatur penampilan, pertunjukan, serta kolaborasi agar setiap talent dapat tampil maksimal di setiap kesempatan.",
-      image: "/images/sudut-profile-suruh/benefit-fast.jpg",
+      image: "/images/sudut-profile-corp/event-management.jpg",
       alt: "Event & Performance Management",
     },
     {
       title: "Brand Collaboration",
       description:
         "Menghubungkan talent dengan brand untuk berbagai bentuk kerjasama komersial seperti endorsement, campaign, dan promosi.",
-      image: "/images/sudut-profile-suruh/benefit-fast.jpg",
+      image: "/images/sudut-profile-corp/brand-collaboration.jpg",
       alt: "Brand Collaboration",
     },
     {
       title: "Professional Support",
       description:
         "Sudut Corp menyediakan dukungan penuh mulai dari manajemen kontrak, legalitas, hingga strategi karier jangka panjang.",
-      image: "/images/sudut-profile-suruh/benefit-fast.jpg",
+      image: "/images/sudut-profile-corp/professional-support.jpg",
       alt: "Professional Support",
     },
     {
       title: "Digital Presence & Content Strategy",
       description:
         "Membantu talent membangun personal branding yang kuat melalui strategi konten, social media management, dan optimasi digital presence.",
-      image: "/images/sudut-profile-suruh/benefit-fast.jpg",
+      image: "/images/sudut-profile-corp/digital-strategy.jpg",
       alt: "Digital Presence & Content Strategy",
     },
   ];
@@ -47,7 +47,7 @@ const AboutUs = () => {
       className="py-16 md:py-24 bg-background min-h-screen flex items-center text-gray-900"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-        <div className="lg:sticky lg:top-0 lg:self-start py-24">
+        <div className="lg:sticky lg:top-0 lg:self-start py-48">
           {/* Left side - Statistics */}
           <div className="relative">
             {/* Background Map Illustration */}

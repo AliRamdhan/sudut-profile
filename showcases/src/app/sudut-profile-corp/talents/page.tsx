@@ -3,7 +3,8 @@
 import { Badge } from "@/components/ui/badge";
 /* eslint-disable @next/next/no-img-element */
 import Cta from "../_components/cta";
-import TalentsCard from "./_components/talents-card";
+import TalentCard from "../_components/talents-card";
+import { Talent, talents } from "../_lib/data";
 
 const Page = () => {
   // Hero
@@ -18,31 +19,31 @@ const Page = () => {
     <div className="min-h-screen">
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8 mt-8">
-        <div className="mb-2 pb-4 border-b border-black">
+        <div className="mb-2 pb-4">
           <Badge
             variant={"outline"}
             className="text-sm uppercase tracking-wide shadow-xl mb-2"
           >
-            Activities
+            Talents
           </Badge>
           <h1 className="max-w-3xl text-6xl font-bold text-gray-900 uppercase tracking-tighter">
-            Our Activities (2025)
+            Our Talents
           </h1>
-          <p className="mt-6 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut iure
-            exercitationem reiciendis minima. Nostrum, a quo quaerat repellat
-            iure reiciendis, fuga aut eum, facilis velit debitis obcaecati!
-            Debitis, placeat mollitia?
+          <p className="mt-2 text-gray-500 italic">
+            Meet the talented individuals shaping our community and projects.
+          </p>
+          <p className="max-w-4xl mt-4 text-gray-600">
+            Our talents are a diverse group of professionals and creators who
+            excel in their fields. From innovative thinkers to skilled
+            performers, each talent contributes unique expertise and creativity,
+            helping us deliver outstanding programs and experiences.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 mt-8">
-          <TalentsCard />
-          <TalentsCard />
-          <TalentsCard />
-          <TalentsCard />
-          <TalentsCard />
-          <TalentsCard />
+          {talents.map((talent: Talent) => (
+            <TalentCard key={talent.id} talent={talent} />
+          ))}
         </div>
       </div>
 

@@ -168,7 +168,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
             <Image
               src={post.coverImage || "/placeholder.svg"}
               alt={post.title}
-              className="w-full h-64 md:h-96 object-cover object-center rounded-lg"
+              className="w-full h-64 md:h-[520px] object-cover object-center rounded-lg"
               width={1024}
               height={1440}
             />

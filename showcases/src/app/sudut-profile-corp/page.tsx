@@ -3,7 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Hero from "./_components/hero";
 import AboutUs from "./_components/about-us-grid";
-import Events from "./_components/events-grid";
+import Activities from "./_components/activities-grid";
 import Courses from "./_components/courses-grid";
 import Talents from "./_components/talents-grid";
 import Blogs from "./_components/blogs-grid";
@@ -29,7 +29,7 @@ const Page = () => {
 
       {/* Digital Download and Event's Section */}
       <div className="w-full bg-gray-50">
-        <Events />
+        <Activities />
       </div>
       {/* Talent's Section */}
       <div className="max-w-6xl mx-auto px-4 py-8">

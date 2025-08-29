@@ -6,23 +6,32 @@ import Image from "next/image";
 import TransitionLink from "@/components/shared/transition-link";
 import BlogCard from "../../blogs/_components/blog_card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { talentsDetail } from "../../_lib/data";
+import { notFound } from "next/navigation";
 
-const Page = () => {
+const Page = ({ params }: { params: { slug: string } }) => {
+  const talent = talentsDetail.find((t) => t.slug === params.slug);
+
+  if (!talent) {
+    notFound();
+  }
+
   return (
     <div>
       <div className="relative isolate overflow-hidden bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-20 lg:flex lg:justify-center lg:items-center lg:gap-x-10 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:justify-center lg:items-center lg:gap-x-10 lg:px-8">
+          {/* Image */}
           <motion.div
             className="mx-auto mt-16 lg:mt-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-[500px] h-full">
+            <div className="relative w-[500px] h-full lg:h-[640px]">
               <Image
-                src="/images/sudut-profile-corp/talents/talents1.jpg"
-                alt="Talents Profile"
-                className="w-full h-[640px] object-cover object-center rounded-2xl shadow-xl ring-1 ring-gray-900/10"
+                src={talent.imageUrl}
+                alt={talent.name}
+                className="w-full h-full object-cover object-center rounded-2xl shadow-xl ring-1 ring-gray-900/10"
                 width={1024}
                 height={1024}
               />
@@ -35,7 +44,7 @@ const Page = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-gradient">Jerome Polin Sijabat</span>
+              <span className="text-gradient">{talent.name}</span>
             </motion.h1>
             <motion.p
               className="mt-6 text-lg leading-8 text-foreground max-w-2xl"
@@ -43,15 +52,7 @@ const Page = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Jerome is widely known as the creator behind Nihongo Mantappu
-              YouTube channel, co-founder of Mantappu Corp, and Founder of
-              Mantappu Academy who has established himself as a household name
-              in Indonesia’s YouTube community. His enthusiasm in education led
-              him to be the top of mind of Math edutainment content creator.He
-              also chosen as a Brand Ambassador for prominent brand such as
-              Samsung Team Galaxy, Frisian Flag, Promag, and created a new
-              segment called CLASSROME (Jerome teaches Indonesian artist) &
-              other education content through his platform.
+              {talent.bio}
             </motion.p>
             <motion.h1
               className="mt-10 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl"
@@ -158,7 +159,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl py-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left Card */}
           <Card className="shadow-md rounded-2xl">
@@ -168,37 +169,31 @@ const Page = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <h3 className="text-lg font-medium mb-2">Pemeran Film :</h3>
-              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
-                <li>Teka-Teki Tika (2021)</li>
-                <li>The Big 4 (2022)</li>
-                <li>Star Syndrome (2023)</li>
-                <li>Sleep Call (2023)</li>
-                <li>Agak Laen (2024)</li>
-                <li>24 Jam Bersama Gaspar (2024)</li>
-                <li>Kaka Boss (2024)</li>
-                <li>The Shadow Strays (2024)</li>
-                <li>Cinta Tak Seindah Drama Korea (2024)</li>
-                <li>Bolehkah Sekali Saja Ku Menangis (2024)</li>
-                <li>My Annoying Brother (2024)</li>
-              </ul>
+              {Object.entries(talent.filmography).map(([section, items]) => (
+                <div key={section} className="mb-6">
+                  <h3 className="text-lg font-medium mb-2 capitalize">
+                    {section.replace(/([A-Z])/g, " $1")}
+                  </h3>
+                  <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                    {items.map((item: string, i: number) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </CardContent>
           </Card>
 
           {/* Right Card */}
           <Card className="shadow-md rounded-2xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold">
-                Act :
-              </CardTitle>
+              <CardTitle className="text-2xl font-semibold">Act :</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                <li>Unscripted Man (2019)</li>
-                <li>Dealing With Myself (2020)</li>
-                <li>Twisted (2020)</li>
-                <li>Modus Operandi (2022)</li>
-                <li>Imperfect The Series 2 (2023)</li>
+              <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground">
+                {talent.act.roles.map((role: string, i: number) => (
+                  <li key={i}>{role}</li>
+                ))}
               </ul>
 
               <h3 className="font-medium mt-4 mb-2">Co-Director</h3>
@@ -217,14 +212,14 @@ const Page = () => {
           </Card>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl pt-10 pb-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-10 pb-20">
         <p className="max-w-xs text-4xl font-semibold border-b pb-3">
-          Blog Related
+          Related Blogs
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          {talent.relatedBlogs.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
         </div>
       </div>
     </div>

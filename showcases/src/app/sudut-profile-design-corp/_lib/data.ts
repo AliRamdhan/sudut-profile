@@ -34,6 +34,7 @@ export const works = [
     description:
       "Integrated campaign for Atlas Motors’ EV launch — from billboard art direction to dynamic product photography and digital rollouts.",
   },
+
   {
     title: "Streamline Finance Dashboard",
     year: "2024",
@@ -45,6 +46,7 @@ export const works = [
     description:
       "Redesigned fintech SaaS dashboard with improved data visualization, accessibility features, and modular design components.",
   },
+
   {
     title: "Eclipse Fashion Film",
     year: "2022",
@@ -57,6 +59,7 @@ export const works = [
     description:
       "A short film for Eclipse Studio’s seasonal campaign, blending cinematic storytelling with high-fashion editorial aesthetics.",
   },
+
   {
     title: "Orchid Skincare Packaging",
     year: "2023",
@@ -68,6 +71,7 @@ export const works = [
     description:
       "Minimal, eco-conscious packaging for Orchid Skincare, focusing on sustainable materials and elegant tactile finishes.",
   },
+
   {
     title: "Nova Broadcast Title Sequence",
     year: "2022",
@@ -80,6 +84,7 @@ export const works = [
     description:
       "Motion design and 3D animation for Nova Channel’s primetime title sequence, balancing futuristic aesthetics with storytelling clarity.",
   },
+
   {
     title: "Café Aesthete Digital Presence",
     year: "2021",
@@ -91,6 +96,7 @@ export const works = [
     description:
       "Designed a lifestyle-driven website and content package for Café Aesthete, combining warm editorial photography with clean minimal layouts.",
   },
+  
   {
     title: "Helio Health Tracker",
     year: "2023",

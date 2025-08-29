@@ -94,18 +94,13 @@ const Hero = () => {
         </h1>
 
         <p className="text-lg md:text-2xl lg:text-3xl text-gray-700 dark:text-white/80 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed font-light">
-          Selamat datang di Hahaha Corp! Talent Management yang menaungi 10
-          komedian papan atas Tanah Air yang bukan hanya lucu, tapi juga
-          berintegritas.
+          Selamat datang di Sudut Profile Corp, Talent Management yang menjadi
+          ruang tumbuh bagi para talenta kreatif dan profesional untuk berkarya,
+          berkembang, dan menginspirasi.
         </p>
 
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-500 dark:via-pink-500 dark:to-cyan-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
-          <Button
-            className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-6 md:px-8 py-4 md:py-6 text-lg md:text-xl group"
-            onClick={() =>
-              window.open("https://www.lunch-box.co/new", "_blank")
-            }
-          >
+          <Button className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-6 md:px-8 py-4 md:py-6 text-lg md:text-xl group">
             View Talents
             <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>

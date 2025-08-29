@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import SliderPortfolio from "./_components/slider-portfolio";
 import { Statistics } from "./_components/statistics";

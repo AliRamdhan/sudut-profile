@@ -1,17 +1,25 @@
+import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail } from "lucide-react";
 import Image from "next/image";
+import { activities, activityDetails } from "../../_lib/data";
+import TransitionLink from "@/components/shared/transition-link";
 
-const Page = () => {
+const Page = ({ params }: { params: { slug: string } }) => {
+  const event = activityDetails[params.slug as keyof typeof activityDetails];
+
+  if (!event) {
+    notFound();
+  }
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[480px] bg-slate-900 text-white">
+      <section className="relative h-[520px] bg-slate-900 text-white">
         <div className="absolute inset-0">
           <Image
-            src="/images/sudut-profile-corp/events/event-hero.jpg"
-            alt="Musician playing guitar"
+            src={event.heroImage}
+            alt={event.title}
             className="w-full h-full object-cover object-center opacity-80"
             width={1024}
             height={1024}
@@ -23,30 +31,27 @@ const Page = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-center">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                Dream World Wide in Jakarta
+                {event.title}
               </h2>
-              <p className="text-lg text-gray-300 mb-6">By David Guetta</p>
-              <p className="text-gray-300 mb-6">
-                Join us for an unforgettable night of music and entertainment.
-                Experience the magic of live performance in the heart of
-                Jakarta.
-              </p>
+              {event.subtitle && (
+                <p className="text-lg text-gray-300 mb-6">{event.subtitle}</p>
+              )}
+              <p className="text-gray-300 mb-6">{event.descriptions[0]}</p>
+
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>View Map</span>
+                <span>{event.location.venue}</span>
               </div>
             </div>
 
-            {/* Booking Form */}
+            {/* Booking Card */}
             <div className="bg-white text-gray-900 rounded-lg p-6 shadow-xl">
               <h3 className="text-xl font-semibold mb-4">Date & Time</h3>
-              <p className="text-gray-600 mb-4">
-                Saturday, May 15, 2024 at 8:00 PM
-              </p>
+              <p className="text-gray-600 mb-4">{event.dateTime}</p>
               <p className="text-gray-600 mb-6">Add to Calendar</p>
 
               <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white mb-4">
-                Book Now (Free)
+                Book Now
               </Button>
 
               <p className="text-center text-gray-600">Powered by Eventbox</p>
@@ -63,24 +68,14 @@ const Page = () => {
             {/* Description */}
             <section>
               <h3 className="text-2xl font-bold mb-4">Description</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Get ready for an electrifying night as Dream World Wide takes
-                the stage in Jakarta! This spectacular event promises to deliver
-                an unforgettable experience filled with incredible music,
-                stunning visuals, and an atmosphere that will leave you
-                breathless.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Join thousands of music lovers for this once-in-a-lifetime
-                concert featuring world-renowned DJ David Guetta. Experience the
-                perfect blend of electronic beats and live performance in one of
-                Jakarta&apos;s most prestigious venues.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Don&apos;t miss this opportunity to be part of something
-                extraordinary. Book your tickets now and prepare for a night
-                that will stay with you forever.
-              </p>
+              {event.descriptions.map((desc, i) => (
+                <p
+                  key={i}
+                  className="text-gray-600 leading-relaxed mb-4 last:mb-0"
+                >
+                  {desc}
+                </p>
+              ))}
             </section>
 
             {/* Hours */}
@@ -89,15 +84,15 @@ const Page = () => {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Doors Open</span>
-                  <span className="font-medium">7:00 PM</span>
+                  <span className="font-medium">{event.hours.doorsOpen}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Show Starts</span>
-                  <span className="font-medium">8:00 PM</span>
+                  <span className="font-medium">{event.hours.showStarts}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Show Ends</span>
-                  <span className="font-medium">11:00 PM</span>
+                  <span className="font-medium">{event.hours.showEnds}</span>
                 </div>
               </div>
             </section>
@@ -105,7 +100,7 @@ const Page = () => {
             {/* Contact */}
             <section>
               <h3 className="text-2xl font-bold mb-4">
-                How can I contact the organizer with any questions?
+                How can I contact the organizer?
               </h3>
               <p className="text-gray-600 mb-4">
                 Please use the contact information below to reach out to the
@@ -114,11 +109,11 @@ const Page = () => {
               <div className="space-y-2">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 mr-3 text-gray-400" />
-                  <span className="text-gray-600">+62 21 1234 5678</span>
+                  <span className="text-gray-600">{event.contact.phone}</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 mr-3 text-gray-400" />
-                  <span className="text-gray-600">info@dreamworldwide.com</span>
+                  <span className="text-gray-600">{event.contact.email}</span>
                 </div>
               </div>
             </section>
@@ -135,33 +130,25 @@ const Page = () => {
                   <p className="text-gray-600">Map View</p>
                 </div>
               </div>
-              <h4 className="font-semibold mb-2">
-                Dream World Wide in Jakarta
-              </h4>
+              <h4 className="font-semibold mb-2">{event.location.name}</h4>
               <p className="text-gray-600 text-sm mb-1">
-                Jakarta Convention Center
+                {event.location.venue}
               </p>
-              <p className="text-gray-600 text-sm">
-                Jl. Gatot Subroto, Jakarta Pusat
-              </p>
+              <p className="text-gray-600 text-sm">{event.location.address}</p>
             </section>
 
             {/* Tags */}
             <section>
               <h3 className="text-2xl font-bold mb-4">Tags</h3>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
-                  Music Event
-                </span>
-                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
-                  Concert
-                </span>
-                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
-                  David Guetta
-                </span>
-                <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">
-                  Electronic Music
-                </span>
+                {event.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </section>
 
@@ -185,175 +172,47 @@ const Page = () => {
 
         {/* Other Events Section */}
         <section className="mt-16">
-          <h3 className="text-2xl font-bold mb-8">Other Events You May Like</h3>
+          <h3 className="text-2xl font-bold mb-8">
+            Other Activities of Sudut Profile Corp
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Event Card 1 */}
-            <Card className="overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/images/sudut-profile-corp/events/event-1.jpg"
-                  alt="Electronic music event"
-                  className="w-full h-48 object-cover"
-                  width={1024}
-                  height={1024}
-                />
-                <div className="absolute top-3 left-3 bg-purple-600 text-white px-2 py-1 rounded text-sm">
-                  LIVE
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-500">15</span>
-                  <span className="text-sm text-gray-500">May</span>
-                </div>
-                <h4 className="font-semibold mb-1">
-                  Synthwave - Retro Conference
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  Electronic music conference featuring retro synthwave artists
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Event Card 2 */}
-            <Card className="overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/images/sudut-profile-corp/events/event-2.jpg"
-                  alt="Jazz concert"
-                  className="w-full h-48 object-cover"
-                  width={1024}
-                  height={1024}
-                />
-                <div className="absolute top-3 left-3 bg-purple-600 text-white px-2 py-1 rounded text-sm">
-                  LIVE
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-500">18</span>
-                  <span className="text-sm text-gray-500">May</span>
-                </div>
-                <h4 className="font-semibold mb-1">
-                  Dream World Wide in Jakarta
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  An evening of smooth jazz and contemporary music
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Event Card 3 */}
-            <Card className="overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/images/sudut-profile-corp/events/event-3.jpg"
-                  alt="Music festival"
-                  className="w-full h-48 object-cover"
-                  width={1024}
-                  height={1024}
-                />
-                <div className="absolute top-3 left-3 bg-purple-600 text-white px-2 py-1 rounded text-sm">
-                  LIVE
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-500">22</span>
-                  <span className="text-sm text-gray-500">May</span>
-                </div>
-                <h4 className="font-semibold mb-1">
-                  Armin Embracing the Techno
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  Techno music festival with international DJs
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Event Card 4 */}
-            <Card className="overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/images/sudut-profile-corp/events/event-3.jpg"
-                  alt="Rock concert"
-                  className="w-full h-48 object-cover"
-                  width={1024}
-                  height={1024}
-                />
-                <div className="absolute top-3 left-3 bg-purple-600 text-white px-2 py-1 rounded text-sm">
-                  LIVE
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-500">25</span>
-                  <span className="text-sm text-gray-500">May</span>
-                </div>
-                <h4 className="font-semibold mb-1">
-                  UI UX Design & Prototyping
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  Design workshop and networking event
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Event Card 5 */}
-            <Card className="overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/images/sudut-profile-corp/events/event-2.jpg"
-                  alt="Acoustic performance"
-                  className="w-full h-48 object-cover"
-                  width={1024}
-                  height={1024}
-                />
-                <div className="absolute top-3 left-3 bg-purple-600 text-white px-2 py-1 rounded text-sm">
-                  LIVE
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-500">28</span>
-                  <span className="text-sm text-gray-500">May</span>
-                </div>
-                <h4 className="font-semibold mb-1">
-                  Mandala Awakening Conference
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  Spiritual and wellness conference with live music
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Event Card 6 */}
-            <Card className="overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/images/sudut-profile-corp/events/event-1.jpg"
-                  alt="Business conference"
-                  className="w-full h-48 object-cover"
-                  width={1024}
-                  height={1024}
-                />
-                <div className="absolute top-3 left-3 bg-purple-600 text-white px-2 py-1 rounded text-sm">
-                  LIVE
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-500">30</span>
-                  <span className="text-sm text-gray-500">May</span>
-                </div>
-                <h4 className="font-semibold mb-1">
-                  Ethical Hacking Bootcamp (4)
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  Cybersecurity training and certification program
-                </p>
-              </CardContent>
-            </Card>
+            {activities.slice(0, 6).map((activity) => (
+              <Card
+                key={activity.id}
+                className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105"
+              >
+                <TransitionLink
+                  href={`/sudut-profile-corp/activities/${activity.slug}`}
+                >
+                  <div className="relative">
+                    <Image
+                      src={activity.imageUrl}
+                      alt={activity.title}
+                      className="w-full h-64 object-contain object-center"
+                      width={1024}
+                      height={1024}
+                    />
+                    <div className="absolute top-3 left-3 bg-purple-600 text-white px-2 py-1 rounded text-sm">
+                      LIVE
+                    </div>
+                  </div>
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-gray-500">
+                        {activity.date}
+                      </span>
+                    </div>
+                    <h4 className="font-semibold mb-1">
+                      {activity.title} - {activity.category}
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      {activity.shortDescription}
+                    </p>
+                  </CardContent>
+                </TransitionLink>
+              </Card>
+            ))}
           </div>
         </section>
       </div>

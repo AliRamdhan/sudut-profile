@@ -1,7 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button";
 import { Lock, ShoppingCart } from "lucide-react";
 
-export function LockedContent() {
+interface LockedContentProps {
+  course: any;
+}
+export function LockedContent({ course }: LockedContentProps) {
   return (
     <div className="mt-12 bg-gray-50 rounded-lg p-8 text-center">
       <div className="mb-6">
@@ -14,11 +18,9 @@ export function LockedContent() {
         </p>
         <Button className="px-6 py-3 rounded-lg font-medium">
           <ShoppingCart className="w-4 h-4 mr-2" />
-          Beli 149.000 IDR
+          Beli {course.price}
         </Button>
-        <p className="text-sm mt-3">
-          Akses 14 hari • Dapat diunduh
-        </p>
+        <p className="text-sm mt-3">Akses 14 hari • Dapat diunduh</p>
       </div>
     </div>
   );
