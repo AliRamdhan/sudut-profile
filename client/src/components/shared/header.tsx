@@ -34,7 +34,7 @@ export function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-white">
           <TransitionLink
-            href="/h/Showcases"
+            href="/h/showcases"
             className="hover:text-neutral-300 transition-colors"
           >
             Showcases
