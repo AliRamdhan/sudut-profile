@@ -31,7 +31,12 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
         if (next >= 100) {
           clearInterval(progressInterval);
           clearInterval(matrixInterval);
-          setTimeout(() => setIsComplete(true), 500); // Delay before hiding splash screen
+
+          setTimeout(() => {
+            setIsComplete(true);
+            finishLoading();
+          }, 500);
+
           return 100;
         }
         return next;
@@ -41,7 +46,6 @@ const SplashScreen = ({ finishLoading }: SplashScreenProps) => {
     return () => {
       clearInterval(progressInterval);
       clearInterval(matrixInterval);
-      router.push("/h");
     };
   }, [finishLoading, router]);
 

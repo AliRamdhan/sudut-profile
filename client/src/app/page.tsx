@@ -18,19 +18,15 @@ export default function Home() {
     const currentTime = Date.now();
     const twoMinutes = 2 * 60 * 1000;
 
-    console.log("Splash time from storage:", sudutProfileSplashTime);
-
     if (
       sudutProfileSplashTime &&
       currentTime - parseInt(sudutProfileSplashTime) < twoMinutes
     ) {
       setLoading(false);
       requestAnimationFrame(() => {
-        console.log("Redirecting to /h ...");
         router.push("/h");
       });
     } else {
-      console.log("Showing splash screen");
       setLoading(true);
       setSplash(true);
     }
@@ -39,14 +35,13 @@ export default function Home() {
   const finishLoading = () => {
     const now = Date.now().toString();
     localStorage.setItem("sudutProfileSplashTime", now);
-    console.log("Saved splash time:", now);
+
     setLoading(false);
     setSplash(false);
 
-    setTimeout(() => {
-      console.log("Redirecting to /h after saving storage");
+    requestAnimationFrame(() => {
       router.push("/h");
-    }, 50);
+    });
   };
 
   return (
