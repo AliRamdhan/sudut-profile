@@ -10,30 +10,43 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Pastikan window/localStorage hanya diakses di client
     if (typeof window === "undefined") return;
 
-    const sudutProfileSplashTime = localStorage.getItem("sudutProfileSplashTime");
+    const sudutProfileSplashTime = localStorage.getItem(
+      "sudutProfileSplashTime"
+    );
     const currentTime = Date.now();
     const twoMinutes = 2 * 60 * 1000;
 
-    if (sudutProfileSplashTime && currentTime - parseInt(sudutProfileSplashTime) < twoMinutes) {
+    console.log("Splash time from storage:", sudutProfileSplashTime);
+
+    if (
+      sudutProfileSplashTime &&
+      currentTime - parseInt(sudutProfileSplashTime) < twoMinutes
+    ) {
       setLoading(false);
-      // Push setelah render selesai, supaya tidak ke-skip di production
       requestAnimationFrame(() => {
+        console.log("Redirecting to /h ...");
         router.push("/h");
       });
     } else {
+      console.log("Showing splash screen");
       setLoading(true);
       setSplash(true);
     }
   }, [router]);
 
   const finishLoading = () => {
-    localStorage.setItem("sudutProfileSplashTime", Date.now().toString());
+    const now = Date.now().toString();
+    localStorage.setItem("sudutProfileSplashTime", now);
+    console.log("Saved splash time:", now);
     setLoading(false);
     setSplash(false);
-    router.push("/h");
+
+    setTimeout(() => {
+      console.log("Redirecting to /h after saving storage");
+      router.push("/h");
+    }, 50);
   };
 
   return (
