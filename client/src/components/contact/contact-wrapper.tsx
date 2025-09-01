@@ -21,14 +21,14 @@ const contactsData = [
   {
     icon: <PhoneCall className="w-6 h-6" />,
     label: "Chat by WA",
-    description: "Mon-Fri from 8am to 5pm.",
+    description: "Available 24/7.",
     highlight: "+62 (813) 85643856",
   },
 ];
 
 const ContactWrapper = () => {
   return (
-    <div className="h-full lg:h-[75vh] flex items-center justify-center pt-24 pb-12">
+    <div className="h-full lg:h-[75vh] flex items-center justify-center pt-32 lg:pt-24 pb-12">
       <div className="container mx-auto px-4 max-w-5xl text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-4">Contact Us</h1>
         <p className="text-lg text-neutral-300 mb-12">

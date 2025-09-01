@@ -68,7 +68,7 @@ const Hero = () => {
           your reach to clients, customers, investors, and partners, and
           strengthen trust through clarity and professionalism.
         </motion.p>
-        <TransitionLink href="#templates">
+        <TransitionLink href="#showcases">
           <motion.button
             className="hero-button flex items-center gap-2 bg-white text-black font-semibold py-3 px-6 rounded-full transition-transform duration-300"
             whileHover={{
@@ -77,7 +77,7 @@ const Hero = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Our Samples <ArrowRight size={20} />
+            Explore Our Showcases <ArrowRight size={20} />
           </motion.button>
         </TransitionLink>
       </div>
