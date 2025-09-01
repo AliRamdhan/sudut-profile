@@ -44,20 +44,20 @@ const Explain = () => {
         <div className="self-stretch px-4 py-12 md:px-6 md:py-16 lg:py-28 flex flex-col justify-start items-start gap-2">
           <div className="self-stretch flex justify-between items-center">
             <div className="flex-1 px-4 py-8 md:px-12 lg:px-20 md:py-8 lg:py-10 overflow-hidden rounded-lg flex flex-col justify-center items-center gap-6 md:gap-8 lg:gap-11">
-              <div className="w-full max-w-[1024px] text-justify text-foreground font-medium text-lg md:text-3xl lg:text-3xl">
-                <h2>
+              <div className="w-full max-w-[1024px] text-justify">
+                <p className="text-foreground font-medium text-lg md:text-3xl lg:text-3xl">
                   A company profile is a document or webpage that provides
                   comprehensive information about a business—covering its
                   history, vision and mission, products or services,
                   achievements, and contact details.
-                </h2>
-                <h3>
+                </p>
+                <p className="text-foreground font-medium text-lg md:text-3xl lg:text-3xl">
                   Its main purpose is to present a clear picture of the
                   company&apos;s identity and credibility to potential clients,
                   partners, and investors.
-                </h3>
+                </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
                 {points.map((point, index) => (
                   <motion.div
                     key={point.label}
@@ -71,9 +71,9 @@ const Explain = () => {
                 ))}
               </div>
               <div className="flex justify-center items-center gap-5">
-                <div className="text-foreground text-base font-black leading-6">
+                <p className="text-foreground text-base font-black leading-6">
                   SUDUTPROFILE
-                </div>
+                </p>
               </div>
             </div>
           </div>

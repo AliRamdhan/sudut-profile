@@ -28,7 +28,7 @@ const ContactItemCard = ({ contact }: ContactItemCardProps) => {
       <TransitionLink href={getLink()} target="_blank">
         <div>
           <div className="absolute top-0 left-0">
-            <Button variant="secondary" size="icon" className="size-8">
+            <Button aria-label="Copy Button" variant="secondary" size="icon" className="size-8">
               <Copy />
             </Button>
           </div>

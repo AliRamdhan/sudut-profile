@@ -50,7 +50,7 @@ const Hero = () => {
           alt="Hero Sudut Profile"
           width={1000}
           height={1000}
-          className="w-full lg:w-1/2 h-full"
+          className="w-full lg:w-1/2 h-full object-cover object-center"
         />
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">

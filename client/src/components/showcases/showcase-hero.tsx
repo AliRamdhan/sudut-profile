@@ -144,9 +144,9 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
-        <h1 className="hero-title font-bold text-5xl md:text-7xl lg:text-8xl mb-6">
+        <h2 className="font-bold text-5xl md:text-7xl lg:text-8xl mb-6">
           OUR SHOWCASES
-        </h1>
+        </h2>
         <p className="max-w-2xl text-lg text-neutral-400">
           This showcase represents sample company profile websites. Each design
           can be fully customized to reflect your brand identity, or simply used

@@ -30,8 +30,8 @@ const ContactWrapper = () => {
   return (
     <div className="h-full lg:h-[75vh] flex items-center justify-center pt-32 lg:pt-24 pb-12">
       <div className="container mx-auto px-4 max-w-5xl text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4">Contact Us</h1>
-        <p className="text-lg text-neutral-300 mb-12">
+        <h1 className="text-[48px] md:text-[72px] font-bold mb-4">Contact Us</h1>
+        <p className="max-w-sm lg:max-w-5xl text-lg text-neutral-300 mb-12">
           We&apos;d love to hear from you. Drop us a line below.
         </p>
         <div className="grid grid-cols-1 gap-12 mt-10 sm:grid-cols-2">
