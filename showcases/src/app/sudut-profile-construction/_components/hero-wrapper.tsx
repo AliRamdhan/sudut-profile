@@ -12,12 +12,12 @@ export function Hero() {
         className="object-cover object-center"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-800/80 to-transparent flex items-center justify-center text-center px-4">
-        <div className="max-w-md lg:max-w-4xl space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-wide text-gray-900 leading-tight">
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-800/70 to-transparent flex items-center justify-center text-center px-4">
+        <div className="max-w-md lg:max-w-5xl space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold tracking-wide text-gray-100 leading-tight">
             Building Your Vision with Precision
           </h1>
-          <p className="text-lg md:text-xl text-white">
+          <p className="text-lg md:text-xl lg:text-2xl text-white">
             We are Struktura, your trusted partner in the world of construction.
             With a legacy of excellence and a commitment to quality, we turn
             your visions into reality.

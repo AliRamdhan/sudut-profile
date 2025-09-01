@@ -10,16 +10,16 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black text-white">
+    <header className="sticky top-0 z-50">
       {/* Top bar */}
-      <div className="py-2 text-sm border-b border-gray-700">
+      <div className="py-2 text-sm bg-gray-900 border-b border-gray-700">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between px-4 md:px-6 space-y-2 sm:space-y-0">
           {/* Social icons */}
           <div className="flex items-center space-x-4">
             {/* Facebook */}
             <TransitionLink
               href="#"
-              className="text-gray-100 hover:text-gray-300"
+              className="text-gray-100 hover:text-gray-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const Header = () => {
             {/* Twitter */}
             <TransitionLink
               href="#"
-              className="text-gray-100 hover:text-gray-300"
+              className="text-gray-100 hover:text-gray-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const Header = () => {
             {/* Instagram */}
             <TransitionLink
               href="#"
-              className="text-gray-100 hover:text-gray-300"
+              className="text-gray-100 hover:text-gray-600"
             >
               <svg
                 role="img"
@@ -68,7 +68,7 @@ const Header = () => {
           </div>
 
           {/* Contact info */}
-          <div className="flex flex-wrap justify-center sm:justify-end items-center gap-4 text-xs sm:text-sm">
+          <div className="flex flex-wrap justify-center sm:justify-end items-center gap-4 text-xs sm:text-sm text-gray-100">
             <div className="flex items-center space-x-1">
               <Clock className="h-4 w-4" />
               <span>Mon - Sat: 7:00 - 17:00</span>
@@ -86,60 +86,62 @@ const Header = () => {
       </div>
 
       {/* Main nav */}
-      <div className="container py-4 shadow-sm mx-auto flex items-center justify-between px-4 md:px-6">
-        <TransitionLink href="#home" className="flex items-center space-x-2">
-          <Truck className="h-6 w-6 text-gray-300" />
-          <span className="text-xl font-bold">SUDUT PROFILE LOGISTICS</span>
-        </TransitionLink>
-
-        {/* Desktop menu */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <TransitionLink
-            href="#vehicles"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            VEHICLE FLEET
-          </TransitionLink>
-          <TransitionLink
-            href="#services"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            SERVICES
-          </TransitionLink>
-          <TransitionLink
-            href="#cta"
-            className="text-gray-100 hover:text-gray-300 font-medium"
-          >
-            CONTACT US
+      <div className="bg-white">
+        <div className="container py-4 shadow-sm mx-auto flex items-center justify-between px-4 md:px-6">
+          <TransitionLink href="#home" className="flex items-center space-x-2">
+            <Truck className="h-6 w-6 text-gray-600" />
+            <span className="text-xl font-bold">SUDUT PROFILE LOGISTICS</span>
           </TransitionLink>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-gray-100 hover:text-gray-300"
-            aria-label="Search Input"
-          >
-            <Search className="h-5 w-5" />
-          </Button>
-        </nav>
+          {/* Desktop menu */}
+          <nav className="hidden md:flex items-center space-x-6">
+            <TransitionLink
+              href="#vehicles"
+              className="text-gray-800 hover:text-gray-600 font-medium"
+            >
+              VEHICLE FLEET
+            </TransitionLink>
+            <TransitionLink
+              href="#services"
+              className="text-gray-800 hover:text-gray-600 font-medium"
+            >
+              SERVICES
+            </TransitionLink>
+            <TransitionLink
+              href="#cta"
+              className="text-gray-800 hover:text-gray-600 font-medium"
+            >
+              CONTACT US
+            </TransitionLink>
 
-        {/* Mobile controls */}
-        <div className="flex items-center gap-2 md:hidden">
-          <Button variant="ghost" size="icon" aria-label="Search Input">
-            <Search className="h-5 w-5" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            aria-label="Toggle Mobile Menu"
-          >
-            {isMobileOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-gray-800 hover:text-gray-600"
+              aria-label="Search Input"
+            >
+              <Search className="h-5 w-5" />
+            </Button>
+          </nav>
+
+          {/* Mobile controls */}
+          <div className="flex items-center gap-2 md:hidden">
+            <Button variant="ghost" size="icon" aria-label="Search Input">
+              <Search className="h-5 w-5" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              aria-label="Toggle Mobile Menu"
+            >
+              {isMobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -155,21 +157,21 @@ const Header = () => {
             <div className="flex flex-col gap-4 text-lg">
               <TransitionLink
                 href="#vehicles"
-                className="text-gray-100 hover:text-gray-300 font-medium pb-4 border-b"
+                className="text-gray-800 hover:text-gray-600 font-medium pb-4 border-b"
                 onClick={() => setIsMobileOpen(false)}
               >
                 VEHICLE FLEET
               </TransitionLink>
               <TransitionLink
                 href="#services"
-                className="text-gray-100 hover:text-gray-300 font-medium pb-4 border-b"
+                className="text-gray-800 hover:text-gray-600 font-medium pb-4 border-b"
                 onClick={() => setIsMobileOpen(false)}
               >
                 SERVICES
               </TransitionLink>
               <TransitionLink
                 href="#cta"
-                className="text-gray-100 hover:text-gray-300 font-medium pb-4 border-b"
+                className="text-gray-800 hover:text-gray-600 font-medium pb-4 border-b"
                 onClick={() => setIsMobileOpen(false)}
               >
                 CONTACT US

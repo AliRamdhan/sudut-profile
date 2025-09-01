@@ -347,16 +347,16 @@ const Page = () => {
         </motion.div>
 
         {/* CTA Banner */}
-        <section id="cta" className="relative h-[640px] w-full overflow-hidden">
-          <Image
+        <section id="cta" className="relative h-[480px] w-full overflow-hidden">
+          {/* <Image
             src="/images/logistics/templates-logistic1-cta.jpg"
             alt="Power lines and a white semi-truck on a highway at sunset"
             fill
             className="object-fit object-center"
-          />
-          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4 md:px-6 text-center text-white space-y-4">
+          /> */}
+          <div className="absolute inset-0 bg-gray-100 flex flex-col items-center justify-center px-4 md:px-6 text-center space-y-4">
             <motion.h2
-              className="text-3xl md:text-6xl font-bold leading-tight max-w-4xl"
+              className="text-3xl md:text-6xl font-bold leading-tight max-w-4xl text-gray-900"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -365,7 +365,7 @@ const Page = () => {
               REACH YOUR DESTINATION 100% SURE AND SAFE
             </motion.h2>
             <motion.p
-              className="text-lg md:text-2xl max-w-xl"
+              className="text-lg md:text-2xl max-w-xl text-gray-700"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}

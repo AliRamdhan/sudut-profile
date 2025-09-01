@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { notFound } from "next/navigation";
@@ -107,13 +106,6 @@ const Page = ({ params }: { params: { slug: string } }) => {
           <h2 className="text-2xl font-bold text-gray-900 uppercase">
             Our Other <span className="italic underline"> services</span>
           </h2>
-          <Link
-            href="/works"
-            className="text-gray-600 hover:text-gray-900 flex items-center gap-2"
-          >
-            View All Works
-            <ArrowRight />
-          </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {services

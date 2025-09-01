@@ -2,7 +2,6 @@
 
 import { ExternalLink } from "lucide-react";
 import Cta from "../_components/cta";
-import AboutUsSlider from "./_components/about-us-slider";
 import ExperienceTimeline from "./_components/experience-slide";
 import TransitionLink from "@/components/shared/transition-link";
 
@@ -43,7 +42,7 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-6 pt-20">
+      <section className="max-w-7xl mx-auto px-6 py-20">
         {/* About Us Section */}
         <div className="mb-16">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-2">
@@ -71,16 +70,14 @@ const Page = () => {
           </p>
           <ExperienceTimeline />
         </div>
-      </section>
 
-      {/* Company Logos */}
-      <AboutUsSlider />
+        {/* Company Logos */}
+        {/* <AboutUsSlider /> */}
 
-      <section className="max-w-7xl mx-auto px-6 pb-20">
         {/* Awards & Recognition */}
         <div className="mb-24">
           <div className="grid lg:grid-cols-2 gap-16">
-             <div className="lg:pr-12 lg:sticky lg:top-0 lg:self-start py-8">
+            <div className="lg:pr-12 lg:sticky lg:top-0 lg:self-start py-8">
               <h2 className="text-3xl md:text-4xl font-bold">
                 Awards & Recognition
               </h2>
