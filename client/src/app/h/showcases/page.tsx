@@ -1,12 +1,12 @@
 import Hero from "@/components/showcases/showcase-hero";
-import TemplatesWrapper from "@/components/showcases/showcases-wrapper";
+import ShwcasesWrapper from "@/components/showcases/showcases-wrapper";
 import React from "react";
 
 const Page = () => {
   return (
     <section>
       <Hero />
-      <TemplatesWrapper />
+      <ShwcasesWrapper />
     </section>
   );
 };

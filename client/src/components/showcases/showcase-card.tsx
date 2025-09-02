@@ -21,7 +21,7 @@ const ShowcaseCard = ({ showcase }: ShowcaseCardProps) => {
         <img
           src={showcase.imgSrc || "/placeholder.svg"}
           alt={showcase.title}
-          className="w-full h-full object-cover transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
+          className="w-full h-[720px] object-fit object-center transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
         />
 
         {/* Preview Button */}
