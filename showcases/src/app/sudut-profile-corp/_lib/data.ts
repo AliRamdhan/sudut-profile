@@ -27,8 +27,8 @@ export const activities = [
   },
   {
     id: 2,
-    title: "Music & Dance Festival",
-    slug: "music-dance-festival",
+    title: "Music & Dance Festival Night",
+    slug: "music-dance-festival-night",
     imageUrl: "/images/sudut-profile-corp/events/music-festival.jpg",
     price: "Rp.150.000",
     date: "2025-10-02",
@@ -196,8 +196,8 @@ export const activityDetails = {
     heroImage: "/images/sudut-profile-corp/events/night-comedy.jpg",
   },
 
-  "music-dance-festival": {
-    title: "Music & Dance Festival",
+  "music-dance-festival-night": {
+    title: "Music & Dance Festival Night",
     subtitle: "A Celebration of Rhythms",
     descriptions: [
       "Music & Dance Festival is a vibrant celebration combining the energy of music and dance across multiple genres and cultures. It offers a unique experience filled with colorful stage performances and dynamic movements.",
