@@ -19,7 +19,7 @@ export function Products() {
           {productsData.slice(0, 4).map((product) => (
             <div
               key={product.label}
-              className="bg-background h-full lg:h-[48vh] rounded-md shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
+              className="bg-background h-full rounded-md shadow-lg overflow-hidden hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
