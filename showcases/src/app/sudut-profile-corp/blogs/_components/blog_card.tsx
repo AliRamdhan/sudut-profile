@@ -7,7 +7,7 @@ interface BlogProps {
 }
 const BlogCard = ({ blog }: BlogProps) => {
   return (
-    <div className="h-[600px] border-2 shadow-xl p-4">
+    <div className="h-full lg:min-h-[600px] border-2 shadow-xl p-4">
       <div className="relative">
         <img
           className="object-cover object-center w-full h-64 rounded-lg lg:h-80"

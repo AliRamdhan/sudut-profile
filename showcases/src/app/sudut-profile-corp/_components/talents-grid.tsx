@@ -9,7 +9,7 @@ const Talents = () => {
   return (
     <section className="my-16">
       <div className="mb-2 flex justify-between items-center">
-        <h1 className="max-w-2xl text-7xl font-bold text-gray-900 uppercase tracking-tighter">
+        <h1 className="max-w-2xl text-4xl lg:text-7xl font-bold text-gray-900 uppercase tracking-tighter">
           Talent&apos;s
         </h1>
         <div className="flex justify-start items-center gap-x-4">
@@ -41,7 +41,7 @@ const Talents = () => {
       </div>
 
       <div className="mt-8 w-full flex justify-center items-center">
-        <TransitionLink href={`/sudut-profile-corp/activities`}>
+        <TransitionLink href={`/sudut-profile-corp/talents`}>
           <Button
             variant={`link`}
             className="px-16 border transition duration-300 hover:scale-105"

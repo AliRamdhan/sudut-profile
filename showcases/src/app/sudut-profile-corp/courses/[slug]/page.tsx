@@ -47,7 +47,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
             href="mailto:cs@sudutprofile.com"
             className="text-blue-600 underline"
           >
-            cs@sudutprofile.com
+            cs@sudutcorp.com
           </Link>
           . CS akan membalas email Senin-Jumat 09.00 - 18.00 WIB.
         </p>

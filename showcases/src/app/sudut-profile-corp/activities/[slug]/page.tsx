@@ -15,7 +15,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-[520px] bg-slate-900 text-white">
+      <section className="relative h-full lg:h-[520px] bg-slate-900 text-white">
         <div className="absolute inset-0">
           <Image
             src={event.heroImage}

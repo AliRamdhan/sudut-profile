@@ -225,7 +225,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
         {/* What&apos;s Next */}
       </section>
 
-      <section className="max-w-7xl mx-auto mb-8">
+      <section className="max-w-7xl mx-auto px-6 mb-8">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">
             What&apos;s other solution?

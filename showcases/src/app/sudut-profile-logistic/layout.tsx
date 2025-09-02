@@ -9,15 +9,15 @@ import Footer from "./_components/shared/footer";
 export default function SampleLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Set the page title
-    document.title = "Samples Construction | Sudut Profile";
+    document.title = "Sudut Profile Logistics | Sudut Profile";
 
     // Change the favicon dynamically
     const link =
       document.querySelector("link[rel~='icon']") ||
       document.createElement("link");
     link.setAttribute("rel", "icon");
-    link.setAttribute("href", "/images/logo-raw.jpg");
-    link.setAttribute("type", "image/jpg");
+    link.setAttribute("href", "/images/shared/icon.png");
+    link.setAttribute("type", "image/png");
     document.head.appendChild(link);
   }, []);
 

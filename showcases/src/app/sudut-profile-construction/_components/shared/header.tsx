@@ -9,7 +9,7 @@ export function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <div className="bg-gray-900 text-gray-300 text-xs py-2 px-4 md:px-8 flex justify-between items-center">
+      <div className="bg-gray-900 text-gray-300 text-xs py-2 px-4 md:px-8 flex flex-col lg:flex-row justify-between items-center gap-2.5">
         <div className="flex items-center space-x-4">
           <TransitionLink
             href="mailto:support@construction.com"
@@ -23,7 +23,7 @@ export function Header() {
             className="flex items-center gap-1 hover:text-white"
           >
             <Phone className="w-3 h-3" />
-            <span>+62 0239 0310</span>
+            <span>(+62) 0239 0310</span>
           </TransitionLink>
           <div className="flex items-center gap-1">
             <MapPin className="w-3 h-3" />
@@ -174,7 +174,7 @@ export function Header() {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white px-16 py-8"
+            className="md:hidden absolute top-full left-0 right-0 bg-white p-8"
           >
             <div className="flex flex-col gap-4 text-lg">
               <TransitionLink

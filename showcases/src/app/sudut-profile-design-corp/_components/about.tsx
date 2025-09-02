@@ -34,15 +34,13 @@ export default function Aboutus() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <a
-              href="https://www.flowersandsaints.com.au"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              aria-label="Explore btn"
               className="apple-button inline-flex items-center transition-all duration-300 hover:scale-110"
             >
               Explore Collection
               <ArrowRightCircle className="w-5 h-5 ml-2" />
-            </a>
+            </button>
           </motion.div>
         </motion.div>
       </div>

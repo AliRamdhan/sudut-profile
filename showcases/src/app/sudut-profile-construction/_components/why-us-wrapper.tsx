@@ -8,7 +8,7 @@ export function WhyChooseUs() {
       className="w-full py-12 md:py-24 lg:py-32 bg-white"
     >
       <div className="container mx-auto px-4 md:px-8 text-center">
-        <div className="flex justify-center items-center gap-x-8">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-x-8">
           <div>
             <h2 className="max-w-xl text-3xl md:text-5xl text-left font-bold text-gray-900 mb-4">
               Why Choose Struktura Construction
@@ -20,8 +20,8 @@ export function WhyChooseUs() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8">
-            <div className="space-y-8">
+          <div className="grid grid-cols-2 gap-4 lg:gap-8">
+            <div className="space-y-4 lg:space-y-8">
               <Card className="p-6 text-left  border-2 transition-all duration-300 ease-in-out hover:border-black/20 hover:scale-105">
                 <CardContent className="p-0 space-y-4">
                   <CheckCircle className="w-8 h-8 text-gray-900" />

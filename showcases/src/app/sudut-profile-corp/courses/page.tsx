@@ -7,14 +7,6 @@ import CourseCard from "./_components/course-card";
 import { courses } from "../_lib/data";
 
 const Page = () => {
-  // Hero
-  // About Us
-  // Digital Download + Event
-  // Talents
-  // Course
-  // Blog
-  // CTA
-
   return (
     <div className="min-h-screen">
       {/* Main Content */}

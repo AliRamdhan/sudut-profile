@@ -7,10 +7,11 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white py-12 md:py-20">
       <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-white">ABOUT US</h2>
           <TransitionLink href="#" className="flex items-center space-x-2">
             <Truck className="h-6 w-6" />
-            <span className="text-xl font-bold text-white">Transport</span>
+            <span className="text-base lg:text-xl font-bold">
+              SUDUT PROFILE LOGISTICS
+            </span>
           </TransitionLink>
           <p className="text-sm">
             For more then 30 years, Transport has been a reliable partner in the
@@ -32,29 +33,12 @@ const Footer = () => {
             </li>
             <li>
               <TransitionLink href="#" className="hover:text-[#007bff]">
-                News
+                Vehicle Fleet
               </TransitionLink>
             </li>
             <li>
               <TransitionLink href="#" className="hover:text-[#007bff]">
                 Contact us
-              </TransitionLink>
-            </li>
-          </ul>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <TransitionLink href="#" className="hover:text-[#007bff]">
-                Vehicle fleet
-              </TransitionLink>
-            </li>
-            <li>
-              <TransitionLink href="#" className="hover:text-[#007bff]">
-                About us
-              </TransitionLink>
-            </li>
-            <li>
-              <TransitionLink href="#" className="hover:text-[#007bff]">
-                Shop
               </TransitionLink>
             </li>
           </ul>
@@ -64,25 +48,19 @@ const Footer = () => {
           <div className="space-y-2 text-sm">
             <div className="flex items-start space-x-2">
               <MapPin className="h-4 w-4 flex-shrink-0 mt-1" />
-              <span>
-                Transport ltd. inc.
-                <br />
-                300 Pennsylvania Ave NW,
-                <br />
-                Washington
-              </span>
+              <span>Jakarta, Indonesia</span>
             </div>
             <div className="flex items-center space-x-2">
               <PhoneCall className="h-4 w-4 flex-shrink-0" />
-              <span>Telephone: +386 40 222 455</span>
+              <span>Telephone: (+62) 08123 321321</span>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4 flex-shrink-0" />
-              <span>Mobile phone: +386 40 112 555</span>
+              <span>Mobile phone: (+62) 08123 321321</span>
             </div>
             <div className="flex items-center space-x-2">
               <Printer className="h-4 w-4 flex-shrink-0" />
-              <span>FAX: +386 40 4444 1155</span>
+              <span>FAX: (+62) 08123 321321</span>
             </div>
           </div>
         </div>
@@ -104,7 +82,8 @@ const Footer = () => {
       </div>
       <div className="container mx-auto px-4 md:px-6 mt-8 pt-8 border-t border-gray-700 text-center text-xs text-gray-500">
         <span>
-          Transport wordpress theme | © 2015 Transport, All rights reserved
+          &copy; Copyright {new Date().getFullYear()} Sudut Profile
+          Constructions
         </span>
       </div>
     </footer>
