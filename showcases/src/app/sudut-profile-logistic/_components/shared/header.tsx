@@ -75,11 +75,11 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-1">
               <Phone className="h-4 w-4" />
-              <span>+386 40 111 5555</span>
+              <span>(+62) 08123 321321</span>
             </div>
             <div className="flex items-center space-x-1">
               <Mail className="h-4 w-4" />
-              <span>info@yourdomain.com</span>
+              <span>info@sudutprofilelogistics.com</span>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ const Header = () => {
         <div className="container py-4 shadow-sm mx-auto flex items-center justify-between px-4 md:px-6">
           <TransitionLink href="#home" className="flex items-center space-x-2">
             <Truck className="h-6 w-6 text-gray-600" />
-            <span className="text-xl font-bold">SUDUT PROFILE LOGISTICS</span>
+            <span className="text-base lg:text-xl font-bold">SUDUT PROFILE LOGISTICS</span>
           </TransitionLink>
 
           {/* Desktop menu */}
@@ -152,7 +152,7 @@ const Header = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md p-6 text-white rounded-b-xl"
+            className="md:hidden absolute top-full left-0 right-0 p-6 rounded-b-xl bg-white"
           >
             <div className="flex flex-col gap-4 text-lg">
               <TransitionLink
