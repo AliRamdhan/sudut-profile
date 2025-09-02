@@ -3,19 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import TransitionLink from "@/components/shared/transition-link";
 import Image from "next/image";
+import { blogs } from "../_lib/data";
 
 const Blogs = () => {
   return (
     <section className="mb-16">
-      <div className="flex items-center justify-between mb-8">
-        <div>
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 gap-4">
+        <div className="space-y-2">
           <Badge
             variant={"outline"}
             className="text-sm uppercase tracking-wide shadow-xl"
           >
             DIGITAL DOWNLOAD & Event&apos;s
           </Badge>
-          <h1 className="max-w-2xl text-7xl font-bold text-gray-900 uppercase tracking-tighter">
+          <h1 className="max-w-2xl text-4xl lg:text-7xl font-bold text-gray-900 uppercase tracking-tighter">
             Info terbaru Sudut Corp
           </h1>
         </div>
@@ -31,8 +32,8 @@ const Blogs = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/images/logistics/templates-logistic1-client2.jpg"
-              alt="Aerial view of Kuara Resort in Southern Lombok"
+              src={blogs[0].imageUrl}
+              alt={blogs[0].title}
               fill
               className="object-cover"
               priority
@@ -40,15 +41,14 @@ const Blogs = () => {
           </div>
           <div className="space-y-4">
             <div className="flex items-center gap-4 text-sm">
-              <time className="text-blue-600">June 24, 2025</time>
-              <span className="text-blue-600">Press Release</span>
+              <span className="text-blue-600">{blogs[0].author.name}</span>
+              <span className="text-blue-600">{blogs[0].author.role}</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-normal text-gray-800 leading-tight">
-              Mirah Investment & Development Achieves Key Milestone with the
-              Soft Launch of Kuara Resort in Southern Lombok.
+              {blogs[0].excerpt}
             </h2>
             <TransitionLink
-              href="/article/kuara-resort-launch"
+              href={`/sudut-profile-corp/blogs/${blogs[0].slug}`}
               className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
             >
               Read Article →
@@ -60,17 +60,14 @@ const Blogs = () => {
         <article className="space-y-4">
           <div className="space-y-3">
             <div className="flex items-center gap-4 text-sm">
-              <time className="text-blue-600">May 23, 2025</time>
-              <span className="text-blue-600">Press Release</span>
+              <span className="text-blue-600">{blogs[3].author.name}</span>
+              <span className="text-blue-600">{blogs[3].author.role}</span>
             </div>
             <h3 className="text-xl font-normal text-gray-800 leading-tight">
-              <em className="font-serif italic">
-                Introducing Klara Ocean Place:
-              </em>{" "}
-              Batu Belig&apos;s Newest Serviced Apartment Landmark
+              {blogs[3].excerpt}
             </h3>
             <TransitionLink
-              href="/article/klara-ocean-place-full"
+              href={`/sudut-profile-corp/blogs/${blogs[3].slug}`}
               className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
             >
               Read Article →
@@ -81,17 +78,14 @@ const Blogs = () => {
         <article className="space-y-4">
           <div className="space-y-3">
             <div className="flex items-center gap-4 text-sm">
-              <time className="text-blue-600">May 23, 2025</time>
-              <span className="text-blue-600">Press Release</span>
+              <span className="text-blue-600">{blogs[5].author.name}</span>
+              <span className="text-blue-600">{blogs[5].author.role}</span>
             </div>
             <h3 className="text-xl font-normal text-gray-800 leading-tight">
-              <em className="font-serif italic">
-                Introducing Klara Ocean Place:
-              </em>{" "}
-              Batu Belig&apos;s Newest Serviced Apartment Landmark
+              {blogs[5].excerpt}
             </h3>
             <TransitionLink
-              href="/article/klara-ocean-place-full"
+              href={`/sudut-profile-corp/blogs/${blogs[5].slug}`}
               className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
             >
               Read Article →

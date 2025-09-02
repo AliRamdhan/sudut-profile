@@ -88,13 +88,13 @@ const Hero = () => {
           <span className="block text-gray-900 dark:text-white group-hover:tracking-wide transition-all duration-500">
             SUDUT
           </span>
-          <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
+          <span className="block bg-gradient-to-r from-gray-800 via-gray-600 to-gray-400 dark:from-gray-200 dark:via-gray-400 dark:to-gray-600 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
             CORP
           </span>
         </h1>
 
         <p className="text-lg md:text-2xl lg:text-3xl text-gray-700 dark:text-white/80 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed font-light">
-          Selamat datang di Sudut Profile Corp, Talent Management yang menjadi
+          Selamat datang di Sudut Corp, Talent Management yang menjadi
           ruang tumbuh bagi para talenta kreatif dan profesional untuk berkarya,
           berkembang, dan menginspirasi.
         </p>

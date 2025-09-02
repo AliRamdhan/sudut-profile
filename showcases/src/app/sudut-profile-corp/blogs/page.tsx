@@ -23,10 +23,10 @@ const Page = () => {
             variant={"outline"}
             className="text-sm uppercase tracking-wide shadow-xl mb-2"
           >
-            Articles
+            Blogs
           </Badge>
           <h1 className="max-w-3xl text-6xl font-bold text-gray-900 uppercase tracking-tighter">
-            Our Articles
+            Our Blogs
           </h1>
           <p className="mt-2 text-gray-500 italic">
             Read stories and insights written by experts, contributors, and our

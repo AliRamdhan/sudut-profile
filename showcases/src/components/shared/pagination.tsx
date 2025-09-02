@@ -23,7 +23,7 @@ const Pagination = () => {
         </a>
       </li>
 
-      <li className="block size-8 rounded border border-indigo-600 bg-indigo-600 text-center text-sm/8 font-medium text-white">
+      <li className="block size-8 rounded border border-gray-600 bg-gray-600 text-center text-sm/8 font-medium text-white">
         2
       </li>
 

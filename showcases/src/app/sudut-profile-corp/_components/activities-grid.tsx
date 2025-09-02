@@ -16,7 +16,7 @@ const Activities = () => {
         >
           DIGITAL DOWNLOAD & Event&apos;s
         </Badge>
-        <h1 className="max-w-2xl text-7xl font-bold text-gray-900 uppercase tracking-tighter">
+        <h1 className="max-w-2xl text-4xl lg:text-7xl font-bold text-gray-900 uppercase tracking-tighter">
           Beli Tiket & Digital Download-nya!
         </h1>
       </div>

@@ -19,7 +19,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
   return (
     <div>
       <div className="relative isolate overflow-hidden bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:justify-center lg:items-center lg:gap-x-10 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:py-20 lg:flex lg:justify-center lg:items-center lg:gap-x-10 lg:px-8">
           {/* Image */}
           <motion.div
             className="mx-auto mt-16 lg:mt-0"
@@ -27,7 +27,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-[500px] h-full lg:h-[640px]">
+            <div className="relative w-full lg:w-[500px] h-full lg:h-[640px]">
               <Image
                 src={talent.imageUrl}
                 alt={talent.name}
@@ -37,7 +37,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
               />
             </div>
           </motion.div>
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-shrink-0 text-justify">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-shrink-0 text-justify mt-4">
             <motion.h1
               className="text-4xl font-semibold tracking-tight text-foreground sm:text-6xl"
               initial={{ opacity: 0, y: 20 }}

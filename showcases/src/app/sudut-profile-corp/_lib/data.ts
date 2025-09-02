@@ -94,7 +94,7 @@ export const activities = [
     id: 7,
     title: "Acting & Theater Workshop",
     slug: "acting-theater-workshop",
-    imageUrl: "/images/talent-management/events/acting-workshop.jpg",
+    imageUrl: "/images/sudut-profile-corp/events/acting-workshop.jpg",
     price: "Rp.120.000",
     date: "2025-09-05",
     location: "Jakarta, Indonesia",
@@ -107,7 +107,7 @@ export const activities = [
     id: 8,
     title: "Content Creator Bootcamp",
     slug: "content-creator-bootcamp",
-    imageUrl: "/images/talent-management/events/creator-bootcamp.jpg",
+    imageUrl: "/images/sudut-profile-corp/events/creator-bootcamp.jpg",
     price: "Rp.80.000",
     date: "2025-07-20",
     location: "Bandung, Indonesia",
@@ -120,7 +120,7 @@ export const activities = [
     id: 9,
     title: "Food & Lifestyle Festival with Talents",
     slug: "food-lifestyle-festival-with-talents",
-    imageUrl: "/images/talent-management/events/lifestyle-fest.jpg",
+    imageUrl: "/images/sudut-profile-corp/events/lifestyle-fest.jpg",
     price: "Rp.60.000",
     date: "2025-10-18",
     location: "Semarang, Indonesia",
@@ -133,7 +133,7 @@ export const activities = [
     id: 10,
     title: "Sports & Fitness Day with Influencers",
     slug: "sports-fitness-day-with-influencers",
-    imageUrl: "/images/talent-management/events/fitness-day.jpg",
+    imageUrl: "/images/sudut-profile-corp/events/fitness-day.jpg",
     price: "Rp.100.000",
     date: "2025-06-10",
     location: "Surabaya, Indonesia",
@@ -361,7 +361,7 @@ export const activityDetails = {
       address: "Jl. Sudirman, Jakarta",
     },
     tags: ["Workshop", "Acting", "Theater"],
-    heroImage: "/images/talent-management/events/acting-workshop.jpg",
+    heroImage: "/images/sudut-profile-corp/events/acting-workshop.jpg",
   },
 
   "content-creator-bootcamp": {
@@ -389,7 +389,7 @@ export const activityDetails = {
       address: "Jl. Asia Afrika, Bandung",
     },
     tags: ["Training", "Content Creation", "Digital"],
-    heroImage: "/images/talent-management/events/creator-bootcamp.jpg",
+    heroImage: "/images/sudut-profile-corp/events/creator-bootcamp.jpg",
   },
 
   "food-lifestyle-festival-with-talents": {
@@ -417,7 +417,7 @@ export const activityDetails = {
       address: "Jl. Pandanaran, Semarang",
     },
     tags: ["Festival", "Food", "Lifestyle"],
-    heroImage: "/images/talent-management/events/lifestyle-fest.jpg",
+    heroImage: "/images/sudut-profile-corp/events/lifestyle-fest.jpg",
   },
 
   "sports-fitness-day-with-influencers": {
@@ -445,7 +445,7 @@ export const activityDetails = {
       address: "Jl. Indragiri, Surabaya",
     },
     tags: ["Sports", "Fitness", "Influencers"],
-    heroImage: "/images/talent-management/events/fitness-day.jpg",
+    heroImage: "/images/sudut-profile-corp/events/fitness-day.jpg",
   },
 };
 
@@ -470,7 +470,7 @@ export const talents = [
     name: "Hasan Minhaj",
     slug: "hasan-minhaj",
     category: "Comedian",
-    imageUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.webp",
     bio: "An American comedian, writer, and producer, best known for his Netflix show 'Patriot Act' where he blends humor with insightful social and political commentary.",
     socialMedia: {
       instagram: "https://instagram.com/hasanminhaj",
@@ -484,7 +484,7 @@ export const talents = [
     name: "Billie Eilish",
     slug: "billie-eilish",
     category: "Musician",
-    imageUrl: "/images/sudut-profile-corp/talents/billie-eilish.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/billie-eilish.webp",
     bio: "Grammy-winning singer and songwriter known for her unique sound and style, redefining modern pop music on a global scale.",
     socialMedia: {
       instagram: "https://instagram.com/billieeilish",
@@ -512,7 +512,7 @@ export const talents = [
     name: "Emma Stone",
     slug: "emma-stone",
     category: "Actor",
-    imageUrl: "/images/sudut-profile-corp/talents/emma-stone.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/emma-stone.webp",
     bio: "Academy Award-winning actress acclaimed for roles in 'La La Land', 'The Help', and 'Cruella'.",
     socialMedia: {
       instagram: "#",
@@ -526,7 +526,7 @@ export const talents = [
     name: "Trevor Noah",
     slug: "trevor-noah",
     category: "Host",
-    imageUrl: "/images/sudut-profile-corp/talents/trevor-noah.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/trevor-noah.avif",
     bio: "South African comedian and former host of 'The Daily Show', Trevor Noah is celebrated for his sharp humor and insightful perspectives.",
     socialMedia: {
       instagram: "https://instagram.com/trevornoah",
@@ -568,7 +568,7 @@ export const talents = [
     name: "Haruki Murakami",
     slug: "haruki-murakami",
     category: "Writer",
-    imageUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpeg",
     bio: "Internationally acclaimed Japanese author of novels such as 'Norwegian Wood' and 'Kafka on the Shore'.",
     socialMedia: {
       instagram: "#",
@@ -585,7 +585,7 @@ export const talentsDetail = [
     name: "Hasan Minhaj",
     slug: "hasan-minhaj",
     category: "Comedian",
-    imageUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.webp",
     bio: "An American comedian, writer, and producer, best known for his Netflix show 'Patriot Act' where he blends humor with insightful social and political commentary. Through his sharp wit and engaging storytelling, he has addressed topics ranging from global politics to pop culture. His unique style has earned him critical acclaim and a loyal fanbase across the world.",
     socials: {
       instagram: "https://instagram.com/hasanminhaj",
@@ -613,11 +613,11 @@ export const talentsDetail = [
         slug: "hasan-minhaj-comedy-politics",
         excerpt:
           "Hasan Minhaj, komedian Amerika, dikenal lewat 'Patriot Act' yang menggabungkan humor dan komentar sosial. Temukan perjalanan kariernya dan insight unik dari dunia stand-up comedy.",
-        imageUrl: "/images/sudut-profile-corp/blogs/hasan-minhaj.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/hasan-minhaj.jpeg",
         author: {
           name: "Hasan Minhaj",
           role: "Comedian & Writer",
-          avatarUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.jpg",
+          avatarUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.webp",
         },
       },
     ],
@@ -627,7 +627,7 @@ export const talentsDetail = [
     name: "Billie Eilish",
     slug: "billie-eilish",
     category: "Musician",
-    imageUrl: "/images/sudut-profile-corp/talents/billie-eilish.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/billie-eilish.webp",
     bio: "A Grammy-winning singer and songwriter recognized for her innovative sound, blending elements of pop, R&B, and electronic music. She has redefined modern pop with chart-topping hits and genre-defying albums that resonate with audiences worldwide. Known for her bold fashion choices and artistic vision, she continues to influence a new generation of artists and fans.",
     socials: {
       instagram: "https://instagram.com/billieeilish",
@@ -653,11 +653,11 @@ export const talentsDetail = [
         slug: "billie-eilish-rise",
         excerpt:
           "Billie Eilish, penyanyi muda Amerika, mengubah wajah musik pop modern dengan suara uniknya dan estetika kreatif yang khas.",
-        imageUrl: "/images/sudut-profile-corp/blogs/blog2.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/billie-eilish.webp",
         author: {
           name: "Billie Eilish",
           role: "Singer & Songwriter",
-          avatarUrl: "/images/sudut-profile-corp/talents/billie-eilish.jpg",
+          avatarUrl: "/images/sudut-profile-corp/talents/billie-eilish.webp",
         },
       },
     ],
@@ -694,7 +694,7 @@ export const talentsDetail = [
         slug: "banksy-street-art",
         excerpt:
           "Banksy, seniman jalanan Inggris, terkenal karena karya seni provokatif dan kritik sosialnya yang penuh satire.",
-        imageUrl: "/images/sudut-profile-corp/blogs/blog3.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/banksy.webp",
         author: {
           name: "Banksy",
           role: "Street Artist & Activist",
@@ -708,7 +708,7 @@ export const talentsDetail = [
     name: "Emma Stone",
     slug: "emma-stone",
     category: "Actor",
-    imageUrl: "/images/sudut-profile-corp/talents/emma-stone.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/emma-stone.webp",
     bio: "An Academy Award-winning actress acclaimed for her versatile roles in films like 'La La Land', 'The Help', and 'Cruella'. With her natural charisma and emotional depth, she has become one of Hollywood’s most respected talents. Beyond acting, she advocates for mental health awareness and continues to inspire audiences both on and off the screen.",
     socials: {
       instagram: "#",
@@ -736,11 +736,11 @@ export const talentsDetail = [
         slug: "emma-stone-journey",
         excerpt:
           "Emma Stone, aktris pemenang Oscar, menapaki karier dari komedi hingga meraih penghargaan tertinggi di industri film.",
-        imageUrl: "/images/sudut-profile-corp/blogs/blog4.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/emma-stone.avif",
         author: {
           name: "Emma Stone",
           role: "Actress",
-          avatarUrl: "/images/sudut-profile-corp/talents/emma-stone.jpg",
+          avatarUrl: "/images/sudut-profile-corp/talents/emma-stone.webp",
         },
       },
     ],
@@ -750,7 +750,7 @@ export const talentsDetail = [
     name: "Trevor Noah",
     slug: "trevor-noah",
     category: "Host",
-    imageUrl: "/images/sudut-profile-corp/talents/trevor-noah.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/trevor-noah.avif",
     bio: "A South African comedian, writer, and political commentator, Trevor Noah rose to global prominence as the host of 'The Daily Show'. Known for his sharp humor and insightful perspectives, he skillfully blends personal storytelling with global political analysis. His memoir 'Born a Crime' became a bestseller, further cementing his impact as both an entertainer and social voice.",
     socials: {
       instagram: "https://instagram.com/trevornoah",
@@ -775,11 +775,11 @@ export const talentsDetail = [
         slug: "trevor-noah-journey",
         excerpt:
           "Trevor Noah, komedian dan host asal Afrika Selatan, membawa perspektif unik ke kancah global lewat The Daily Show.",
-        imageUrl: "/images/sudut-profile-corp/blogs/blog5.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/trevor-noah.webp",
         author: {
           name: "Trevor Noah",
           role: "Comedian & TV Host",
-          avatarUrl: "/images/sudut-profile-corp/talents/trevor-noah.jpg",
+          avatarUrl: "/images/sudut-profile-corp/talents/trevor-noah.avif",
         },
       },
     ],
@@ -811,7 +811,7 @@ export const talentsDetail = [
         slug: "charli-damelio-genz",
         excerpt:
           "Charli D’Amelio menjadi fenomena TikTok, menginspirasi generasi muda dengan kreativitas dan engagement tinggi di platform video pendek.",
-        imageUrl: "/images/sudut-profile-corp/blogs/blog6.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/charli-damelio.jpg",
         author: {
           name: "Charli D’Amelio",
           role: "TikTok Influencer",
@@ -855,7 +855,7 @@ export const talentsDetail = [
         slug: "misty-copeland-ballet",
         excerpt:
           "Misty Copeland adalah penari balet Amerika yang memecahkan batasan rasial dan menjadi inspirasi generasi baru penari profesional.",
-        imageUrl: "/images/sudut-profile-corp/blogs/blog7.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/misty-copeland.jpg",
         author: {
           name: "Misty Copeland",
           role: "Ballet Dancer",
@@ -869,7 +869,7 @@ export const talentsDetail = [
     name: "Haruki Murakami",
     slug: "haruki-murakami",
     category: "Writer",
-    imageUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpg",
+    imageUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpeg",
     bio: "An internationally acclaimed Japanese author celebrated for his novels such as 'Norwegian Wood' and 'Kafka on the Shore'. His works, often surreal and deeply introspective, blend magical realism with themes of love, memory, and identity. With a dedicated global readership, he has become one of the most influential literary voices of his generation.",
     socials: {
       instagram: "#",
@@ -896,11 +896,11 @@ export const talentsDetail = [
         slug: "haruki-murakami-literature",
         excerpt:
           "Haruki Murakami, penulis Jepang terkenal, memadukan realitas dan surealisme dalam karya-karyanya yang mendunia.",
-        imageUrl: "/images/sudut-profile-corp/blogs/blog8.jpg",
+        imageUrl: "/images/sudut-profile-corp/blogs/haruki-murakami.webp",
         author: {
           name: "Haruki Murakami",
           role: "Author",
-          avatarUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpg",
+          avatarUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpeg",
         },
       },
     ],
@@ -925,11 +925,11 @@ export const blogs = [
     title: "Hasan Minhaj: Mengubah Stand-Up Comedy dengan Politik & Humor",
     excerpt:
       "Hasan Minhaj, komedian Amerika, dikenal lewat 'Patriot Act' yang menggabungkan humor dan komentar sosial. Temukan perjalanan kariernya dan insight unik dari dunia stand-up comedy.",
-    imageUrl: "/images/sudut-profile-corp/blogs/hasan-minhaj.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/hasan-minhaj.jpeg",
     author: {
       name: "Hasan Minhaj",
       role: "Comedian & Writer",
-      avatarUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.jpg",
+      avatarUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.webp",
     },
     slug: "hasan-minhaj-comedy-politics",
   },
@@ -938,11 +938,11 @@ export const blogs = [
     title: "Billie Eilish: Transformasi Musik Pop Global",
     excerpt:
       "Grammy-winning Billie Eilish membawa pop ke level baru dengan suara unik dan gaya khas. Pelajari bagaimana ia membentuk tren musik generasi muda dunia.",
-    imageUrl: "/images/sudut-profile-corp/blogs/billie-eilish.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/billie-eilish.webp",
     author: {
       name: "Billie Eilish",
       role: "Musician",
-      avatarUrl: "/images/sudut-profile-corp/talents/billie-eilish.jpg",
+      avatarUrl: "/images/sudut-profile-corp/talents/billie-eilish.webp",
     },
     slug: "billie-eilish-pop-global",
   },
@@ -951,7 +951,7 @@ export const blogs = [
     title: "Banksy: Seni Jalanan yang Mengubah Perspektif Dunia",
     excerpt:
       "Banksy, seniman anonim Inggris, terkenal dengan karya satir dan kritik sosialnya. Temukan cara Banksy menggunakan seni untuk menyampaikan pesan kuat.",
-    imageUrl: "/images/sudut-profile-corp/blogs/banksy.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/banksy.webp",
     author: {
       name: "Banksy",
       role: "Street Artist",
@@ -964,11 +964,11 @@ export const blogs = [
     title: "Emma Stone: Dari Layar Kaca ke Panggung Oscar",
     excerpt:
       "Aktris pemenang Academy Award Emma Stone memukau lewat perannya di 'La La Land' dan 'Cruella'. Simak perjalanan karier dan tips suksesnya di dunia akting.",
-    imageUrl: "/images/sudut-profile-corp/blogs/emma-stone.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/emma-stone.avif",
     author: {
       name: "Emma Stone",
       role: "Actor",
-      avatarUrl: "/images/sudut-profile-corp/talents/emma-stone.jpg",
+      avatarUrl: "/images/sudut-profile-corp/talents/emma-stone.webp",
     },
     slug: "emma-stone-acting-journey",
   },
@@ -977,11 +977,11 @@ export const blogs = [
     title: "Trevor Noah: Menghubungkan Dunia lewat Komedi",
     excerpt:
       "Trevor Noah, mantan host 'The Daily Show', dikenal karena perspektif tajam dan humornya. Pelajari bagaimana ia membawa komentar sosial ke panggung internasional.",
-    imageUrl: "/images/sudut-profile-corp/blogs/trevor-noah.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/trevor-noah.webp",
     author: {
       name: "Trevor Noah",
       role: "Comedian & Host",
-      avatarUrl: "/images/sudut-profile-corp/talents/trevor-noah.jpg",
+      avatarUrl: "/images/sudut-profile-corp/talents/trevor-noah.avif",
     },
     slug: "trevor-noah-comedy-global",
   },
@@ -1016,11 +1016,11 @@ export const blogs = [
     title: "Haruki Murakami: Menelusuri Dunia Magis & Realitas",
     excerpt:
       "Pengarang Jepang terkenal, Haruki Murakami, menghadirkan kisah surreal dan introspektif. Temukan bagaimana novelnya mempengaruhi pembaca global.",
-    imageUrl: "/images/sudut-profile-corp/blogs/haruki-murakami.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/haruki-murakami.webp",
     author: {
       name: "Haruki Murakami",
       role: "Writer",
-      avatarUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpg",
+      avatarUrl: "/images/sudut-profile-corp/talents/haruki-murakami.jpeg",
     },
     slug: "haruki-murakami-literary-world",
   },
@@ -1032,11 +1032,11 @@ export const blogDetail = [
     title: "Hasan Minhaj: Mengubah Stand-Up Comedy dengan Politik & Humor",
     excerpt:
       "Hasan Minhaj, komedian Amerika, dikenal lewat 'Patriot Act' yang menggabungkan humor dan komentar sosial. Temukan perjalanan kariernya dan insight unik dari dunia stand-up comedy.",
-    imageUrl: "/images/sudut-profile-corp/blogs/hasan-minhaj.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/hasan-minhaj.jpeg",
     author: {
       name: "Hasan Minhaj",
       role: "Comedian & Writer",
-      avatarUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.jpg",
+      avatarUrl: "/images/sudut-profile-corp/talents/hasan-minhaj.webp",
     },
     slug: "hasan-minhaj-comedy-politics",
     content: `
@@ -1064,7 +1064,7 @@ export const blogDetail = [
     title: "Billie Eilish: Transformasi Musik Pop Global",
     excerpt:
       "Grammy-winning Billie Eilish membawa pop ke level baru dengan suara unik dan gaya khas. Pelajari bagaimana ia membentuk tren musik generasi muda dunia.",
-    imageUrl: "/images/sudut-profile-corp/blogs/billie-eilish.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/billie-eilish.webp",
     slug: "billie-eilish-pop-global",
     content: `
       <p>Billie Eilish Pirate Baird O'Connell lahir pada 18 Desember 2001 di Los Angeles. Ia dikenal karena suara vokalnya yang unik, produksi musik inovatif, dan gaya visual khas yang memengaruhi budaya pop global.</p>
@@ -1099,7 +1099,7 @@ export const blogDetail = [
     title: "Banksy: Seni Jalanan yang Mengubah Perspektif Dunia",
     excerpt:
       "Banksy, seniman anonim Inggris, terkenal dengan karya satir dan kritik sosialnya. Temukan cara Banksy menggunakan seni untuk menyampaikan pesan kuat.",
-    imageUrl: "/images/sudut-profile-corp/blogs/banksy.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/banksy.webp",
     slug: "banksy-street-art",
     content: `
       <p>Banksy adalah seniman jalanan anonim asal Inggris, terkenal karena karya satir yang menyoroti isu politik, sosial, dan budaya. Identitasnya tetap menjadi misteri, menambah aura unik pada karya-karyanya.</p>
@@ -1132,7 +1132,7 @@ export const blogDetail = [
     title: "Emma Stone: Dari Layar Kaca ke Panggung Oscar",
     excerpt:
       "Aktris pemenang Academy Award Emma Stone memukau lewat perannya di 'La La Land' dan 'Cruella'. Simak perjalanan karier dan tips suksesnya di dunia akting.",
-    imageUrl: "/images/sudut-profile-corp/blogs/emma-stone.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/emma-stone.avif",
     slug: "emma-stone-acting-journey",
     content: `
       <p>Emma Stone adalah aktris Amerika yang telah memenangkan Academy Award dan dikenal karena kemampuan aktingnya yang ekspresif. Lahir pada 6 November 1988 di Scottsdale, Arizona, ia memulai karier di teater musikal sebelum pindah ke film.</p>
@@ -1163,7 +1163,7 @@ export const blogDetail = [
     title: "Trevor Noah: Menghubungkan Dunia lewat Komedi",
     excerpt:
       "Trevor Noah, mantan host 'The Daily Show', dikenal karena perspektif tajam dan humornya. Pelajari bagaimana ia membawa komentar sosial ke panggung internasional.",
-    imageUrl: "/images/sudut-profile-corp/blogs/trevor-noah.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/trevor-noah.webp",
     slug: "trevor-noah-comedy-global",
     content: `
       <p>Trevor Noah adalah komedian asal Afrika Selatan, mantan host 'The Daily Show', yang dikenal karena kemampuannya menggabungkan humor dan komentar sosial. Lahir di Johannesburg pada 20 Februari 1984, ia menghadapi tantangan kehidupan apartheids yang membentuk perspektifnya.</p>
@@ -1256,7 +1256,7 @@ export const blogDetail = [
     title: "Haruki Murakami: Menelusuri Dunia Magis & Realitas",
     excerpt:
       "Pengarang Jepang terkenal, Haruki Murakami, menghadirkan kisah surreal dan introspektif. Temukan bagaimana novelnya mempengaruhi pembaca global.",
-    imageUrl: "/images/sudut-profile-corp/blogs/haruki-murakami.jpg",
+    imageUrl: "/images/sudut-profile-corp/blogs/haruki-murakami.webp",
     slug: "haruki-murakami-literary-world",
     content: `
       <p>Haruki Murakami adalah penulis Jepang yang terkenal karena novel-novelnya yang surreal, introspektif, dan memadukan realitas dengan dunia magis. Lahir di Kyoto pada 12 Januari 1949, Murakami menjadi salah satu penulis Jepang yang paling berpengaruh di dunia.</p>
@@ -1453,7 +1453,7 @@ export const courseDetail = [
     ],
   },
   {
-    slug: "creative-storytelling",
+    slug: "content-creation-storytelling",
     title: "Creative Storytelling for Content",
     instructor: "Najwa Shihab",
     price: "179.000 IDR",
@@ -1495,7 +1495,7 @@ export const courseDetail = [
     ],
   },
   {
-    slug: "social-media-strategy",
+    slug: "social-media-strategy-for-creatives",
     title: "Social Media Strategy for Talents",
     instructor: "Agnez Mo",
     price: "249.000 IDR",
@@ -1537,7 +1537,7 @@ export const courseDetail = [
     ],
   },
   {
-    slug: "negotiation-for-success",
+    slug: "negotiation-talent-contracts",
     title: "Negotiation Skills for Success",
     instructor: "Ernest Prakasa",
     price: "159.000 IDR",
@@ -1579,7 +1579,7 @@ export const courseDetail = [
     ],
   },
   {
-    slug: "career-management",
+    slug: "career-growth-entertainment-industry",
     title: "Career Management for Talents",
     instructor: "Dian Sastrowardoyo",
     price: "189.000 IDR",
@@ -1617,6 +1617,90 @@ export const courseDetail = [
       {
         q: "Apakah ada panduan praktis?",
         a: "Tentu, terdapat action plan yang bisa langsung diaplikasikan.",
+      },
+    ],
+  },
+  {
+    slug: "wellness-mindset-for-performers",
+    title: "Wellness & Mindset for Performers",
+    instructor: "Ayu Prameswari",
+    price: "249.000 IDR",
+    description:
+      "Discover practical techniques to manage stress, build resilience, and maintain a positive mindset in demanding creative industries.",
+    content: [
+      "Ayu Prameswari adalah seorang psikolog sekaligus performance coach yang berfokus pada kesehatan mental dan mindset untuk para pekerja kreatif.",
+      "Dalam kelas ini, Anda akan mempelajari teknik manajemen stres, cara membangun ketahanan diri, serta strategi menjaga kesehatan mental di industri yang menuntut performa tinggi.",
+      "Kursus ini cocok untuk musisi, aktor, seniman, hingga profesional kreatif yang ingin menjaga keseimbangan antara karier dan kesejahteraan diri.",
+      "Tersedia sesi pembukaan yang bisa Anda akses gratis untuk memahami gambaran materi.",
+    ],
+    curriculum: [
+      {
+        title: "Chapter 1: Understanding Stress",
+        items: ["Mengenali sumber stres & dampaknya pada performa"],
+      },
+      {
+        title: "Chapter 2: Resilience Building",
+        items: ["Teknik membangun daya tahan mental"],
+      },
+      {
+        title: "Chapter 3: Mindset Practices",
+        items: ["Latihan mindfulness & positive thinking"],
+      },
+      {
+        title: "Chapter 4: Daily Wellness Routine",
+        items: ["Rutinitas sehat untuk performa jangka panjang"],
+      },
+    ],
+    faqs: [
+      {
+        q: "Apakah kelas ini perlu pengalaman sebelumnya?",
+        a: "Tidak, kelas ini terbuka untuk semua level.",
+      },
+      {
+        q: "Apakah ada latihan praktis?",
+        a: "Ya, terdapat latihan yang bisa langsung dipraktikkan sehari-hari.",
+      },
+    ],
+  },
+  {
+    slug: "networking-collaboration-mastery",
+    title: "Networking & Collaboration Mastery",
+    instructor: "Bima Prakoso",
+    price: "279.000 IDR",
+    description:
+      "Build strong professional relationships, find collaborators, and expand your network to accelerate your growth as a talent.",
+    content: [
+      "Bima Prakoso adalah seorang entrepreneur kreatif dan mentor networking dengan pengalaman lebih dari 12 tahun membangun kolaborasi lintas industri.",
+      "Dalam kelas ini, Anda akan belajar strategi membangun jaringan profesional, cara menemukan kolaborator yang tepat, dan etika networking yang efektif.",
+      "Kursus ini sangat cocok bagi Anda yang ingin memperluas peluang kerja, memperkuat personal branding, dan mempercepat perkembangan karier.",
+      "Tersedia video preview gratis untuk melihat metode pengajaran sebelum membeli.",
+    ],
+    curriculum: [
+      {
+        title: "Chapter 1: Networking Fundamentals",
+        items: ["Dasar-dasar membangun koneksi profesional"],
+      },
+      {
+        title: "Chapter 2: Finding the Right Collaborators",
+        items: ["Strategi menemukan partner kolaborasi yang tepat"],
+      },
+      {
+        title: "Chapter 3: Communication & Follow-up",
+        items: ["Teknik komunikasi & menjaga hubungan jangka panjang"],
+      },
+      {
+        title: "Chapter 4: Expanding Your Network",
+        items: ["Mengembangkan jaringan secara berkelanjutan"],
+      },
+    ],
+    faqs: [
+      {
+        q: "Apakah kelas ini cocok untuk pemula?",
+        a: "Ya, materi dirancang agar mudah dipahami oleh semua level.",
+      },
+      {
+        q: "Apakah ada contoh studi kasus?",
+        a: "Benar, kelas ini menyertakan studi kasus kolaborasi sukses dari berbagai industri.",
       },
     ],
   },

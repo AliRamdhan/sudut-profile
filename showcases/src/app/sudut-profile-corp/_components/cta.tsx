@@ -11,14 +11,14 @@ const Cta = () => {
           <h2 className="text-foreground text-4xl md:text-5xl lg:text-[68px] font-bold tracking-tighter max-w-3xl">
             SUDUT CORP
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base font-medium leading-[18.20px] md:leading-relaxed break-words max-w-2xl">
+          <p className="max-w-xs md:max-w-2xl text-muted-foreground text-sm md:text-base font-medium leading-[18.20px] md:leading-relaxed break-words">
             Build trust with potential customers, partners, and investors by
             showcasing a modern, fast, and mobile-friendly company profile
             website that reflects your professionalism.
           </p>
         </div>
-        <div className="max-w-2xl space-y-8">
-          <div className="flex justify-center items-center gap-x-8">
+        <div className="max-w-xs md:max-w-2xl  space-y-8">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-x-8">
             <TransitionLink
               href="https://vercel.com/home"
               target="_blank"

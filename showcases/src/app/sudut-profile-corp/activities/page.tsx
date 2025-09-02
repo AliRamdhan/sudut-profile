@@ -27,7 +27,7 @@ const Page = () => {
             Activities
           </Badge>
           <h1 className="max-w-3xl text-6xl font-bold text-gray-900 uppercase tracking-tighter">
-            Our Activities (2025)
+            Our Activities
           </h1>
           <p className="mt-2 text-gray-500 italic">
             Explore events and programs that bring our community together and
