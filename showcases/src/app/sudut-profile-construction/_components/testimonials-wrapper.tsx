@@ -55,7 +55,7 @@ export function Testimonials() {
           <Card className="max-w-2xl w-full p-8 text-left bg-gray-50 border-none shadow-none relative">
             <CardContent className="p-0">
               <Quote className="w-10 h-10 text-gray-400 mb-4" />
-              <p className="h-36 text-lg text-gray-800 mb-6">{currentTestimonial.quote}</p>
+              <p className="h-full lg:h-36 text-lg text-gray-800 mb-6">{currentTestimonial.quote}</p>
               <div className="font-semibold text-gray-900">{currentTestimonial.name}</div>
               <div className="text-gray-600 text-sm">{currentTestimonial.title}</div>
             </CardContent>

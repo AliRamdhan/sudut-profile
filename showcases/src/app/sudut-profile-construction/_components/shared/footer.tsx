@@ -13,7 +13,7 @@ export function Footer() {
             className="flex items-center gap-2 text-xl font-bold text-white"
           >
             <Building className="w-7 h-7" />
-            Struktura
+            Sudut Profile Constructions
           </Link>
           <p className="text-sm">Building Your Vision with Precision</p>
           <div className="space-y-2">
@@ -49,12 +49,17 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#" className="hover:text-white">
-                  Portfolio
+                  Works
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white">
                   Services
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Products
                 </Link>
               </li>
             </ul>
@@ -96,15 +101,15 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <span>Tegal, Indonesia</span>
+              <span>Jakarta, Indonesia</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              <span>+1 0239 0310</span>
+              <span>(+62) 0239 0310</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <span>support@struktura.com</span>
+              <span>support@construction.com</span>
             </li>
           </ul>
           <div className="flex space-x-4 pt-4">
@@ -176,25 +181,9 @@ export function Footer() {
         </div>
       </div>
       <div className="container mx-auto px-4 md:px-8 text-center text-xs text-gray-500 mt-12 pt-6 border-t border-gray-800 flex justify-between items-center">
-        <span>&copy; Copyright 2023 Struktura</span>
-        <span className="flex items-center gap-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-framer"
-          >
-            <path d="M12 6V2l8 4-8 4V6z" />
-            <path d="M12 18V14l8 4-8 4V18z" />
-            <path d="M12 12L4 8l8-4 8 4-8 4z" />
-          </svg>
-          Made in Framer
+        <span>
+          &copy; Copyright {new Date().getFullYear()} Sudut Profile
+          Constructions
         </span>
       </div>
     </footer>
