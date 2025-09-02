@@ -13,8 +13,10 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Button } from "@/components/ui/button";
 import TransitionLink from "@/components/shared/transition-link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -39,33 +41,53 @@ const Header = () => {
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2">
           <div className="rounded-full px-1 py-1 backdrop-blur-md bg-background/80 border border-border shadow-lg">
-            <ToggleGroup type="single">
-              <ToggleGroupItem value="home">
+            <ToggleGroup type="single" value={pathname}>
+              <ToggleGroupItem
+                value="/sudut-profile-corp"
+                asChild
+                className="px-3 py-1.5 rounded-full transition-colors hover:bg-muted data-[state=on]:bg-muted"
+              >
                 <TransitionLink href="/sudut-profile-corp">
                   <CircleDot size={16} className="inline-block mr-1.5" /> Home
                 </TransitionLink>
               </ToggleGroupItem>
 
-              <ToggleGroupItem value="activities">
+              <ToggleGroupItem
+                value="/sudut-profile-corp/activities"
+                asChild
+                className="px-3 py-1.5 rounded-full transition-colors hover:bg-muted data-[state=on]:bg-muted"
+              >
                 <TransitionLink href="/sudut-profile-corp/activities">
                   <Activity size={16} className="inline-block mr-1.5" />{" "}
                   Activities
                 </TransitionLink>
               </ToggleGroupItem>
 
-              <ToggleGroupItem value="talents">
+              <ToggleGroupItem
+                value="/sudut-profile-corp/talents"
+                asChild
+                className="px-3 py-1.5 rounded-full transition-colors hover:bg-muted data-[state=on]:bg-muted"
+              >
                 <TransitionLink href="/sudut-profile-corp/talents">
                   <Users size={16} className="inline-block mr-1.5" /> Talents
                 </TransitionLink>
               </ToggleGroupItem>
 
-              <ToggleGroupItem value="blogs">
+              <ToggleGroupItem
+                value="/sudut-profile-corp/blogs"
+                asChild
+                className="px-3 py-1.5 rounded-full transition-colors hover:bg-muted data-[state=on]:bg-muted"
+              >
                 <TransitionLink href="/sudut-profile-corp/blogs">
                   <BookA size={16} className="inline-block mr-1.5" /> Blogs
                 </TransitionLink>
               </ToggleGroupItem>
 
-              <ToggleGroupItem value="courses">
+              <ToggleGroupItem
+                value="/sudut-profile-corp/courses"
+                asChild
+                className="px-3 py-1.5 rounded-full transition-colors hover:bg-muted data-[state=on]:bg-muted"
+              >
                 <TransitionLink href="/sudut-profile-corp/courses">
                   <GraduationCap size={16} className="inline-block mr-1.5" />{" "}
                   Courses
