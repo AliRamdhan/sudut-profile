@@ -6,23 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import TransitionLink from "@/components/shared/transition-link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { blogDetail } from "../../_lib/data";
-
-const recommendedPosts = [
-  {
-    title:
-      "The Power of Typography in Visual Design: Enhancing Communication and Impact",
-    date: "May 5, 2023",
-    image: "/images/sudut-profile-design-corp/design-1.jpg",
-    slug: "typography-power",
-  },
-  {
-    title: "Mastering the Art of Color Theory: A Visual Designer's Guide",
-    date: "May 5, 2023",
-    image: "/images/sudut-profile-design-corp/design-2.jpg",
-    slug: "color-theory-guide",
-  },
-];
+import { blogDetail, blogPosts } from "../../_lib/data";
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogDetail[params.slug as keyof typeof blogDetail];
@@ -113,26 +97,26 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {recommendedPosts.map((recommendedPost, index) => (
+            {blogPosts.map((blog, index) => (
               <TransitionLink
                 key={index}
-                href={`/sudut-profile-design-corp/articles/${recommendedPost.slug}`}
+                href={`/sudut-profile-design-corp/articles/${blog.slug}`}
                 className="group cursor-pointer"
               >
                 <div className="flex gap-4">
                   <Image
-                    src={recommendedPost.image || "/placeholder.svg"}
-                    alt={recommendedPost.title}
+                    src={blog.image || "/placeholder.svg"}
+                    alt={blog.title}
                     width={1024}
                     height={1024}
                     className="w-24 h-24 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="flex-1">
                     <h3 className="font-bold mb-2 leading-tight group-hover:text-gray-600 transition-colors">
-                      {recommendedPost.title}
+                      {blog.title}
                     </h3>
                     <p className="text-gray-500 text-sm">
-                      {recommendedPost.date}
+                      {blog.date}
                     </p>
                   </div>
                 </div>
