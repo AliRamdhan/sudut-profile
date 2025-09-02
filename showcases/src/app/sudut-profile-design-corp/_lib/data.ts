@@ -426,12 +426,12 @@ export const worksDetail = {
   },
 };
 
-export const featuredPost = {
+export const featuredBlogPost = {
   title: "Minimalism in Branding: Crafting Timeless Visual Identities",
   slug: "minimalism-in-branding",
   excerpt:
     "In an era where brands compete for attention, minimalism has proven to be a powerful approach for creating timeless and memorable identities that resonate with audiences.",
-  image: "/images/sudut-profile-design-corp/branding-minimalism.jpg",
+  image: "/images/sudut-profile-design-corp/insights/branding-minimalism.jpg",
 };
 
 export const blogPosts = [
@@ -440,7 +440,7 @@ export const blogPosts = [
       "Typography that Speaks: Building Stronger Brand Voices Through Type",
     excerpt:
       "Typography is more than style—it’s a voice. Learn how Sudut Design Corp uses typography to establish brand character, enhance readability, and build emotional connections.",
-    image: "/images/sudut-profile-design-corp/typography.jpg",
+    image: "/images/sudut-profile-design-corp/insights/typography.jpg",
     date: "June 12, 2024",
     slug: "typography-brand-voice",
   },
@@ -448,7 +448,7 @@ export const blogPosts = [
     title: "Human-Centered UX: Designing Digital Products That People Love",
     excerpt:
       "Discover Sudut Design Corp’s approach to user experience—balancing aesthetics with functionality to create digital products that people trust and enjoy using daily.",
-    image: "/images/sudut-profile-design-corp/ux-design.jpg",
+    image: "/images/sudut-profile-design-corp/insights/ux-design.jpg",
     date: "June 5, 2024",
     slug: "human-centered-ux",
   },
@@ -456,7 +456,7 @@ export const blogPosts = [
     title: "Color Strategy in Branding: Beyond Aesthetics",
     excerpt:
       "Colors do more than decorate—they persuade. Explore how Sudut Design Corp applies color psychology and strategy to craft visual systems that align with brand goals.",
-    image: "/images/sudut-profile-design-corp/color-strategy.jpg",
+    image: "/images/sudut-profile-design-corp/insights/color-strategy.jpg",
     date: "May 28, 2024",
     slug: "color-strategy-branding",
   },
@@ -514,7 +514,7 @@ export const blogDetail = {
   "minimalism-in-branding": {
     title: "Minimalism in Branding: Crafting Timeless Visual Identities",
     date: "June 10, 2025",
-    image: "/images/sudut-profile-design-corp/branding-minimalism.jpg",
+    image: "/images/sudut-profile-design-corp/insights/branding-minimalism.jpg",
     content: {
       intro:
         "Minimalism in branding isn’t about stripping everything away—it’s about focusing on clarity, purpose, and timeless design. By removing distractions and highlighting what matters most, minimalistic branding creates strong, enduring impressions that cut through today’s cluttered market.",
@@ -553,7 +553,7 @@ export const blogDetail = {
     title:
       "Typography that Speaks: Building Stronger Brand Voices Through Type",
     date: "June 12, 2024",
-    image: "/images/sudut-profile-design-corp/typography.jpg",
+    image: "/images/sudut-profile-design-corp/insights/typography.jpg",
     content: {
       intro:
         "Typography is more than just choosing fonts—it is a brand’s voice. At Sudut Design Corp, we use typography to communicate brand personality, establish hierarchy, and build trust with audiences. This article explores typography fundamentals and the strategies we apply when building brand identities.",
@@ -587,7 +587,7 @@ export const blogDetail = {
   "human-centered-ux": {
     title: "Human-Centered UX: Designing Digital Products That People Love",
     date: "June 5, 2024",
-    image: "/images/sudut-profile-design-corp/ux-design.jpg",
+    image: "/images/sudut-profile-design-corp/insights/ux-design.jpg",
     content: {
       intro:
         "Great UX is invisible. At Sudut Design Corp, we believe that design should feel natural, intuitive, and enjoyable. This article explores our human-centered approach to UX and how it translates into products people love.",
@@ -621,7 +621,7 @@ export const blogDetail = {
   "color-strategy-branding": {
     title: "Color Strategy in Branding: Beyond Aesthetics",
     date: "May 28, 2024",
-    image: "/images/sudut-profile-design-corp/color-strategy.jpg",
+    image: "/images/sudut-profile-design-corp/insights/color-strategy.jpg",
     content: {
       intro:
         "Colors are not just decoration—they are psychology and strategy. Sudut Design Corp uses color systems to influence perception, guide decisions, and strengthen brand presence. This article explores how color shapes brand identity.",
@@ -655,7 +655,7 @@ export const blogDetail = {
   "visual-hierarchy-psychology": {
     title: "The Psychology of Visual Hierarchy in Modern Websites",
     date: "May 18, 2024",
-    image: "/images/sudut-profile-design-corp/visual-hierarchy.jpg",
+    image: "/images/sudut-profile-design-corp/insights/visual-hierarchy.png",
     content: {
       intro:
         "Visual hierarchy is the backbone of effective digital design. At Sudut Design Corp, we apply psychological principles to guide users’ eyes, highlight priorities, and create seamless browsing experiences. This article explores how hierarchy enhances clarity and engagement.",
@@ -689,7 +689,7 @@ export const blogDetail = {
   "accessible-design-systems": {
     title: "Accessible Design Systems for Inclusive Digital Products",
     date: "May 10, 2024",
-    image: "/images/sudut-profile-design-corp/accessible-design.jpg",
+    image: "/images/sudut-profile-design-corp/insights/accessible-design.png",
     content: {
       intro:
         "Accessibility is no longer optional—it’s essential. Sudut Design Corp builds inclusive design systems that allow everyone to interact with digital products, regardless of ability. This article highlights key principles and best practices.",
@@ -723,7 +723,7 @@ export const blogDetail = {
   "motion-design-storytelling": {
     title: "Motion Design as a Storytelling Tool",
     date: "April 30, 2024",
-    image: "/images/sudut-profile-design-corp/motion-design.jpg",
+    image: "/images/sudut-profile-design-corp/insights/motion-design.webp",
     content: {
       intro:
         "Motion design has evolved from decoration to a storytelling tool. At Sudut Design Corp, we use animation and micro-interactions to guide users, evoke emotion, and bring brands to life.",
@@ -757,7 +757,7 @@ export const blogDetail = {
   "ai-driven-design": {
     title: "AI-Driven Design: Balancing Automation and Human Creativity",
     date: "July 22, 2024",
-    image: "/images/sudut-profile-design-corp/ai-design.jpg",
+    image: "/images/sudut-profile-design-corp/insights/ai-design.png",
     content: {
       intro:
         "Artificial Intelligence is rapidly transforming design workflows, from generating layouts to suggesting color palettes. At Sudut Design Corp, we see AI not as a replacement, but as a tool that empowers creativity and efficiency. This insight explores the balance between automation and human intuition in design.",
@@ -786,7 +786,7 @@ export const blogDetail = {
   "sustainable-branding": {
     title: "Sustainable Branding: Designing with Purpose and Responsibility",
     date: "July 15, 2024",
-    image: "/images/sudut-profile-design-corp/sustainable-branding.jpg",
+    image: "/images/sudut-profile-design-corp/insights/sustainable-branding.jpg",
     content: {
       intro:
         "Today’s consumers demand more than aesthetics—they want brands that act responsibly. Sudut Design Corp integrates sustainability into branding strategies to create identities that inspire trust and reflect ethical values.",
@@ -815,7 +815,7 @@ export const blogDetail = {
   "future-of-web": {
     title: "The Future of Web Design: Adaptive, Immersive, and Human-Centered",
     date: "July 8, 2024",
-    image: "/images/sudut-profile-design-corp/future-web.jpg",
+    image: "/images/sudut-profile-design-corp/insights/future-web.webp",
     content: {
       intro:
         "Web design is evolving beyond static layouts into adaptive, immersive, and human-centered experiences. Sudut Design Corp explores upcoming trends shaping the future of digital interfaces.",

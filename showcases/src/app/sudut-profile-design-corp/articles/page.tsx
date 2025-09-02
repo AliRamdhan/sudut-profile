@@ -10,7 +10,7 @@ import {
   latestInsights,
   additionalInsights,
   blogPosts,
-  featuredPost,
+  featuredBlogPost,
 } from "../_lib/data";
 const Page = () => {
   const [showMore, setShowMore] = useState(false);
@@ -38,7 +38,7 @@ const Page = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative mb-20">
               <Image
-                src={featuredPost.image || "/placeholder.svg"}
+                src={featuredBlogPost.image || "/placeholder.svg"}
                 alt="Aerial view of Kuara Resort in Southern Lombok"
                 width={1024}
                 height={1024}
@@ -47,13 +47,13 @@ const Page = () => {
             </div>
             <div>
               <h3 className="text-3xl font-bold mb-4 leading-tight">
-                {featuredPost.title}
+                {featuredBlogPost.title}
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                {featuredPost.excerpt}
+                {featuredBlogPost.excerpt}
               </p>
               <TransitionLink
-                href={`articles/${featuredPost.slug}`}
+                href={`articles/${featuredBlogPost.slug}`}
                 className="inline-flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
               >
                 <Button
