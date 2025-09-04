@@ -1,15 +1,17 @@
 "use client"
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
-import TransitionLink from "@/components/shared/transition-link";
+import React, { useState } from "react"
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import TransitionLink from "@/components/shared/transition-link"
+import { Button } from "@/components/ui/button"
+
 const SliderService = () => {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [loaded, setLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
@@ -34,199 +36,183 @@ const SliderService = () => {
       },
     },
     slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
+      setCurrentSlide(slider.track.details.rel)
     },
     created() {
-      setLoaded(true);
+      setLoaded(true)
     },
-  });
+  })
+
   return (
     <section
       id="solutions"
-      className="w-full py-12 md:py-24 bg-gray-50"
+      className="w-full px-4 md:px-10 py-16 md:py-24 bg-gradient-to-br from-slate-50 to-slate-100"
     >
-      <div className="w-full px-4 md:px-8 text-center">
-        <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide relative group overflow-hidden rounded-xl shadow-lg">
+      <div className="w-full max-w-7xl mx-auto text-center">
+        <div ref={sliderRef} className="keen-slider mb-8">
+          <div className="keen-slider__slide relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <Image
               src="/images/construction/construction-solutions-1.jpg"
               alt="Design and Planning Services"
               width={600}
               height={400}
-              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-xl font-semibold text-white mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 text-balance">
                 Design and Planning Services
               </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Our expert design and planning services ensure meticulous
-                execution
+              <p className="text-slate-200 text-sm md:text-base mb-6 leading-relaxed">
+                Our expert design and planning services ensure meticulous execution
               </p>
               <TransitionLink
                 href="#"
-                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+                className="flex items-center text-white hover:text-emerald-300 text-sm md:text-base font-medium transition-colors duration-300 group/link"
               >
                 Learn more
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1" />
               </TransitionLink>
             </div>
           </div>
-          <div className="keen-slider__slide relative group overflow-hidden rounded-xl shadow-lg">
+          <div className="keen-slider__slide relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <Image
               src="/images/construction/construction-solutions-2.jpg"
               alt="Construction and Building"
               width={600}
               height={400}
-              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Construction and Building
-              </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                From groundbreaking to the finishing touches, we bring your
-                vision to life with precision.
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 text-balance">Construction and Building</h3>
+              <p className="text-slate-200 text-sm md:text-base mb-6 leading-relaxed">
+                From groundbreaking to the finishing touches, we bring your vision to life with precision.
               </p>
               <TransitionLink
                 href="#"
-                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+                className="flex items-center text-white hover:text-emerald-300 text-sm md:text-base font-medium transition-colors duration-300 group/link"
               >
                 Learn more
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1" />
               </TransitionLink>
             </div>
           </div>
-          <div className="keen-slider__slide relative group overflow-hidden rounded-xl shadow-lg">
+          <div className="keen-slider__slide relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <Image
               src="/images/construction/construction-solutions-3.jpg"
               alt="Renovation and Remodeling"
               width={600}
               height={400}
-              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Renovation and Remodeling
-              </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Enhance existing spaces or rejuvenate structures with tailored
-                solutions
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 text-balance">Renovation and Remodeling</h3>
+              <p className="text-slate-200 text-sm md:text-base mb-6 leading-relaxed">
+                Enhance existing spaces or rejuvenate structures with tailored solutions
               </p>
               <TransitionLink
                 href="#"
-                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+                className="flex items-center text-white hover:text-emerald-300 text-sm md:text-base font-medium transition-colors duration-300 group/link"
               >
                 Learn more
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1" />
               </TransitionLink>
             </div>
           </div>
-          <div className="keen-slider__slide relative group overflow-hidden rounded-xl shadow-lg">
+          <div className="keen-slider__slide relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <Image
               src="/images/construction/construction-solutions-1.jpg"
               alt="Design and Planning Services"
               width={600}
               height={400}
-              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-xl font-semibold text-white mb-2">
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 text-balance">
                 Design and Planning Services
               </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Our expert design and planning services ensure meticulous
-                execution
+              <p className="text-slate-200 text-sm md:text-base mb-6 leading-relaxed">
+                Our expert design and planning services ensure meticulous execution
               </p>
               <TransitionLink
                 href="#"
-                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+                className="flex items-center text-white hover:text-emerald-300 text-sm md:text-base font-medium transition-colors duration-300 group/link"
               >
                 Learn more
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1" />
               </TransitionLink>
             </div>
           </div>
-          <div className="keen-slider__slide relative group overflow-hidden rounded-xl shadow-lg">
+          <div className="keen-slider__slide relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <Image
               src="/images/construction/construction-solutions-2.jpg"
               alt="Construction and Building"
               width={600}
               height={400}
-              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Construction and Building
-              </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                From groundbreaking to the finishing touches, we bring your
-                vision to life with precision.
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 text-balance">Construction and Building</h3>
+              <p className="text-slate-200 text-sm md:text-base mb-6 leading-relaxed">
+                From groundbreaking to the finishing touches, we bring your vision to life with precision.
               </p>
               <TransitionLink
                 href="#"
-                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+                className="flex items-center text-white hover:text-emerald-300 text-sm md:text-base font-medium transition-colors duration-300 group/link"
               >
                 Learn more
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1" />
               </TransitionLink>
             </div>
           </div>
-          <div className="keen-slider__slide relative group overflow-hidden rounded-xl shadow-lg">
+          <div className="keen-slider__slide relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500">
             <Image
               src="/images/construction/construction-solutions-3.jpg"
               alt="Renovation and Remodeling"
               width={600}
               height={400}
-              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-64 lg:h-[64vh] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex flex-col justify-end p-6">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Renovation and Remodeling
-              </h3>
-              <p className="text-gray-300 text-sm mb-4">
-                Enhance existing spaces or rejuvenate structures with tailored
-                solutions
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 text-balance">Renovation and Remodeling</h3>
+              <p className="text-slate-200 text-sm md:text-base mb-6 leading-relaxed">
+                Enhance existing spaces or rejuvenate structures with tailored solutions
               </p>
               <TransitionLink
                 href="#"
-                className="flex items-center text-white hover:text-gray-300 text-sm font-medium"
+                className="flex items-center text-white hover:text-emerald-300 text-sm md:text-base font-medium transition-colors duration-300 group/link"
               >
                 Learn more
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1" />
               </TransitionLink>
             </div>
           </div>
         </div>
         {loaded && instanceRef.current && (
-          <div className="flex justify-start items-center gap-x-4 mt-4">
-            <button
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
+          <div className="flex justify-start items-center gap-x-3">
+            <Button
+              onClick={() => instanceRef.current?.prev()}
               disabled={currentSlide === 0}
-              className="bg-white border border-gray-300 shadow-xl p-5 rounded-full text-black"
+              variant="outline"
+              size="icon"
+              className="h-12 w-12 rounded-full border-slate-200 bg-white/80 backdrop-blur-sm text-slate-600 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all duration-300 shadow-lg disabled:opacity-50"
             >
-              <ChevronLeft />
-            </button>
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
 
-            <button
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
-              disabled={
-                currentSlide ===
-                instanceRef.current.track.details.slides.length - 1
-              }
-              className="bg-white border border-gray-300 shadow-xl p-5 rounded-full text-black"
+            <Button
+              onClick={() => instanceRef.current?.next()}
+              disabled={currentSlide === instanceRef.current.track.details.slides.length - 1}
+              variant="outline"
+              size="icon"
+              className="h-12 w-12 rounded-full border-slate-200 bg-white/80 backdrop-blur-sm text-slate-600 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all duration-300 shadow-lg disabled:opacity-50"
             >
-              <ChevronRight />
-            </button>
+              <ChevronRight className="h-5 w-5" />
+            </Button>
           </div>
         )}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SliderService;
+export default SliderService

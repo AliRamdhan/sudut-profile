@@ -1,64 +1,22 @@
-"use client";
+"use client"
 
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Image from "next/image";
-
-const testimonials = [
-  {
-    id: 1,
-    content:
-      "This service transformed our approach to client engagement! The results exceeded our expectations and the team couldn't be happier with the outcome.",
-    author: "Alex Rodriguez",
-    role: "Marketing Director",
-    company: "TechFlow Solutions",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-  },
-  {
-    id: 2,
-    content:
-      "An indispensable tool for our daily operations. It streamlined our workflow and increased productivity by 40%. Highly recommend to any growing business.",
-    author: "Jamie Thompson",
-    role: "Operations Manager",
-    company: "InnovateCorp",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-  },
-  {
-    id: 3,
-    content:
-      "Innovative and user-friendly, a game changer! The interface is intuitive and the support team is incredibly responsive. Best investment we've made.",
-    author: "Morgan Lee",
-    role: "CEO",
-    company: "StartupHub",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-  },
-  {
-    id: 4,
-    content:
-      "Outstanding results from day one. The platform helped us scale our operations efficiently while maintaining quality. Couldn't ask for more.",
-    author: "Sarah Chen",
-    role: "Product Manager",
-    company: "GrowthLabs",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-  },
-];
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import { useState } from "react"
+import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Image from "next/image"
+import { testimonials } from "../lib/data"
 
 export function Testimonials() {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false)
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     created() {
-      setLoaded(true);
+      setLoaded(true)
     },
     loop: true,
     mode: "free-snap",
@@ -80,7 +38,7 @@ export function Testimonials() {
         },
       },
     },
-  });
+  })
 
   return (
     <section className="relative w-full h-screen">
@@ -91,52 +49,46 @@ export function Testimonials() {
         className="object-cover object-center"
         priority
       />
-      <div className="absolute w-full h-full bg-gradient-to-t from-gray-800/80 to-transparent mx-auto p-8">
-        <div className="w-full h-full flex justify-start items-center px-20">
+      <div className="absolute inset-0 bg-slate-900/60"></div>
+      <div className="absolute w-full h-full bg-gradient-to-t from-slate-900/95 via-emerald-900/70 to-slate-800/80 mx-auto p-8">
+        <div className="w-full h-full flex justify-start items-center px-8 md:px-16 lg:px-28">
           <div className="max-w-7xl">
             {/* Header */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 font-sans">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-sans">
                 Why Our Clients Trust Us
-              </h2>
-              <p className="text-xl text-gray-100 max-w-2xl mx-auto font-sans">
-                Genuine experiences from partners and investors who have
-                achieved growth and success through our developments and
-                strategic opportunities.
+                </h2>
+              <p className="text-xl md:text-2xl text-slate-100 max-w-3xl mx-auto font-sans leading-relaxed">
+                Genuine experiences from partners and investors who have achieved growth and success through our
+                developments and strategic opportunities.
               </p>
             </div>
 
             {/* Slider Container */}
-            <div className="w-full flex flex-col justify-center items-center space-y-4">
+            <div className="w-full flex flex-col justify-center items-center space-y-8">
               <div className="max-w-5xl">
                 <div ref={sliderRef} className="keen-slider">
                   {testimonials.map((testimonial) => (
                     <div key={testimonial.id} className="keen-slider__slide">
-                      <Card className="h-full bg-white/50 backdrop-blur-md border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+                      <Card className="h-full bg-white/95 backdrop-blur-md border-emerald-500/20 shadow-2xl hover:shadow-3xl hover:border-emerald-400/40 transition-all duration-300 rounded-2xl">
                         <CardContent className="p-8">
                           {/* Rating Stars */}
                           <div className="flex gap-1 mb-6">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className="w-5 h-5 fill-yellow-600 text-yellow-600"
-                              />
+                              <Star key={i} className="w-6 h-6 fill-emerald-500 text-emerald-500" />
                             ))}
                           </div>
 
                           {/* Testimonial Content */}
-                          <blockquote className="text-lg text-foreground mb-8 leading-relaxed font-sans">
+                          <blockquote className="text-lg text-slate-800 mb-8 leading-relaxed font-sans">
                             &apos;{testimonial.content}&apos;
                           </blockquote>
 
                           {/* Author Info */}
                           <div className="flex items-center gap-4">
                             <Avatar className="w-12 h-12">
-                              <AvatarImage
-                                src={testimonial.avatar || "/placeholder.svg"}
-                                alt={testimonial.author}
-                              />
-                              <AvatarFallback className="bg-black text-white font-semibold">
+                              <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.author} />
+                              <AvatarFallback className="bg-emerald-600 text-white font-semibold">
                                 {testimonial.author
                                   .split(" ")
                                   .map((n) => n[0])
@@ -144,10 +96,8 @@ export function Testimonials() {
                               </AvatarFallback>
                             </Avatar>
                             <div>
-                              <div className="font-semibold text-foreground font-sans">
-                                {testimonial.author}
-                              </div>
-                              <div className="text-sm text-gray-800 font-sans">
+                              <div className="font-semibold text-slate-900 font-sans">{testimonial.author}</div>
+                              <div className="text-sm text-slate-600 font-sans">
                                 {testimonial.role} at {testimonial.company}
                               </div>
                             </div>
@@ -166,7 +116,7 @@ export function Testimonials() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-black hover:text-white hover:border-black transition-all duration-200 shadow-lg"
+                      className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm border-emerald-500/30 text-emerald-600 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-200 shadow-xl"
                       onClick={() => instanceRef.current?.prev()}
                     >
                       <ChevronLeft className="w-5 h-5" />
@@ -174,7 +124,7 @@ export function Testimonials() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-black hover:text-white hover:border-black transition-all duration-200 shadow-lg"
+                      className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm border-slate-700/30 text-slate-700 hover:bg-slate-700 hover:text-white hover:border-slate-700 transition-all duration-200 shadow-xl"
                       onClick={() => instanceRef.current?.next()}
                     >
                       <ChevronRight className="w-5 h-5" />
@@ -187,5 +137,5 @@ export function Testimonials() {
         </div>
       </div>
     </section>
-  );
+  )
 }
