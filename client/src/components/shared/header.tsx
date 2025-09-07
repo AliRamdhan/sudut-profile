@@ -46,6 +46,12 @@ export function Header() {
             About
           </TransitionLink>
           <TransitionLink
+            href="/h/success-stories"
+            className="hover:text-neutral-300 transition-colors"
+          >
+            Success Stories
+          </TransitionLink>
+          <TransitionLink
             href="/h/contacts"
             className="hover:text-neutral-300 transition-colors"
           >
@@ -95,9 +101,15 @@ export function Header() {
               <TransitionLink
                 href="/h#about"
                 className="hover:text-neutral-300 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
+              </TransitionLink>
+              <TransitionLink
+                href="/h/success-stories"
+                className="hover:text-neutral-300 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Success Stories
               </TransitionLink>
               <TransitionLink
                 href="/h/contacts"
