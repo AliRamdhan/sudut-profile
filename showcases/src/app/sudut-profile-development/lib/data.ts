@@ -41,15 +41,6 @@ export const testimonials = [
   },
 ]
 
-export const stats = [
-  { value: 150, suffix: "+", prefix: "", label: "Projects Completed" },
-  { value: 98, suffix: "%", prefix: "", label: "Client Satisfaction" },
-  { value: 25, suffix: "+", prefix: "", label: "Years Experience" },
-  { value: 500, suffix: "+", prefix: "", label: "Happy Clients" },
-  { value: 50, suffix: "+", prefix: "", label: "Team Members" },
-  { value: 15, suffix: "+", prefix: "", label: "Awards Won" },
-]
-
 export const portfolioFrames = [
   {
     id: 1,
@@ -98,45 +89,74 @@ export const portfolioFrames = [
 export const news = [
   {
     id: "kuara-resort-launch",
+    slug: "kuara-resort-launch",
     title: "Mirah Investment & Development Achieves Key Milestone...",
     date: "June 24, 2025",
+    author: "Sarah Johnson",
+    publication: "Property Development Today",
     category: "Featured Story",
     description:
       "A groundbreaking achievement in luxury hospitality and more about Kuara Resort's grand opening story...",
-    image: "/images/logistics/templates-logistic1-client2.jpg",
+    fullContent:
+      "Mirah Investment & Development has reached a significant milestone with the successful launch of Kuara Resort in Lombok. This eco-luxury resort represents a new standard in sustainable hospitality, combining environmental consciousness with premium guest experiences. The resort features 100 private villas designed with traditional Indonesian architecture and modern amenities. Each villa incorporates sustainable materials and energy-efficient systems, including solar panels and rainwater harvesting. The project has created over 300 local jobs and supports community development initiatives in the surrounding area.",
+    image: "/images/sudut-profile-development/news/kuara-resort-launch.jpg",
     type: "featured",
   },
   {
     id: "klara-ocean-place",
+    slug: "klara-ocean-place",
     title: "Introducing Klara Ocean Place: Batu Belig's Newest...",
     date: "May 23, 2025",
+    author: "Michael Chen",
+    publication: "Bali Property News",
     category: "Press Release",
-    image: "/images/logistics/templates-logistic1-client2.jpg",
+    description: "A new luxury development bringing modern sophistication to Batu Belig's pristine coastline.",
+    fullContent:
+      "Klara Ocean Place represents the next evolution in Batu Belig's luxury real estate landscape. This exclusive development features 45 oceanfront residences, each designed to maximize natural light and ocean views. The project incorporates cutting-edge smart home technology and sustainable building practices. Residents will enjoy private beach access, a world-class spa, and concierge services. The development is strategically located near Bali's finest restaurants and cultural attractions.",
+    image: "/images/sudut-profile-development/news/klara-ocean-place.jpg",
     type: "recent",
   },
   {
     id: "finns-bali-stage-2",
+    slug: "finns-bali-stage-2",
     title: "After Record Sell-Out, FINNS Bali Resort Launches Stage 2 Sales",
     date: "May 5, 2025",
+    author: "Emily Rodriguez",
+    publication: "Hospitality Indonesia",
     category: "Press Release",
-    image: "/images/logistics/templates-logistic1-client2.jpg",
+    description:
+      "Following unprecedented demand, FINNS Bali Resort announces the launch of its highly anticipated second phase.",
+    fullContent:
+      "The overwhelming success of FINNS Bali Resort's initial phase has prompted the immediate launch of Stage 2 development. The first phase sold out within 72 hours of launch, demonstrating strong market confidence in the project. Stage 2 will add 100 additional rooms and suites, along with expanded dining and entertainment facilities. The new phase includes a signature restaurant by a Michelin-starred chef, an expanded spa complex, and additional conference facilities. Construction is scheduled to begin in Q3 2025 with completion expected by Q2 2026.",
+    image: "/images/sudut-profile-development/news/finns-bali-resort.jpg",
     type: "recent",
   },
   {
     id: "cocana-resort-award",
+    slug: "cocana-resort-award",
     title: "Cocana Resort Named Top 10% of Hotels Worldwide...",
     date: "June 17, 2025",
+    author: "David Thompson",
+    publication: "Travel & Leisure Asia",
     category: "Award",
-    image: "/images/logistics/templates-logistic1-client2.jpg",
+    description: "TripAdvisor recognizes Cocana Resort's exceptional service and guest satisfaction ratings.",
+    fullContent:
+      "Cocana Resort has been honored with TripAdvisor's prestigious Travelers' Choice Award, placing it in the top 10% of hotels worldwide. This recognition is based on millions of reviews and opinions from travelers across the globe. The resort's clifftop location in Uluwatu, combined with its exceptional service standards and sustainable practices, has earned consistent 5-star ratings from guests. The award highlights the resort's commitment to providing unforgettable experiences while maintaining environmental responsibility. General Manager Sarah Chen credits the dedicated team and innovative sustainability programs for this achievement.",
+    image: "/images/sudut-profile-development/news/cocana-resort-award.jpg",
     type: "recent",
   },
   {
     id: "cocana-best-earner",
+    slug: "cocana-best-earner",
     title: "Cocana Resort Wins 'Best Earner' Award from Expedia Group",
     date: "April 14, 2025",
+    author: "Lisa Wang",
+    publication: "Business Travel News",
     category: "Award",
     description: "Recognition for outstanding performance and revenue generation...",
-    image: "/images/logistics/templates-logistic1-client2.jpg",
+    fullContent:
+      "Cocana Resort has been recognized by Expedia Group with the coveted 'Best Earner' award for exceptional revenue performance and guest satisfaction. The award acknowledges properties that demonstrate outstanding financial performance while maintaining high guest satisfaction scores. Cocana Resort achieved a 98% occupancy rate throughout 2024, with average daily rates exceeding market benchmarks by 35%. The resort's success is attributed to its unique positioning, exceptional service delivery, and strategic marketing initiatives. This recognition reinforces Cocana Resort's position as a leading luxury destination in Bali's competitive hospitality market.",
+    image: "/images/sudut-profile-development/news/cocana-best-earner.jpg",
     type: "more",
   },
 ]
@@ -144,33 +164,100 @@ export const news = [
 export const services = [
   {
     id: 1,
-    title: "Design and Planning Services",
-    description: "Comprehensive architectural design and planning solutions tailored to your vision and requirements.",
-    features: ["Architectural Design", "Interior Planning", "3D Visualization", "Project Consultation"],
-    image: "/architectural-design-planning.png",
+    slug: "strategic-land-development",
+    title: "Strategic Land Development & Planning",
+    shortDescription:
+      "Transforming raw potential into viable, construction-ready projects through meticulous planning and expert guidance.",
+    description:
+      "This foundational service is where visionary ideas meet practical reality. We navigate the complexities of site acquisition, conduct in-depth feasibility studies to ensure financial viability, and craft master plans that are both innovative and practical. We transform your initial idea into a fully-approved, investment-ready blueprint poised for success.",
+    image: "/images/sudut-profile-development/services/planning.png",
+    details: {
+      aboutService:
+        "Our design and planning services serve as the foundation for every successful construction project. We combine technical expertise with creative innovation to craft layouts that are practical, sustainable, and visually compelling. By utilizing advanced design tools, market insights, and industry best practices, we ensure that each plan is not only aesthetically aligned with client aspirations but also meets strict regulatory and structural requirements.",
+      targetClients:
+        "Our planning solutions are trusted by property developers, commercial investors, industrial facility managers, and individual landowners. Each of them requires clarity at the planning stage to minimize risk, optimize budgets, and maximize long-term project value. Whether for high-rise buildings, residential complexes, or specialized industrial sites, our clients depend on us to translate their abstract ideas into tangible, well-structured plans.",
+      commonChallenges:
+        "Development planning is often challenged by the need to reconcile multiple factors such as regulatory compliance, cost limitations, land use restrictions, and the client's evolving vision. Our challenge is to strike the right balance between innovation and practicality. By adopting an integrated and iterative process, we overcome these obstacles and prepare a plan that is both visionary and executable.",
+    },
   },
   {
     id: 2,
-    title: "Construction and Building",
-    description: "Full-scale construction services with quality craftsmanship and attention to detail.",
-    features: ["General Contracting", "Project Management", "Quality Control", "Timeline Management"],
-    image: "/construction-building.png",
+    slug: "integrated-construction-management",
+    title: "Integrated Construction & Project Management",
+    shortDescription:
+      "Overseeing the entire construction lifecycle with precision, ensuring projects are built on time, on budget, and to the highest standards.",
+    description:
+      "Building is more than just bricks and mortar; it's the precise execution of a complex plan. Our integrated management approach ensures that every phase of construction, from groundbreaking to final handover, is managed with unwavering attention to detail. We act as your single point of contact, transforming architectural drawings into exceptional physical assets.",
+    image: "/images/sudut-profile-development/services/construction-management.jpg",
+    details: {
+      aboutService:
+        "Our service ensures the seamless execution of construction plans. We manage every aspect of the build, from subcontractor coordination and material procurement to rigorous quality control and safety compliance. Our goal is to deliver the project exactly as envisioned, ensuring efficiency and excellence at every step of the process.",
+      targetClients:
+        "We serve developers, investors, and business owners who require professional oversight for their construction projects. These clients value reliability, transparency, and a single point of accountability to ensure their significant investment is realized without costly delays or compromises in quality. They rely on our expertise to navigate the complexities of on-site operations.",
+      commonChallenges:
+        "The primary challenges in construction are budget overruns, schedule delays, and inconsistent quality. Miscommunication between the dozens of stakeholders can lead to critical errors. We address this by implementing robust project management systems, fostering clear communication channels, and proactively identifying potential issues before they become problems, ensuring a smooth and predictable construction process.",
+    },
   },
   {
     id: 3,
-    title: "Renovation and Remodeling",
-    description: "Transform existing spaces with our expert renovation and remodeling services.",
-    features: ["Space Optimization", "Modern Updates", "Structural Improvements", "Design Integration"],
-    image: "/renovation-remodeling.png",
+    slug: "investment-strategy-advisory",
+    title: "Investment Strategy & Advisory",
+    shortDescription:
+      "Providing data-driven insights and strategic counsel to help you navigate the property investment landscape and maximize returns.",
+    description:
+      "In the dynamic world of property development, informed decisions are the cornerstone of success. Our advisory service empowers you with the clarity needed to make strategic moves. We go beyond surface-level data, providing deep market analysis to identify lucrative opportunities, structure financing, and mitigate potential risks. We are your trusted partner in optimizing capital and achieving long-term financial growth.",
+    image: "/images/sudut-profile-development/services/investment.png",
+    details: {
+      aboutService:
+        "Our advisory service provides strategic financial and market guidance for property investment. We specialize in financial modeling, risk assessment, and market analysis to help clients make informed decisions. We structure investment deals, facilitate joint ventures, and create clear pathways to profitability, ensuring every investment is fundamentally sound.",
+      targetClients:
+        "Our clients include high-net-worth individuals, family offices, institutional investors, and developers seeking capital. They require sophisticated analysis that goes beyond simple projections. They depend on our expertise to vet opportunities, structure favorable terms, and develop strategies that align with their financial goals, whether for a single asset or a diversified portfolio.",
+      commonChallenges:
+        "Navigating market volatility, understanding complex financial instruments, and accurately assessing risk are significant challenges for investors. The fear of making a poor investment choice can lead to inaction. We solve this by providing clear, data-backed recommendations and robust due diligence, giving our clients the confidence to act on lucrative opportunities while protecting their capital.",
+    },
+  },
+  {
+    id: 4,
+    slug: "property-marketing-sales-strategy",
+    title: "Property Marketing & Sales Strategy",
+    shortDescription:
+      "Crafting compelling narratives and executing targeted campaigns to connect your property with the right buyers and achieve optimal sales.",
+    description:
+      "A world-class development deserves a world-class sales strategy. We specialize in creating a powerful market presence for your project, blending creative storytelling with data-driven digital marketing to generate qualified leads. We manage the entire sales funnel, from initial outreach to closing, to ensure you achieve your revenue targets.",
+    image: "/images/sudut-profile-development/services/marketing.png",
+    details: {
+      aboutService:
+        "Our service is designed to create and execute a comprehensive go-to-market strategy for property developments. We handle everything from brand positioning and creating marketing collateral to implementing digital campaigns and managing the sales team. Our approach is holistic, ensuring that every touchpoint with a potential buyer is professional, compelling, and effective.",
+      targetClients:
+        "We work with property developers who have a completed or near-complete project and need to achieve sales targets efficiently. These clients understand that a strong marketing and sales effort is crucial for profitability and brand reputation. They rely on us to be their dedicated sales engine, driving interest and converting it into revenue.",
+      commonChallenges:
+        "In a competitive market, standing out and reaching the right audience is a major hurdle. A poorly executed sales strategy can lead to slow absorption rates and price reductions, hurting profitability. We overcome this by developing a unique brand story for each project, utilizing targeted digital marketing to find qualified buyers, and employing a professional sales process to close deals effectively.",
+    },
+  },
+  {
+    id: 5,
+    slug: "asset-facility-management",
+    title: "Asset & Facility Management",
+    shortDescription:
+      "Protecting and enhancing the value of your completed property through professional, proactive operational management.",
+    description:
+      "The journey doesn't end when construction is complete. Our management service ensures your property operates efficiently and continues to grow in value. We handle all aspects of day-to-day operations, from preventative maintenance to responsive tenant relations, transforming your building into a high-performing asset that delivers sustained returns.",
+    image: "/images/sudut-profile-development/services/asset.png",
+    details: {
+      aboutService:
+        "This service focuses on the long-term health and profitability of a completed property. We manage day-to-day operations, including maintenance, security, and tenant services. By monitoring financial performance and implementing strategic improvements, we work to increase revenue, control costs, and enhance the overall value of the asset over time.",
+      targetClients:
+        "Our clients are property owners, investment funds, and condominium associations (PPPSRS) who want to ensure their asset is professionally managed and protected. They seek to maximize their return on investment and free themselves from the complexities of daily operations, trusting us to maintain the property's physical and financial well-being.",
+      commonChallenges:
+        "The biggest challenges in property management are high operational costs, tenant turnover, and the gradual depreciation of the building. Reactive, rather than proactive, maintenance can lead to expensive repairs. We solve this by implementing preventative maintenance schedules, fostering strong tenant relationships to improve retention, and continuously seeking ways to operate the building more efficiently and enhance its market value.",
+    },
   },
 ]
 
-
 export interface ProjectBase {
-
   id: number
   slug: string
-  address: string 
+  address: string
   title: string
   status: string
   completion: string
@@ -201,14 +288,14 @@ export type Project = CurrentProject | CompletedProject
 export const currentProjects: CurrentProject[] = [
   {
     id: 1,
-    slug: "secana-beachtown", // Added slug field for URL routing
+    slug: "secana-beachtown",
     address: "JL. PANTAI LUAR AGUNG, JL. PANTAI PERMAI, CANGGU, KEC. KUTA UTARA, KABUPATEN BADUNG, BALI 80361",
     title: "Secana Beachtown",
     status: "Under Construction",
     completion: "Q2 2025",
     investment: "$45M",
     units: "120 Villas",
-    image: "/images/sudut-profile-development/cta.jpg",
+    image: "/images/sudut-profile-development/projects/secana-beachtown.jpg",
     category: "Residential Resort",
     description:
       "An exclusive beachfront villa development featuring contemporary Balinese architecture with direct beach access. Each villa includes private pools, tropical gardens, and panoramic ocean views.",
@@ -241,14 +328,14 @@ export const currentProjects: CurrentProject[] = [
   },
   {
     id: 2,
-    slug: "sunset-villas", // Added slug field for URL routing
+    slug: "sunset-villas",
     address: "JL. KAYU AYA NO. 88, SEMINYAK, KUTA, BADUNG, BALI 80361",
     title: "Sunset Villas",
     status: "Planning Phase",
     completion: "Q4 2025",
     investment: "$32M",
     units: "85 Villas",
-    image: "/images/sudut-profile-development/cta_2.jpg",
+    image: "/images/sudut-profile-development/projects/sunset-villas.jpg",
     category: "Luxury Residential",
     description:
       "Premium villa complex in the heart of Seminyak, combining modern luxury with traditional Balinese charm. Located minutes from world-class dining and shopping.",
@@ -281,14 +368,14 @@ export const currentProjects: CurrentProject[] = [
   },
   {
     id: 3,
-    slug: "sanur-beachfront", // Added slug field for URL routing
+    slug: "sanur-beachfront",
     address: "JL. DANAU TAMBLINGAN NO. 21, SANUR, DENPASAR SELATAN, BALI 80228",
     title: "Sanur Beachfront",
     status: "Pre-Launch",
     completion: "Q1 2026",
     investment: "$28M",
     units: "60 Units",
-    image: "/images/sudut-profile-development/testimonial.jpg",
+    image: "/images/sudut-profile-development/projects/sanur-beachfront.jpg",
     category: "Mixed-Use Development",
     description:
       "Sophisticated mixed-use development combining residential units with commercial spaces. Features stunning sunrise views and direct access to Sanur's pristine beach.",
@@ -324,14 +411,14 @@ export const currentProjects: CurrentProject[] = [
 export const completedProjects: CompletedProject[] = [
   {
     id: 4,
-    slug: "cocana-resort", // Added slug field for URL routing
+    slug: "cocana-resort",
     address: "JL. RAYA ULUWATU, PECATU, KUTA SELATAN, BADUNG, BALI 80361",
     title: "Cocana Resort",
     status: "Completed",
     completion: "2023",
     investment: "$55M",
     units: "150 Rooms",
-    image: "/images/sudut-profile-development/cta.jpg",
+    image: "/images/sudut-profile-development/projects/cocana-resort.jpg",
     category: "Luxury Resort",
     description:
       "Award-winning luxury resort perched on Uluwatu's dramatic cliffs. Features world-class amenities and breathtaking ocean views, recognized as one of Bali's premier destinations.",
@@ -365,14 +452,14 @@ export const completedProjects: CompletedProject[] = [
   },
   {
     id: 5,
-    slug: "finns-resort", // Added slug field for URL routing
+    slug: "finns-resort",
     address: "JL. PANTAI BINGIN, ULUWATU, KUTA SELATAN, BADUNG, BALI 80361",
     title: "FINNS Resort",
     status: "Completed",
     completion: "2022",
     investment: "$42M",
     units: "200 Rooms",
-    image: "/images/sudut-profile-development/cta_2.jpg",
+    image: "/images/sudut-profile-development/projects/finns-resort.jpg",
     category: "Beach Resort",
     description:
       "Contemporary beach resort featuring innovative design and world-class facilities. Known for its vibrant atmosphere and exceptional guest experiences.",
@@ -406,14 +493,14 @@ export const completedProjects: CompletedProject[] = [
   },
   {
     id: 6,
-    slug: "kuara-resort", // Added slug field for URL routing
+    slug: "kuara-resort",
     address: "JL. RAYA SENGGIGI, LOMBOK BARAT, NUSA TENGGARA BARAT 83355",
     title: "Kuara Resort",
     status: "Completed",
     completion: "2024",
     investment: "$38M",
     units: "100 Villas",
-    image: "/images/sudut-profile-development/testimonial.jpg",
+    image: "/images/sudut-profile-development/projects/kuara-resort.jpg",
     category: "Eco Resort",
     description:
       "Pioneering eco-resort development showcasing sustainable luxury in Lombok. Combines environmental consciousness with premium hospitality standards.",
