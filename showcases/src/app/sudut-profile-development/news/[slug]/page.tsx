@@ -94,7 +94,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
         {/* Related News Section */}
         {otherNews.length > 0 && (
           <section className="mt-16 pt-8 border-t border-slate-200">
-            <h2 className="text-2xl font-bold text-slate-900 mb-8">Berita Lainnya</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-8">Other News</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {otherNews.map((newsItem) => (
                 <Link

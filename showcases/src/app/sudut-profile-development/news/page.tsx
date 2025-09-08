@@ -65,7 +65,7 @@ const Page = () => {
                     href={`/sudut-profile-development/news/${featured.slug}`}
                     className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl group"
                   >
-                    Baca Selengkapnya
+                    Read More
                     <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
                   </TransitionLink>
                 </div>
@@ -110,7 +110,7 @@ const Page = () => {
                       href={`/sudut-profile-development/news/${article.slug}`}
                       className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold group/link"
                     >
-                      Baca Selengkapnya
+                      Read More
                       <span className="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                     </TransitionLink>
                   </div>
@@ -158,7 +158,7 @@ const Page = () => {
                       href={`/news/${article.slug}`}
                       className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold group/link"
                     >
-                      Baca Selengkapnya
+                      Read More
                       <span className="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
                     </TransitionLink>
                   </div>
