@@ -181,7 +181,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
           {/* Location */}
           <div className="bg-slate-50 rounded-2xl p-8">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Location</h2>
-            <p className="text-slate-700 leading-relaxed text-lg">{project.address}</p>
+            <p className="text-slate-700 leading-relaxed text-base">{project.address}</p>
           </div>
         </div>
       </section>
