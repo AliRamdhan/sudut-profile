@@ -7,12 +7,13 @@
     "cta": "Let's Talk"
   },
   "hero": {
-    "description": " We design digital company profiles that elevate your brand, simplify your reach to clients, customers, investors, and partners, and strengthen trust through clarity and professionalism.",
-    "explore": "Explore Our Showcases"
+    "description": "Build trust and grow faster with professional digital solutions from Sudut Profile. From company profiles that strengthen your brand identity to custom IT systems, we help your business tell its story, gain credibility, and thrive through technology.",
+    "explore": "Learn More"
   },
   "about-us": {
-    "description1": "We design digital company profiles that elevate your brand, simplify your reach to clients, customers, investors, and partners, and strengthen trust through clarity and professionalism.",
-    "description2": "Its main purpose is to present a clear picture of the company's identity and credibility to potential clients, partners, and investors.",
+    "description1": "We craft digital company profiles that build trust, strengthen brand identity, and boost credibility.",
+    "description2": "We also provide tailored IT solutions—like product catalogs and POS systems—to streamline your business and help you grow with confidence.",
+    "description3": "Our solutions are designed to showcase your business with clarity and professionalism while improving efficiency, strengthening credibility, and creating meaningful connections with clients, partners, and investors.",
 
     "icon-points-1": "LayoutTemplate",
     "label-points-1": "Design",
@@ -43,7 +44,7 @@
   },
   "cta": {
     "description": "Build trust with potential customers, partners, and investors by showcasing a modern, fast, and mobile-friendly company profile website that reflects your professionalism.",
-    "cta": "Talk to us"
+    "cta-button": "Talk to us"
   },
   "faq": {
     "title": "Frequently Asked Questions",

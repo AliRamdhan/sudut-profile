@@ -150,7 +150,7 @@ const CTA = () => {
           <h2 className="text-foreground text-4xl md:text-5xl lg:text-[68px] font-black leading-tight md:leading-tight lg:leading-[76px] break-words max-w-3xl">
             SUDUT PROFILE
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base font-medium leading-[18.20px] md:leading-relaxed break-words max-w-2xl">
+          <p className="max-w-3xl self-stretch text-center mx-auto text-lg text-neutral-400">
             {t("description")}
           </p>
         </div>

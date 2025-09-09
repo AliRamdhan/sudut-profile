@@ -26,7 +26,7 @@ const Showcases = () => {
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
           {t("title")}
         </h2>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-neutral-400">
+        <p className="max-w-3xl self-stretch text-center mx-auto text-lg text-neutral-400 mt-2">
           {t("description")}
         </p>
       </div>

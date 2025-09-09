@@ -35,18 +35,12 @@ export function Header() {
         </TransitionLink>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-white">
+        <nav className="hidden lg:flex items-center gap-6 text-white">
           <TransitionLink
             href="/h/showcases"
             className="hover:text-neutral-300 transition-colors"
           >
             {t("showcases")}
-          </TransitionLink>
-          <TransitionLink
-            href="/h#about"
-            className="hover:text-neutral-300 transition-colors"
-          >
-            {t("about")}
           </TransitionLink>
           <TransitionLink
             href="/h/success-stories"
@@ -64,7 +58,7 @@ export function Header() {
 
         <div className="flex items-center gap-x-4">
           <LanguageSwitcher />
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <TransitionLink href="/h/contacts">
               <motion.button
                 className="bg-white text-black font-semibold py-2 px-5 rounded-full"
@@ -75,16 +69,16 @@ export function Header() {
               </motion.button>
             </TransitionLink>
           </div>
-        </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="text-white md:hidden"
-          aria-label="Mobile Menu Button"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Mobile Menu Toggle */}
+          <button
+            className="text-white lg:hidden"
+            aria-label="Mobile Menu Button"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -94,7 +88,7 @@ export function Header() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md p-6 text-white rounded-b-xl"
+            className="lg:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md p-6 text-white rounded-b-xl"
           >
             <div className="flex flex-col gap-4 text-lg">
               <TransitionLink
@@ -103,13 +97,6 @@ export function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t("showcases")}
-              </TransitionLink>
-              <TransitionLink
-                href="/h#about"
-                className="hover:text-neutral-300 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t("about")}
               </TransitionLink>
               <TransitionLink
                 href="/h/success-stories"
