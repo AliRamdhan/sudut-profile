@@ -155,7 +155,7 @@ const Page = () => {
                     </div>
                     {article.description && <p className="text-slate-600 leading-relaxed">{article.description}</p>}
                     <TransitionLink
-                      href={`/news/${article.slug}`}
+                      href={`/sudut-profile-development/news/${article.slug}`}
                       className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold group/link"
                     >
                       Read More
