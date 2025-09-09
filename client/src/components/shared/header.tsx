@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { Menu, X } from "lucide-react"; // install lucide-react if not already
+import LanguageSwitcher from "./language-switcher";
 
 export function Header() {
   const headerRef = useRef(null);
@@ -59,16 +60,19 @@ export function Header() {
           </TransitionLink>
         </nav>
 
-        <div className="hidden md:block">
-          <TransitionLink href="/h/contacts">
-            <motion.button
-              className="bg-white text-black font-semibold py-2 px-5 rounded-full"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let&apos;s Talk
-            </motion.button>
-          </TransitionLink>
+        <div className="flex items-center gap-x-4">
+          <LanguageSwitcher />
+          <div className="hidden md:block">
+            <TransitionLink href="/h/contacts">
+              <motion.button
+                className="bg-white text-black font-semibold py-2 px-5 rounded-full"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Let&apos;s Talk
+              </motion.button>
+            </TransitionLink>
+          </div>
         </div>
 
         {/* Mobile Menu Toggle */}

@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "description": " We design digital company profiles that elevate your brand, simplify your reach to clients, customers, investors, and partners, and strengthen trust through clarity and professionalism.",
+    "explore": "Explore Our Showcases"
+  },
+  "about-us": {
+    "description1": "We design digital company profiles that elevate your brand, simplify your reach to clients, customers, investors, and partners, and strengthen trust through clarity and professionalism.",
+    "description2": "Its main purpose is to present a clear picture of the company's identity and credibility to potential clients, partners, and investors.",
+
+    "icon-points-1": "LayoutTemplate",
+    "label-points-1": "Design",
+    "description-points-1": "Visually crafted layouts that reflect your brand identity and capture attention instantly.",
+
+    "icon-points-2": "BriefcaseBusiness",
+    "label-points-2": "Professional",
+    "description-points-2": "Content structured to meet professional standards and present your business with credibility.",
+
+    "icon-points-3": "BadgeCheck",
+    "label-points-3": "Quality",
+    "description-points-3": "Includes accurate, relevant, and value-driven information to showcase your strengths effectively.",
+
+    "icon-points-4": "AlignLeft",
+    "label-points-4": "Clarity",
+    "description-points-4": "Clear and concise presentation that informs without overwhelming—ideal for clients, partners, and investors.",
+
+    "signature": "SUDUTPROFILE"
+  },
+  "showcases": {
+    "title": "OOur Work Showcases",
+    "description": "A selection of company profile showcases designed to demonstrate professionalism, brand alignment, and impactful presentation.",
+    "explore": "Explore Our Showcases"
+  },
+  "cta": {
+    "description": "Build trust with potential customers, partners, and investors by showcasing a modern, fast, and mobile-friendly company profile website that reflects your professionalism.",
+    "cta": "Talk to us"
+  },
+  "contact-us": {
+    "title": "Contact Us",
+    "description": "We'd love to hear from you. Drop us a line below."
+  },
+  "hero-success-stories": {
+    "title": "OUR SUCCESS STORIES",
+    "description": "Discover inspiring success stories and sample company profile websites. Each design is fully customizable to showcase your brand identity and help your business stand out online."
+  },
+  "hero-success-highlights": {
+    "title": "Our Highlights",
+    "description": "Explore inspiring success stories showcasing how businesses achieve growth, overcome challenges, and bring their ideas to life."
+  },
+  "hero-showcases": {
+    "title": "OUR SHOWCASES",
+    "description": "This showcase represents sample company profile websites. Each design can be fully customized to reflect your brand identity, or simply used as a source of inspiration.",
+    "scrollText": "Click to scroll"
+  }
+}

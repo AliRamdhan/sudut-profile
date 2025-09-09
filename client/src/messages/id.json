@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "description": "Kami merancang profil perusahaan digital yang meningkatkan citra merek Anda, mempermudah jangkauan ke klien, pelanggan, investor, dan mitra, serta memperkuat kepercayaan melalui kejelasan dan profesionalisme.",
+    "explore": "Jelajahi Showcase Kami"
+  },
+  "about-us": {
+    "description1": "Kami merancang profil perusahaan digital yang meningkatkan citra merek Anda, mempermudah jangkauan ke klien, pelanggan, investor, dan mitra, serta memperkuat kepercayaan melalui kejelasan dan profesionalisme.",
+    "description2": "Tujuan utamanya adalah menyajikan gambaran yang jelas tentang identitas dan kredibilitas perusahaan kepada calon klien, mitra, dan investor.",
+
+    "icon-points-1": "LayoutTemplate",
+    "label-points-1": "Desain",
+    "description-points-1": "Layout yang dirancang secara visual untuk mencerminkan identitas merek Anda dan menarik perhatian secara instan.",
+
+    "icon-points-2": "BriefcaseBusiness",
+    "label-points-2": "Profesional",
+    "description-points-2": "Konten disusun sesuai standar profesional untuk menghadirkan bisnis Anda dengan kredibilitas tinggi.",
+
+    "icon-points-3": "BadgeCheck",
+    "label-points-3": "Kualitas",
+    "description-points-3": "Menyertakan informasi yang akurat, relevan, dan bernilai untuk menampilkan kekuatan Anda secara efektif.",
+
+    "icon-points-4": "AlignLeft",
+    "label-points-4": "Kejelasan",
+    "description-points-4": "Penyajian yang jelas dan ringkas yang menyampaikan informasi tanpa membingungkan — ideal untuk klien, mitra, dan investor.",
+
+    "signature": "SUDUTPROFILE"
+  },
+  "showcases": {
+    "title": "Showcase Pekerjaan Kami",
+    "description": "Kumpulan showcase profil perusahaan yang dirancang untuk menunjukkan profesionalisme, keselarasan merek, dan presentasi yang berdampak.",
+    "explore": "Jelajahi Showcase Kami"
+  },
+  "cta": {
+    "description": "Bangun kepercayaan dengan calon pelanggan, mitra, dan investor dengan menampilkan website profil perusahaan modern, cepat, dan mobile-friendly yang mencerminkan profesionalisme Anda.",
+    "cta": "Hubungi Kami"
+  },
+  "contact-us": {
+    "title": "Hubungi Kami",
+    "description": "Kami senang mendengar dari Anda. Kirimkan pesan Anda di bawah ini."
+  },
+  "hero-success-stories": {
+    "title": "CERITA KESUKSESAN KAMI",
+    "description": "Temukan cerita sukses yang menginspirasi dan contoh website profil perusahaan. Setiap desain sepenuhnya dapat disesuaikan untuk menampilkan identitas merek Anda dan membantu bisnis Anda menonjol secara online."
+  },
+  "hero-success-highlights": {
+    "title": "Sorotan Kami",
+    "description": "Jelajahi cerita sukses yang menginspirasi, menunjukkan bagaimana bisnis mencapai pertumbuhan, mengatasi tantangan, dan mewujudkan ide mereka."
+  },
+  "hero-showcases": {
+    "title": "SHOWCASE KAMI",
+    "description": "Showcase ini menampilkan contoh website profil perusahaan. Setiap desain dapat sepenuhnya disesuaikan untuk mencerminkan identitas merek Anda, atau digunakan sebagai sumber inspirasi.",
+    "scrollText": "Klik untuk menggulir"
+  }
+}

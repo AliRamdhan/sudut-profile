@@ -1,7 +1,9 @@
 import React from "react";
-import TransitionLink from "../layout/transition-link";
+import TransitionLink from "@/components/layout/transition-link";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
+  const t = useTranslations("hero-showcases");
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
@@ -145,13 +147,9 @@ const Hero = () => {
           </svg>
         </div>
         <h2 className="font-bold text-5xl md:text-7xl lg:text-8xl mb-6">
-          OUR SHOWCASES
+          {t("title")}
         </h2>
-        <p className="max-w-2xl text-lg text-neutral-400">
-          This showcase represents sample company profile websites. Each design
-          can be fully customized to reflect your brand identity, or simply used
-          as a source of inspiration.
-        </p>
+        <p className="max-w-2xl text-lg text-neutral-400">{t("description")}</p>
         <div className="pt-8">
           <TransitionLink href={"#our-showcases"}>
             <p className="animate-bounce">Click to scroll</p>
