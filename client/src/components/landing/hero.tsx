@@ -7,9 +7,11 @@ import gsap from "gsap";
 import { TransitionLink } from "@/components/layout/transition-link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
   const container = useRef(null);
+  const t = useTranslations("hero");
 
   useGSAP(
     () => {
@@ -64,9 +66,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
         >
-          We design digital company profiles that elevate your brand, simplify
-          your reach to clients, customers, investors, and partners, and
-          strengthen trust through clarity and professionalism.
+          {t("description")}
         </motion.p>
         <TransitionLink href="#showcases">
           <motion.button
@@ -77,7 +77,7 @@ const Hero = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Our Showcases <ArrowRight size={20} />
+            {t("explore")} <ArrowRight size={20} />
           </motion.button>
         </TransitionLink>
       </div>

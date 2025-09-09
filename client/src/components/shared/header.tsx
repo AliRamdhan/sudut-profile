@@ -7,8 +7,10 @@ import gsap from "gsap";
 import { useRef, useState } from "react";
 import { Menu, X } from "lucide-react"; // install lucide-react if not already
 import LanguageSwitcher from "./language-switcher";
+import { useTranslations } from "next-intl";
 
 export function Header() {
+  const t = useTranslations("header");
   const headerRef = useRef(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -38,25 +40,25 @@ export function Header() {
             href="/h/showcases"
             className="hover:text-neutral-300 transition-colors"
           >
-            Showcases
+            {t("showcases")}
           </TransitionLink>
           <TransitionLink
             href="/h#about"
             className="hover:text-neutral-300 transition-colors"
           >
-            About
+            {t("about")}
           </TransitionLink>
           <TransitionLink
             href="/h/success-stories"
             className="hover:text-neutral-300 transition-colors"
           >
-            Success Stories
+            {t("successStories")}
           </TransitionLink>
           <TransitionLink
             href="/h/contacts"
             className="hover:text-neutral-300 transition-colors"
           >
-            Contact
+            {t("contact")}
           </TransitionLink>
         </nav>
 
@@ -69,7 +71,7 @@ export function Header() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Let&apos;s Talk
+                {t("cta")}
               </motion.button>
             </TransitionLink>
           </div>
@@ -100,34 +102,35 @@ export function Header() {
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Showcases
+                {t("showcases")}
               </TransitionLink>
               <TransitionLink
                 href="/h#about"
                 className="hover:text-neutral-300 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                {t("about")}
               </TransitionLink>
               <TransitionLink
                 href="/h/success-stories"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Success Stories
+                {t("successStories")}
               </TransitionLink>
               <TransitionLink
                 href="/h/contacts"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Contact
+                {t("contact")}
               </TransitionLink>
               <TransitionLink
                 href="/h/contacts"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <button className="bg-white text-black font-semibold py-2 px-4 rounded-full w-full text-center">
-                  Let&apos;s Talk
+                  {t("cta")}
                 </button>
               </TransitionLink>
             </div>

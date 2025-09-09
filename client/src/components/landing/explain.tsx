@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   LayoutTemplate,
   BriefcaseBusiness,
@@ -11,32 +11,12 @@ import PointItemCard from "@/components/cards/point-item-card";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-const points = [
-  {
-    icon: <LayoutTemplate className="w-6 h-6" />,
-    label: "Design",
-    description:
-      "Visually crafted layouts that reflect your brand identity and capture attention instantly.",
-  },
-  {
-    icon: <BriefcaseBusiness className="w-6 h-6" />,
-    label: "Professional",
-    description:
-      "Content structured to meet professional standards and present your business with credibility.",
-  },
-  {
-    icon: <BadgeCheck className="w-6 h-6" />,
-    label: "Quality",
-    description:
-      "Includes accurate, relevant, and value-driven information to showcase your strengths effectively.",
-  },
-  {
-    icon: <AlignLeft className="w-6 h-6" />,
-    label: "Clarity",
-    description:
-      "Clear and concise presentation that informs without overwhelming—ideal for clients, partners, and investors.",
-  },
-];
+const iconMap: Record<string, ReactNode> = {
+  "icon-points-1": <LayoutTemplate className="w-6 h-6" />,
+  "icon-points-2": <BriefcaseBusiness className="w-6 h-6" />,
+  "icon-points-3": <BadgeCheck className="w-6 h-6" />,
+  "icon-points-4": <AlignLeft className="w-6 h-6" />,
+};
 
 const Explain = () => {
   const t = useTranslations("about-us");
@@ -55,15 +35,19 @@ const Explain = () => {
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                {points.map((point, index) => (
+                {[0, 1, 2, 3].map((_, index) => (
                   <motion.div
-                    key={point.label}
+                    key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + index * 0.1 }}
                     className="text-center cursor-default"
                   >
-                    <PointItemCard point={point} />
+                    <PointItemCard
+                      icon={iconMap[`icon-points-${index + 1}`]}
+                      label={t(`label-points-${index + 1}`)}
+                      description={t(`description-points-${index + 1}`)}
+                    />
                   </motion.div>
                 ))}
               </div>

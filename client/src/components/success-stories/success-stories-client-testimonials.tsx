@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useTranslations } from "next-intl";
 
 const testimonials = [
   {
@@ -45,16 +46,27 @@ const testimonials = [
   },
 ];
 
+const rowSpanClasses: Record<number, string> = {
+  1: "md:row-span-1",
+  2: "md:row-span-2",
+};
+
+const colSpanClasses: Record<number, string> = {
+  1: "md:col-span-1",
+  2: "md:col-span-2",
+};
+
 const TestimonialsSection = () => {
+  const t = useTranslations("success-stories");
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-4xl sm:text-5xl font-bold text-balance mb-6">
-          Our Highlights
+          {t("testimonial-title")}
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-          Explore inspiring success stories showcasing how businesses achieve
-          growth, overcome challenges, and bring their ideas to life.
+          {t("testimonial-description")}
         </p>
       </div>
 
@@ -65,9 +77,9 @@ const TestimonialsSection = () => {
             "transition-all",
             "duration-300",
             "hover:scale-[1.02]",
-            testimonial.rows ? `md:row-span-${testimonial.rows}` : "",
-            testimonial.cols ? `md:col-span-${testimonial.cols}` : "",
-            "flex items-center justify-center", // center logo
+            rowSpanClasses[testimonial.rows ?? 1],
+            colSpanClasses[testimonial.cols ?? 1],
+            "flex items-center justify-center",
           ]
             .filter(Boolean)
             .join(" ");
@@ -83,7 +95,7 @@ const TestimonialsSection = () => {
               ) : (
                 <div className="flex flex-col h-full">
                   <blockquote className="text-sm leading-relaxed mb-6 flex-grow">
-                    &quot;{testimonial.quote}&ldquo;
+                    &quot;{t(`testimonial-quote-${testimonial.id}`)}&quot;
                   </blockquote>
 
                   <div className="flex items-center gap-3">
