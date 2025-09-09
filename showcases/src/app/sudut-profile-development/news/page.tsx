@@ -75,7 +75,7 @@ const Page = () => {
 
           {/* Recent News Grid */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">Berita Terbaru</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-8">Recent Updates</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {recent.map((article) => (
                 <article
@@ -121,7 +121,7 @@ const Page = () => {
 
           {/* Additional News */}
           <div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">Berita Lainnya</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-8">More News</h3>
             <div className="space-y-6">
               {moreStories.map((article) => (
                 <article
