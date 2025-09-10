@@ -1,0 +1,104 @@
+{
+  "header": {
+    "showcases": "Showcases",
+    "about": "About",
+    "successStories": "Success Stories",
+    "contact": "Contact",
+    "cta": "Let's Talk"
+  },
+  "hero": {
+    "description": "Build trust and grow faster with professional digital solutions from Sudut Profile. From company profiles that strengthen your brand identity to custom IT systems, we help your business tell its story, gain credibility, and thrive through technology.",
+    "explore": "Learn More"
+  },
+  "about-us": {
+    "description1": "We craft digital company profiles that build trust, strengthen brand identity, and boost credibility.",
+    "description2": "We also provide tailored IT solutions—like product catalogs and POS systems—to streamline your business and help you grow with confidence.",
+    "description3": "Our solutions are designed to showcase your business with clarity and professionalism while improving efficiency, strengthening credibility, and creating meaningful connections with clients, partners, and investors.",
+
+    "icon-points-1": "LayoutTemplate",
+    "label-points-1": "Design",
+    "description-points-1": "Visually crafted layouts that reflect your brand identity and capture attention instantly.",
+
+    "icon-points-2": "BriefcaseBusiness",
+    "label-points-2": "Professional",
+    "description-points-2": "Content structured to meet professional standards and present your business with credibility.",
+
+    "icon-points-3": "BadgeCheck",
+    "label-points-3": "Quality",
+    "description-points-3": "Includes accurate, relevant, and value-driven information to showcase your strengths effectively.",
+
+    "icon-points-4": "AlignLeft",
+    "label-points-4": "Clarity",
+    "description-points-4": "Clear and concise presentation that informs without overwhelming—ideal for clients, partners, and investors.",
+
+    "signature": "SUDUTPROFILE"
+  },
+  "showcases": {
+    "title": "Our Work Showcases",
+    "description": "A selection of company profile showcases designed to demonstrate professionalism, brand alignment, and impactful presentation.",
+    "explore": "Explore Our Showcases",
+    "showcase-1": "A professional showcase tailored for the construction industry.",
+    "showcase-2": "A clean and modern company profile design for corporate needs.",
+    "showcase-3": "A creative and stylish profile concept for design-focused companies.",
+    "showcase-4": "A streamlined profile concept designed for logistics businesses."
+  },
+  "cta": {
+    "description": "Build trust with potential customers, partners, and investors by showcasing a modern, fast, and mobile-friendly company profile website that reflects your professionalism.",
+    "cta-button": "Talk to us"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Everything you need to know about Pointer and how it can transform your development workflow",
+
+    "question-1": "What is a company profile website and why is it important for my business in 2025?",
+    "answer-1": "A company profile website is a digital platform that presents comprehensive information about your business, such as its history, vision & mission, services, and achievements. In 2025, a strong digital presence is essential for building credibility, reaching more clients, and facilitating collaboration with investors or business partners.",
+
+    "question-2": "What services are included in the company profile creation service you offer?",
+    "answer-2": "Our company profile services include initial consultation, design concept planning, website development (including homepage, about us, services/products, portfolio, contact, and other pages as needed), mobile-friendly optimization, social media integration, and basic SEO to ensure the website is easily discoverable on search engines.",
+
+    "question-3": "How much does it cost to create a company profile website?",
+    "answer-3": "The cost of creating a company profile website varies depending on design complexity, number of pages, additional features required, and level of customization. Please contact us for a tailored pricing quote.",
+
+    "question-4": "How long does it take to create a company profile website?",
+    "answer-4": "The timeline also varies depending on project complexity and how quickly the client provides materials. Typically, it takes 2-8 weeks to complete a project.",
+
+    "question-5": "Can the company profile website design be customized to match my company's branding?",
+    "answer-5": "Absolutely! Our design team will work closely with you to ensure the company profile website design matches your logo, colors, typography, and visual style of your brand.",
+
+    "question-6": "Will the company profile website be responsive and accessible on all devices?",
+    "answer-6": "Yes, all our company profile websites are built with responsive design to look and perform optimally on all screen sizes and devices.",
+
+    "question-7": "What if I want to change the website content or design?",
+    "answer-7": "We provide content management and revision services so you can update information or the website appearance as needed.",
+
+    "question-8": "Do you provide maintenance and technical support after the company profile website is completed?",
+    "answer-8": "Yes, we offer periodic technical support and maintenance packages to ensure your website continues to run smoothly and securely."
+  },
+  "contact-us": {
+    "title": "Contact Us",
+    "description": "We'd love to hear from you. Drop us a line below."
+  },
+  "hero-success-stories": {
+    "title": "OUR SUCCESS STORIES",
+    "description": "Discover inspiring success stories and sample company profile websites. Each design is fully customizable to showcase your brand identity and help your business stand out online."
+  },
+  "hero-success-highlights": {
+    "title": "Our Highlights",
+    "description": "Explore inspiring success stories showcasing how businesses achieve growth, overcome challenges, and bring their ideas to life."
+  },
+  "hero-showcases": {
+    "title": "OUR SHOWCASES",
+    "description": "This showcase represents sample company profile websites. Each design can be fully customized to reflect your brand identity, or simply used as a source of inspiration.",
+    "scrollText": "Click to scroll"
+  },
+  "success-stories": {
+    "title": "OUR SUCCESS STORIES",
+    "description": "Discover inspiring success stories and sample company profile websites. Each design is fully customizable to showcase your brand identity and help your business stand out online.",
+    "testimonial-title": "Our Highlights",
+    "testimonial-description": "Explore inspiring success stories showcasing how businesses achieve growth, overcome challenges, and bring their ideas to life.",
+    "testimonial-quote-1": "Thanks to Desa Metesih's new administrative system, operations are now smoother and more efficient than ever. It’s truly transformed the way the local governance team works!",
+    "testimonial-quote-2": "Laduny Computer’s POS system with 2FA authentication makes transactions secure and effortless. The audit logs and management features give us total control over our business!",
+    "testimonial-quote-3": "Arvindo’s UI and UX redesign with multi-language support has made our platform intuitive and enjoyable for users worldwide. The experience is seamless!",
+    "testimonial-quote-4": "The Posyandu administration system now lets us efficiently manage birth records, child growth tracking, and pregnancy monitoring. It’s made our work faster and more reliable!"
+  }
+}

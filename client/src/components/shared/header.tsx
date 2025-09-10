@@ -6,8 +6,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { Menu, X } from "lucide-react"; // install lucide-react if not already
+import LanguageSwitcher from "./language-switcher";
+import { useTranslations } from "next-intl";
 
 export function Header() {
+  const t = useTranslations("header");
   const headerRef = useRef(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -32,47 +35,50 @@ export function Header() {
         </TransitionLink>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-white">
+        <nav className="hidden lg:flex items-center gap-6 text-white">
           <TransitionLink
             href="/h/showcases"
             className="hover:text-neutral-300 transition-colors"
           >
-            Showcases
+            {t("showcases")}
           </TransitionLink>
           <TransitionLink
-            href="/h#about"
+            href="/h/success-stories"
             className="hover:text-neutral-300 transition-colors"
           >
-            About
+            {t("successStories")}
           </TransitionLink>
           <TransitionLink
             href="/h/contacts"
             className="hover:text-neutral-300 transition-colors"
           >
-            Contact
+            {t("contact")}
           </TransitionLink>
         </nav>
 
-        <div className="hidden md:block">
-          <TransitionLink href="/h/contacts">
-            <motion.button
-              className="bg-white text-black font-semibold py-2 px-5 rounded-full"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let&apos;s Talk
-            </motion.button>
-          </TransitionLink>
-        </div>
+        <div className="flex items-center gap-x-4">
+          <LanguageSwitcher />
+          <div className="hidden lg:block">
+            <TransitionLink href="/h/contacts">
+              <motion.button
+                className="bg-white text-black font-semibold py-2 px-5 rounded-full"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {t("cta")}
+              </motion.button>
+            </TransitionLink>
+          </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="text-white md:hidden"
-          aria-label="Mobile Menu Button"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Mobile Menu Toggle */}
+          <button
+            className="text-white lg:hidden"
+            aria-label="Mobile Menu Button"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -82,7 +88,7 @@ export function Header() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md p-6 text-white rounded-b-xl"
+            className="lg:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md p-6 text-white rounded-b-xl"
           >
             <div className="flex flex-col gap-4 text-lg">
               <TransitionLink
@@ -90,28 +96,28 @@ export function Header() {
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Showcases
+                {t("showcases")}
               </TransitionLink>
               <TransitionLink
-                href="/h#about"
+                href="/h/success-stories"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                {t("successStories")}
               </TransitionLink>
               <TransitionLink
                 href="/h/contacts"
                 className="hover:text-neutral-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Contact
+                {t("contact")}
               </TransitionLink>
               <TransitionLink
                 href="/h/contacts"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <button className="bg-white text-black font-semibold py-2 px-4 rounded-full w-full text-center">
-                  Let&apos;s Talk
+                  {t("cta")}
                 </button>
               </TransitionLink>
             </div>

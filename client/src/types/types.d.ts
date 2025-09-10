@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export interface showcaseType {
+  id: number;
   title: string;
   description: string;
   imgSrc: string;

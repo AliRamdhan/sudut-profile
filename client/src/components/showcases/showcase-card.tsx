@@ -4,12 +4,14 @@
 import { ArrowRight } from "lucide-react";
 import { showcaseType } from "@/types/types";
 import TransitionLink from "../layout/transition-link";
+import { useTranslations } from "next-intl";
 
 interface ShowcaseCardProps {
   showcase: showcaseType;
 }
 
 const ShowcaseCard = ({ showcase }: ShowcaseCardProps) => {
+  const t = useTranslations("showcases");
   return (
     <TransitionLink
       href={showcase.href}
@@ -21,7 +23,7 @@ const ShowcaseCard = ({ showcase }: ShowcaseCardProps) => {
         <img
           src={showcase.imgSrc || "/placeholder.svg"}
           alt={showcase.title}
-          className="w-full h-[720px] object-fit object-center transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
+          className="w-full h-[560px] object-fit object-center transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
         />
 
         {/* Preview Button */}
@@ -43,7 +45,7 @@ const ShowcaseCard = ({ showcase }: ShowcaseCardProps) => {
           </div>
         </div>
         <p className="mt-1 text-left text-sm text-muted-foreground">
-          {showcase.description}
+          {t(`showcase-${showcase.id}`)}
         </p>
       </div>
     </TransitionLink>
