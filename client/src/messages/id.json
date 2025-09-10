@@ -1,0 +1,104 @@
+{
+  "header": {
+    "showcases": "Showcase",
+    "about": "Tentang",
+    "successStories": "Kisah Sukses",
+    "contact": "Kontak",
+    "cta": "Hubungi Kami"
+  },
+  "hero": {
+    "description": "Bangun kepercayaan dan tumbuh lebih cepat dengan solusi digital profesional dari Sudut Profile. Dari profil perusahaan yang memperkuat identitas brand hingga sistem IT khusus, kami membantu bisnis Anda bercerita, meraih kredibilitas, dan berkembang melalui teknologi.",
+    "explore": "Pelajari Lebih Kami"
+  },
+  "about-us": {
+    "description1": "Kami merancang profil perusahaan digital yang membangun kepercayaan, memperkuat identitas merek, dan meningkatkan kredibilitas.",
+    "description2": "Kami juga menyediakan solusi IT khusus—seperti katalog produk dan sistem POS—untuk menyederhanakan operasional bisnis Anda dan membantu pertumbuhan dengan lebih percaya diri.",
+    "description3": "Solusi kami dirancang untuk menampilkan bisnis Anda dengan jelas dan profesional, sekaligus meningkatkan efisiensi, memperkuat kredibilitas, serta membangun koneksi yang bermakna dengan klien, mitra, dan investor.",
+
+    "icon-points-1": "LayoutTemplate",
+    "label-points-1": "Desain",
+    "description-points-1": "Layout yang dirancang secara visual untuk mencerminkan identitas merek Anda dan menarik perhatian secara instan.",
+
+    "icon-points-2": "BriefcaseBusiness",
+    "label-points-2": "Profesional",
+    "description-points-2": "Konten disusun sesuai standar profesional untuk menghadirkan bisnis Anda dengan kredibilitas tinggi.",
+
+    "icon-points-3": "BadgeCheck",
+    "label-points-3": "Kualitas",
+    "description-points-3": "Menyertakan informasi yang akurat, relevan, dan bernilai untuk menampilkan kekuatan Anda secara efektif.",
+
+    "icon-points-4": "AlignLeft",
+    "label-points-4": "Kejelasan",
+    "description-points-4": "Penyajian yang jelas dan ringkas yang menyampaikan informasi tanpa membingungkan — ideal untuk klien, mitra, dan investor.",
+
+    "signature": "SUDUTPROFILE"
+  },
+  "showcases": {
+    "title": "Showcase Pekerjaan Kami",
+    "description": "Kumpulan showcase profil perusahaan yang dirancang untuk menunjukkan profesionalisme, keselarasan merek, dan presentasi yang berdampak.",
+    "explore": "Jelajahi Showcase Kami",
+    "showcase-1": "Sebuah tampilan profesional yang dibuat khusus untuk industri konstruksi.",
+    "showcase-2": "Desain profil perusahaan yang bersih dan modern untuk kebutuhan korporasi.",
+    "showcase-3": "Konsep profil kreatif dan bergaya untuk perusahaan yang berfokus pada desain.",
+    "showcase-4": "Konsep profil yang ringkas, dirancang untuk bisnis logistik."
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "description": "Semua yang perlu Anda ketahui tentang Pointer dan bagaimana hal ini dapat mengubah alur kerja pengembangan Anda",
+
+    "question-1": "Apa itu website company profile dan mengapa penting untuk bisnis saya di tahun 2025?",
+    "answer-1": "Website company profile adalah platform digital yang menyajikan informasi lengkap mengenai bisnis Anda, seperti sejarah, visi-misi, layanan, dan pencapaian. Di tahun 2025, kehadiran digital yang kuat sangat penting untuk membangun kredibilitas, menjangkau lebih banyak klien, dan mempermudah kerja sama dengan investor atau mitra bisnis.",
+
+    "question-2": "Apa saja layanan yang termasuk dalam jasa pembuatan company profile yang Anda tawarkan?",
+    "answer-2": "Layanan jasa pembuatan company profile kami meliputi konsultasi awal, perancangan konsep desain, pengembangan website (termasuk halaman utama, tentang kami, layanan/produk, portofolio, kontak, dan halaman lain sesuai kebutuhan), optimasi mobile-friendly, integrasi media sosial, dan basic SEO agar website mudah ditemukan di mesin pencari.",
+
+    "question-3": "Berapa biaya yang dibutuhkan untuk jasa pembuatan company profile?",
+    "answer-3": "Biaya jasa pembuatan company profile bervariasi tergantung pada kompleksitas desain, jumlah halaman, fitur tambahan yang dibutuhkan, dan tingkat kustomisasi. Silakan hubungi kami untuk penawaran harga yang disesuaikan.",
+
+    "question-4": "Berapa lama waktu yang dibutuhkan untuk proses pembuatan website company profile?",
+    "answer-4": "Waktu pengerjaan website company profile juga bervariasi tergantung pada kompleksitas proyek dan kecepatan respons dari pihak klien dalam menyediakan materi. Umumnya memakan waktu antara 2-8 minggu kerja.",
+
+    "question-5": "Apakah desain website company profile bisa disesuaikan dengan identitas merek (branding) perusahaan saya?",
+    "answer-5": "Tentu saja! Tim desain kami akan bekerja sama dengan Anda untuk memastikan desain website company profile sesuai dengan logo, warna, tipografi, dan gaya visual merek perusahaan Anda.",
+
+    "question-6": "Apakah website company profile yang Anda buat akan responsif dan bisa diakses melalui berbagai perangkat?",
+    "answer-6": "Tentu, semua website company profile kami dibuat dengan desain responsif sehingga tampil optimal di semua ukuran layar dan perangkat.",
+
+    "question-7": "Bagaimana jika saya ingin mengubah konten atau desain website?",
+    "answer-7": "Kami menyediakan layanan revisi dan pengelolaan konten agar Anda dapat memperbarui informasi atau tampilan website sesuai kebutuhan.",
+
+    "question-8": "Apakah Anda menyediakan layanan pemeliharaan dan dukungan teknis setelah website company profile selesai dibuat?",
+    "answer-8": "Ya, kami menyediakan paket dukungan teknis dan pemeliharaan berkala untuk memastikan website Anda tetap berjalan optimal dan aman."
+  },
+  "cta": {
+    "description": "Bangun kepercayaan dan tumbuh lebih cepat dengan solusi digital profesional dari Sudut Profile. Dari company profile yang memperkuat identitas brand, hingga sistem IT khusus seperti katalog produk dan POS, kami membantu bisnis Anda bercerita, dipercaya, dan berkembang melalui teknologi.",
+    "cta-button": "Hubungi Kami"
+  },
+  "contact-us": {
+    "title": "Hubungi Kami",
+    "description": "Kami senang mendengar dari Anda. Kirimkan pesan Anda di bawah ini."
+  },
+  "hero-success-stories": {
+    "title": "CERITA KESUKSESAN KAMI",
+    "description": "Temukan cerita sukses yang menginspirasi dan contoh website profil perusahaan. Setiap desain sepenuhnya dapat disesuaikan untuk menampilkan identitas merek Anda dan membantu bisnis Anda menonjol secara online."
+  },
+  "hero-success-highlights": {
+    "title": "Sorotan Kami",
+    "description": "Jelajahi cerita sukses yang menginspirasi, menunjukkan bagaimana bisnis mencapai pertumbuhan, mengatasi tantangan, dan mewujudkan ide mereka."
+  },
+  "hero-showcases": {
+    "title": "SHOWCASE KAMI",
+    "description": "Showcase ini menampilkan contoh website profil perusahaan. Setiap desain dapat sepenuhnya disesuaikan untuk mencerminkan identitas merek Anda, atau digunakan sebagai sumber inspirasi.",
+    "scrollText": "Klik untuk menggulir"
+  },
+  "success-stories": {
+    "title": "KISAH SUKSES KAMI",
+    "description": "Temukan kisah sukses yang menginspirasi dan contoh website profil perusahaan. Setiap desain sepenuhnya dapat disesuaikan untuk menampilkan identitas brand Anda dan membantu bisnis Anda lebih menonjol secara online.",
+    "testimonial-title": "Highlight Kami",
+    "testimonial-description": "Jelajahi kisah sukses yang menginspirasi tentang bagaimana bisnis meraih pertumbuhan, mengatasi tantangan, dan mewujudkan ide-ide mereka.",
+    "testimonial-quote-1": "Berkat sistem administrasi baru Desa Metesih, operasional kini lebih lancar dan efisien dari sebelumnya. Ini benar-benar mengubah cara tim pemerintahan desa bekerja!",
+    "testimonial-quote-2": "Sistem POS Laduny Computer dengan autentikasi 2FA membuat transaksi lebih aman dan mudah. Audit log dan fitur manajemen memberi kami kendali penuh atas bisnis kami!",
+    "testimonial-quote-3": "Redesain UI dan UX Arvindo dengan dukungan multi-bahasa membuat platform kami intuitif dan menyenangkan untuk pengguna di seluruh dunia. Pengalamannya sangat mulus!",
+    "testimonial-quote-4": "Sistem administrasi Posyandu kini memungkinkan kami mengelola catatan kelahiran, pemantauan tumbuh kembang anak, dan monitoring kehamilan dengan lebih efisien. Pekerjaan kami jadi lebih cepat dan andal!"
+  }
+}

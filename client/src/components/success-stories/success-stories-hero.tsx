@@ -1,9 +1,9 @@
 import React from "react";
-import TransitionLink from "@/components/layout/transition-link";
+import TransitionLink from "../layout/transition-link";
 import { useTranslations } from "next-intl";
 
 const Hero = () => {
-  const t = useTranslations("hero-showcases");
+  const t = useTranslations("success-stories");
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
@@ -149,9 +149,9 @@ const Hero = () => {
         <h2 className="font-bold text-5xl md:text-7xl lg:text-8xl mb-6">
           {t("title")}
         </h2>
-        <p className="max-w-2xl text-lg text-neutral-400">{t("description")}</p>
+        <p className="max-w-4xl text-lg text-neutral-400">{t("description")}</p>
         <div className="pt-8">
-          <TransitionLink href={"#our-showcases"}>
+          <TransitionLink href={"#our-success-stories"}>
             <p className="animate-bounce">Click to scroll</p>
           </TransitionLink>
         </div>
