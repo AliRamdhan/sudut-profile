@@ -55,7 +55,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Top Bar (Mobile) - UPDATED */}
+      {/* Top Bar (Mobile) */}
       <div className="sm:hidden py-2 text-xs bg-slate-900 text-white">
         <div className="container mx-auto flex items-center justify-center gap-4 px-4">
           <a
@@ -94,38 +94,7 @@ const Header = () => {
 
         {/* Desktop menu */}
         <nav className="hidden md:flex items-center space-x-8">
-          <TransitionLink href="/sudut-profile-development" className={getNavLinkClass("/sudut-profile-development")}>
-            Home
-            <span className={getSpanClass("/sudut-profile-development")}></span>
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/projects"
-            className={getNavLinkClass("/sudut-profile-development/projects")}
-          >
-            Projects
-            <span className={getSpanClass("/sudut-profile-development/projects")}></span>
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/services"
-            className={getNavLinkClass("/sudut-profile-development/services")}
-          >
-            Services
-            <span className={getSpanClass("/sudut-profile-development/services")}></span>
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/news"
-            className={getNavLinkClass("/sudut-profile-development/news")}
-          >
-            News
-            <span className={getSpanClass("/sudut-profile-development/news")}></span>
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/about-us"
-            className={getNavLinkClass("/sudut-profile-development/about-us")}
-          >
-            About
-            <span className={getSpanClass("/sudut-profile-development/about-us")}></span>
-          </TransitionLink>
+            {/* Nav links */}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -141,44 +110,48 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown - UPDATED */}
       {mobileOpen && (
-        <div className="md:hidden px-4 pb-4 sm:pb-6 space-y-1 bg-white border-t border-slate-200 animate-in slide-in-from-top-2 duration-200">
-          <TransitionLink
-            href="/sudut-profile-development"
-            className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Home
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/projects"
-            className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Projects
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/services"
-            className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Services
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/news"
-            className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            News
-          </TransitionLink>
-          <TransitionLink
-            href="/sudut-profile-development/about-us"
-            className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            About
-          </TransitionLink>
+        <div 
+          className="absolute left-0 top-full w-full bg-white/95 backdrop-blur-sm shadow-lg md:hidden border-t border-slate-200 animate-in slide-in-from-top-2 duration-300"
+        >
+          <div className="px-4 pb-4 pt-2 space-y-1">
+            <TransitionLink
+              href="/sudut-profile-development"
+              className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Home
+            </TransitionLink>
+            <TransitionLink
+              href="/sudut-profile-development/projects"
+              className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Projects
+            </TransitionLink>
+            <TransitionLink
+              href="/sudut-profile-development/services"
+              className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Services
+            </TransitionLink>
+            <TransitionLink
+              href="/sudut-profile-development/news"
+              className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              News
+            </TransitionLink>
+            <TransitionLink
+              href="/sudut-profile-development/about-us"
+              className="block py-3 px-2 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              About
+            </TransitionLink>
+          </div>
         </div>
       )}
     </header>
