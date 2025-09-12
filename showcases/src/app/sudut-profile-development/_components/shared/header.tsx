@@ -55,7 +55,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Top Bar (Mobile) */}
+      {/* Top Bar (Mobile) - UPDATED */}
       <div className="sm:hidden py-2 text-xs bg-slate-900 text-white">
         <div className="container mx-auto flex items-center justify-center gap-4 px-4">
           <a
@@ -94,7 +94,38 @@ const Header = () => {
 
         {/* Desktop menu */}
         <nav className="hidden md:flex items-center space-x-8">
-            {/* Nav links */}
+          <TransitionLink href="/sudut-profile-development" className={getNavLinkClass("/sudut-profile-development")}>
+            Home
+            <span className={getSpanClass("/sudut-profile-development")}></span>
+          </TransitionLink>
+          <TransitionLink
+            href="/sudut-profile-development/projects"
+            className={getNavLinkClass("/sudut-profile-development/projects")}
+          >
+            Projects
+            <span className={getSpanClass("/sudut-profile-development/projects")}></span>
+          </TransitionLink>
+          <TransitionLink
+            href="/sudut-profile-development/services"
+            className={getNavLinkClass("/sudut-profile-development/services")}
+          >
+            Services
+            <span className={getSpanClass("/sudut-profile-development/services")}></span>
+          </TransitionLink>
+          <TransitionLink
+            href="/sudut-profile-development/news"
+            className={getNavLinkClass("/sudut-profile-development/news")}
+          >
+            News
+            <span className={getSpanClass("/sudut-profile-development/news")}></span>
+          </TransitionLink>
+          <TransitionLink
+            href="/sudut-profile-development/about-us"
+            className={getNavLinkClass("/sudut-profile-development/about-us")}
+          >
+            About
+            <span className={getSpanClass("/sudut-profile-development/about-us")}></span>
+          </TransitionLink>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -110,7 +141,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown - UPDATED */}
+      {/* Mobile Menu Dropdown */}
       {mobileOpen && (
         <div 
           className="absolute left-0 top-full w-full bg-white/95 backdrop-blur-sm shadow-lg md:hidden border-t border-slate-200 animate-in slide-in-from-top-2 duration-300"
