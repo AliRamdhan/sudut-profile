@@ -30,7 +30,7 @@ const Header = () => {
           {/* Left Side: Location */}
           <div className="flex items-center space-x-1 sm:space-x-2">
             <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-slate-400" />
-            <span>Jakarta, Indonesia</span>
+            <span>Solo, Indonesia</span>
           </div>
 
           {/* Right Side: Contact */}
