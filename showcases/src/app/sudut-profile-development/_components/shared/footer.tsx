@@ -63,14 +63,6 @@ const Footer = () => {
                 About Us
               </TransitionLink>
             </li>
-            <li>
-              <TransitionLink
-                href="/sudut-profile-development/contacts"
-                className="text-slate-300 hover:text-emerald-400 transition-colors duration-300"
-              >
-                Contact
-              </TransitionLink>
-            </li>
           </ul>
         </div>
 
