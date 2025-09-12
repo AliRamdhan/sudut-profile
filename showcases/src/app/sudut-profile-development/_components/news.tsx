@@ -1,6 +1,5 @@
 import TransitionLink from "@/components/shared/transition-link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { news } from "../lib/data"
 
@@ -31,7 +30,13 @@ const News = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
                 <div className="relative grid lg:grid-cols-2 min-h-[500px]">
                   <div className="relative aspect-[4/3] lg:aspect-auto">
-                    <Image src={featured.image} alt={featured.title} fill className="object-cover" priority />
+                    <Image
+                      src={featured.image || "/placeholder.svg"}
+                      alt={featured.title}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
                   </div>
                   <div className="p-8 lg:p-12 flex flex-col justify-center text-white">
                     <div className="flex items-center gap-4 mb-6">
@@ -44,10 +49,10 @@ const News = () => {
                     {featured.description && (
                       <p className="text-slate-200 mb-8 text-lg leading-relaxed">{featured.description}</p>
                     )}
-                    <TransitionLink href={`/article/${featured.id}`} className="inline-flex items-center group">
+                    <TransitionLink href={`/sudut-profile-development/news/${featured.slug}`} className="inline-flex items-center group">
                       <Button className="bg-white text-slate-900 hover:bg-slate-100 font-semibold px-6 py-3 rounded-full">
                         Read Full Story
-                        <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                        <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </Button>
                     </TransitionLink>
                   </div>
@@ -67,7 +72,12 @@ const News = () => {
                     className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
                       <div className="absolute top-4 left-4">
                         <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                           {item.category}
@@ -79,15 +89,13 @@ const News = () => {
                       <h4 className="text-xl font-semibold text-slate-900 mt-2 mb-3 leading-tight group-hover:text-emerald-600 transition-colors">
                         {item.title}
                       </h4>
-                      {item.description && (
-                        <p className="text-slate-600 mb-4 line-clamp-2">{item.description}</p>
-                      )}
+                      {item.description && <p className="text-slate-600 mb-4 line-clamp-2">{item.description}</p>}
                       <TransitionLink
-                        href={`/article/${item.id}`}
+                        href={`/sudut-profile-development/news/${item.slug}`}
                         className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium group"
                       >
                         Read More
-                        <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                        <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </TransitionLink>
                     </div>
                   </article>
@@ -123,11 +131,11 @@ const News = () => {
                         {item.title}
                       </h4>
                       <TransitionLink
-                        href={`/article/${item.id}`}
+                        href={`/sudut-profile-development/news/${item.slug}`}
                         className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium text-sm group"
                       >
                         Read Article
-                        <ArrowRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                        <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </TransitionLink>
                     </div>
                   </article>

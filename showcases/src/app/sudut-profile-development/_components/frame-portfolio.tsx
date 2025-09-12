@@ -1,24 +1,23 @@
-"use client";
-import { Slider } from "@/components/ui/slider";
-import { useRef } from "react";
+"use client"
+import { Slider } from "@/components/ui/slider"
 
 interface FramePortfolioProps {
-  video: string;
-  width: number | string;
-  height: number | string;
-  className?: string;
-  mediaSize: number;
-  borderThickness: number;
-  borderSize: number;
-  onMediaSizeChange: (value: number) => void;
-  onBorderThicknessChange: (value: number) => void;
-  onBorderSizeChange: (value: number) => void;
-  showControls: boolean;
-  label: string;
+  image: string // Changed from video to image
+  width: number | string
+  height: number | string
+  className?: string
+  mediaSize: number
+  borderThickness: number
+  borderSize: number
+  onMediaSizeChange: (value: number) => void
+  onBorderThicknessChange: (value: number) => void
+  onBorderSizeChange: (value: number) => void
+  showControls: boolean
+  label: string
 }
 
 export function FramePortfolio({
-  video,
+  image, // Changed from video to image
   width,
   height,
   className = "",
@@ -31,8 +30,6 @@ export function FramePortfolio({
   showControls,
   label,
 }: FramePortfolioProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   return (
     <div
       className={`relative ${className}`}
@@ -42,8 +39,7 @@ export function FramePortfolio({
         transition: "width 0.3s ease-in-out, height 0.3s ease-in-out",
       }}
     >
-      <div className="relative w-full h-full overflow-hidden">
-        {/* Video with Border */}
+      <div className="relative w-full h-full overflow-hidden rounded-lg">
         <div
           className="absolute inset-0 flex items-center justify-center w-full h-full left-0 top-0 p-0"
           style={{
@@ -52,42 +48,29 @@ export function FramePortfolio({
           }}
         >
           <div
-            className="w-full h-full overflow-hidden"
+            className="w-full h-full overflow-hidden rounded-lg"
             style={{
               transform: `scale(${mediaSize})`,
               transformOrigin: "center",
               transition: "transform 0.3s ease-in-out",
             }}
           >
-            <video
-              className="w-full h-full object-cover"
-              src={video}
-              loop
-              muted
-              playsInline
-              autoPlay={false} // autoplay dimatikan
-              ref={videoRef}
-              onMouseEnter={(e) => {
-                e.currentTarget.play(); // play ketika hover
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.pause(); // pause ketika leave
-              }}
+            <img
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              src={image || "/placeholder.svg"}
+              alt={`Portfolio ${label}`}
+              loading="lazy"
             />
           </div>
         </div>
       </div>
 
-      {/* Controls */}
       {showControls && (
-        <div className="absolute bottom-0 left-0 right-0 p-2 bg-black bg-opacity-50 z-10">
-          <div className="text-white font-bold mb-2">{label}</div>
-          <div className="space-y-2">
+        <div className="absolute bottom-0 left-0 right-0 p-1 md:p-2 bg-black bg-opacity-50 z-10 rounded-b-lg">
+          <div className="text-white font-bold mb-1 md:mb-2 text-xs md:text-sm">{label}</div>
+          <div className="space-y-1 md:space-y-2">
             <div>
-              <label
-                htmlFor={`media-size-${label}`}
-                className="block text-sm font-medium text-white"
-              >
+              <label htmlFor={`media-size-${label}`} className="block text-xs font-medium text-white">
                 Media Size: {mediaSize.toFixed(2)}
               </label>
               <Slider
@@ -100,10 +83,7 @@ export function FramePortfolio({
               />
             </div>
             <div>
-              <label
-                htmlFor={`border-thickness-${label}`}
-                className="block text-sm font-medium text-white"
-              >
+              <label htmlFor={`border-thickness-${label}`} className="block text-xs font-medium text-white">
                 Border Thickness: {borderThickness}px
               </label>
               <Slider
@@ -116,10 +96,7 @@ export function FramePortfolio({
               />
             </div>
             <div>
-              <label
-                htmlFor={`border-size-${label}`}
-                className="block text-sm font-medium text-white"
-              >
+              <label htmlFor={`border-size-${label}`} className="block text-xs font-medium text-white">
                 Border Size: {borderSize}%
               </label>
               <Slider
@@ -135,5 +112,5 @@ export function FramePortfolio({
         </div>
       )}
     </div>
-  );
+  )
 }

@@ -1,28 +1,27 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { FramePortfolio } from "./frame-portfolio";
-import { Slider } from "@/components/ui/slider";
-import { Button } from "@/components/ui/button";
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { FramePortfolio } from "./frame-portfolio"
+import { Slider } from "@/components/ui/slider"
+import { Button } from "@/components/ui/button"
 
 interface Frame {
-  id: number;
-  video: string;
-  defaultPos: { x: number; y: number; w: number; h: number };
-  mediaSize: number;
-  borderThickness: number;
-  borderSize: number;
-  autoplayMode: "all" | "hover";
-  isHovered: boolean;
+  id: number
+  image: string // Changed from video to image
+  defaultPos: { x: number; y: number; w: number; h: number }
+  mediaSize: number
+  borderThickness: number
+  borderSize: number
+  autoplayMode: "all" | "hover"
+  isHovered: boolean
 }
 
 const initialFrames: Frame[] = [
   {
     id: 1,
-    video: "/images/sudut-profile-development/videos/video-1.mp4",
+    image: "/images/sudut-profile-development/projects/secana-beachtown.jpg",
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
@@ -31,9 +30,8 @@ const initialFrames: Frame[] = [
   },
   {
     id: 2,
-    video: "/images/sudut-profile-development/videos/video-2.mp4",
+    image: "/images/sudut-profile-development/projects/sunset-villas.jpg",
     defaultPos: { x: 4, y: 0, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
@@ -42,9 +40,8 @@ const initialFrames: Frame[] = [
   },
   {
     id: 3,
-    video: "/images/sudut-profile-development/videos/video-3.mp4",
+    image: "/images/sudut-profile-development/projects/sanur-beachfront.jpg",
     defaultPos: { x: 8, y: 0, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
@@ -53,9 +50,8 @@ const initialFrames: Frame[] = [
   },
   {
     id: 4,
-    video: "/images/sudut-profile-development/videos/video-4.mp4",
+    image: "/images/sudut-profile-development/projects/cocana-resort.jpg",
     defaultPos: { x: 0, y: 4, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
@@ -64,9 +60,8 @@ const initialFrames: Frame[] = [
   },
   {
     id: 5,
-    video: "/images/sudut-profile-development/videos/video-main.mp4",
+    image: "/images/sudut-profile-development/projects/finns-resort.jpg",
     defaultPos: { x: 4, y: 4, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
@@ -75,7 +70,7 @@ const initialFrames: Frame[] = [
   },
   {
     id: 6,
-    video: "/images/sudut-profile-development/videos/video-6.mp4",
+    image: "/images/sudut-profile-development/projects/kuara-resort.jpg",
     defaultPos: { x: 8, y: 4, w: 4, h: 4 },
     mediaSize: 1,
     borderThickness: 0,
@@ -85,9 +80,8 @@ const initialFrames: Frame[] = [
   },
   {
     id: 7,
-    video: "/images/sudut-profile-development/videos/video-7.mp4",
+    image: "/images/sudut-profile-development/news/kuara-resort-launch.jpg",
     defaultPos: { x: 0, y: 8, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
@@ -96,9 +90,8 @@ const initialFrames: Frame[] = [
   },
   {
     id: 8,
-    video: "/images/sudut-profile-development/videos/video-8.mp4",
+    image: "/images/sudut-profile-development/news/klara-ocean-place.jpg",
     defaultPos: { x: 4, y: 8, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
@@ -107,112 +100,95 @@ const initialFrames: Frame[] = [
   },
   {
     id: 9,
-    video: "/images/sudut-profile-development/videos/video-9.mp4",
+    image: "/images/sudut-profile-development/news/finns-bali-resort.jpg",
     defaultPos: { x: 8, y: 8, w: 4, h: 4 },
-
     mediaSize: 1,
     borderThickness: 0,
     borderSize: 80,
     autoplayMode: "all",
     isHovered: false,
   },
-];
+]
 
 export default function DynamicFrameLayout() {
-  const [frames, setFrames] = useState<Frame[]>(initialFrames);
-  const [hovered, setHovered] = useState<{ row: number; col: number } | null>(
-    null
-  );
-  const [hoverSize, setHoverSize] = useState(6);
-  const [gapSize, setGapSize] = useState(4);
-  const [showControls, setShowControls] = useState(false);
-  const [cleanInterface, setCleanInterface] = useState(true);
+  const [frames, setFrames] = useState<Frame[]>(initialFrames)
+  const [hovered, setHovered] = useState<{ row: number; col: number } | null>(null)
+  const [hoverSize, setHoverSize] = useState(5) // Adjusted hover size for better mobile experience
+  const [gapSize, setGapSize] = useState(2) // Reduced gap for mobile
+  const [showControls, setShowControls] = useState(false)
+  const [cleanInterface, setCleanInterface] = useState(true)
 
   const getRowSizes = () => {
     if (hovered === null) {
-      return "4fr 4fr 4fr";
+      return "4fr 4fr 4fr"
     }
-    const { row } = hovered;
-    const nonHoveredSize = (12 - hoverSize) / 2;
-    return [0, 1, 2]
-      .map((r) => (r === row ? `${hoverSize}fr` : `${nonHoveredSize}fr`))
-      .join(" ");
-  };
+    const { row } = hovered
+    const nonHoveredSize = (12 - hoverSize) / 2
+    return [0, 1, 2].map((r) => (r === row ? `${hoverSize}fr` : `${nonHoveredSize}fr`)).join(" ")
+  }
 
   const getColSizes = () => {
     if (hovered === null) {
-      return "4fr 4fr 4fr";
+      return "4fr 4fr 4fr"
     }
-    const { col } = hovered;
-    const nonHoveredSize = (12 - hoverSize) / 2;
-    return [0, 1, 2]
-      .map((c) => (c === col ? `${hoverSize}fr` : `${nonHoveredSize}fr`))
-      .join(" ");
-  };
+    const { col } = hovered
+    const nonHoveredSize = (12 - hoverSize) / 2
+    return [0, 1, 2].map((c) => (c === col ? `${hoverSize}fr` : `${nonHoveredSize}fr`)).join(" ")
+  }
 
   const getTransformOrigin = (x: number, y: number) => {
-    const vertical = y === 0 ? "top" : y === 4 ? "center" : "bottom";
-    const horizontal = x === 0 ? "left" : x === 4 ? "center" : "right";
-    return `${vertical} ${horizontal}`;
-  };
+    const vertical = y === 0 ? "top" : y === 4 ? "center" : "bottom"
+    const horizontal = x === 0 ? "left" : x === 4 ? "center" : "right"
+    return `${vertical} ${horizontal}`
+  }
 
-  const updateFrameProperty = (
-    id: number,
-    property: keyof Frame,
-    value: number
-  ) => {
-    setFrames(
-      frames.map((frame) =>
-        frame.id === id ? { ...frame, [property]: value } : frame
-      )
-    );
-  };
+  const updateFrameProperty = (id: number, property: keyof Frame, value: number) => {
+    setFrames(frames.map((frame) => (frame.id === id ? { ...frame, [property]: value } : frame)))
+  }
 
   const toggleControls = () => {
-    setShowControls(!showControls);
-  };
+    setShowControls(!showControls)
+  }
 
   const toggleCleanInterface = () => {
-    setCleanInterface(!cleanInterface);
+    setCleanInterface(!cleanInterface)
     if (!cleanInterface) {
-      setShowControls(false);
+      setShowControls(false)
     }
-  };
+  }
 
   const updateCodebase = () => {
-    console.log("Updating codebase with current values:");
-    console.log("Hover Size:", hoverSize);
-    console.log("Gap Size:", gapSize);
-    console.log("Frames:", frames);
+    console.log("Updating codebase with current values:")
+    console.log("Hover Size:", hoverSize)
+    console.log("Gap Size:", gapSize)
+    console.log("Frames:", frames)
     // Here you would typically make an API call to update the codebase
     // For now, we'll just log the values
-  };
+  }
 
   return (
-    <div className="space-y-4 w-full h-full">
+    <div className="space-y-2 md:space-y-4 w-full h-full">
       {!cleanInterface && (
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold text-white">
-            Dynamic Frame Layout
-          </h2>
-          <div className="space-x-2">
-            <Button onClick={toggleControls}>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-0">
+          <h2 className="text-lg md:text-2xl font-bold text-white">Dynamic Frame Layout</h2>
+          <div className="flex flex-wrap gap-2">
+            <Button size="sm" onClick={toggleControls}>
               {showControls ? "Hide Controls" : "Show Controls"}
             </Button>
-            <Button onClick={updateCodebase}>Update Codebase</Button>
-            <Button onClick={toggleCleanInterface}>
+            <Button size="sm" onClick={updateCodebase}>
+              Update Codebase
+            </Button>
+            <Button size="sm" onClick={toggleCleanInterface}>
               {cleanInterface ? "Show UI" : "Hide UI"}
             </Button>
           </div>
         </div>
       )}
+
       {!cleanInterface && showControls && (
-        <>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label
-              htmlFor="hover-size"
-              className="block text-sm font-medium text-gray-200"
-            >
+            <label htmlFor="hover-size" className="block text-xs md:text-sm font-medium text-gray-200">
               Hover Size: {hoverSize}
             </label>
             <Slider
@@ -225,10 +201,7 @@ export default function DynamicFrameLayout() {
             />
           </div>
           <div className="space-y-2">
-            <label
-              htmlFor="gap-size"
-              className="block text-sm font-medium text-gray-200"
-            >
+            <label htmlFor="gap-size" className="block text-xs md:text-sm font-medium text-gray-200">
               Gap Size: {gapSize}px
             </label>
             <Slider
@@ -240,26 +213,23 @@ export default function DynamicFrameLayout() {
               onValueChange={(value) => setGapSize(value[0])}
             />
           </div>
-        </>
+        </div>
       )}
+
       <div
         className="relative w-full h-full"
         style={{
           display: "grid",
-          gridTemplateRows: getRowSizes(),
-          gridTemplateColumns: getColSizes(),
+          gridTemplateRows: window.innerWidth < 768 ? "1fr 1fr 1fr" : getRowSizes(),
+          gridTemplateColumns: window.innerWidth < 768 ? "1fr 1fr 1fr" : getColSizes(),
           gap: `${gapSize}px`,
-          transition:
-            "grid-template-rows 0.4s ease, grid-template-columns 0.4s ease",
+          transition: "grid-template-rows 0.4s ease, grid-template-columns 0.4s ease",
         }}
       >
         {frames.map((frame) => {
-          const row = Math.floor(frame.defaultPos.y / 4);
-          const col = Math.floor(frame.defaultPos.x / 4);
-          const transformOrigin = getTransformOrigin(
-            frame.defaultPos.x,
-            frame.defaultPos.y
-          );
+          const row = Math.floor(frame.defaultPos.y / 4)
+          const col = Math.floor(frame.defaultPos.x / 4)
+          const transformOrigin = getTransformOrigin(frame.defaultPos.x, frame.defaultPos.y)
 
           return (
             <motion.div
@@ -273,29 +243,23 @@ export default function DynamicFrameLayout() {
               onMouseLeave={() => setHovered(null)}
             >
               <FramePortfolio
-                video={frame.video}
+                image={frame.image}
                 width="100%"
                 height="100%"
                 className="absolute inset-0"
                 mediaSize={frame.mediaSize}
                 borderThickness={frame.borderThickness}
                 borderSize={frame.borderSize}
-                onMediaSizeChange={(value) =>
-                  updateFrameProperty(frame.id, "mediaSize", value)
-                }
-                onBorderThicknessChange={(value) =>
-                  updateFrameProperty(frame.id, "borderThickness", value)
-                }
-                onBorderSizeChange={(value) =>
-                  updateFrameProperty(frame.id, "borderSize", value)
-                }
+                onMediaSizeChange={(value) => updateFrameProperty(frame.id, "mediaSize", value)}
+                onBorderThicknessChange={(value) => updateFrameProperty(frame.id, "borderThickness", value)}
+                onBorderSizeChange={(value) => updateFrameProperty(frame.id, "borderSize", value)}
                 showControls={showControls && !cleanInterface}
                 label={`Frame ${frame.id}`}
               />
             </motion.div>
-          );
+          )
         })}
       </div>
     </div>
-  );
+  )
 }

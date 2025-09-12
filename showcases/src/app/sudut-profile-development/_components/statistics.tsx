@@ -2,7 +2,15 @@
 import Image from "next/image"
 import CountUp from "react-countup"
 import { useEffect, useState } from "react"
-import { stats } from "../lib/data"
+
+export const stats = [
+  { value: 150, suffix: "+", prefix: "", label: "Projects Completed" },
+  { value: 98, suffix: "%", prefix: "", label: "Client Satisfaction" },
+  { value: 25, suffix: "+", prefix: "", label: "Years Experience" },
+  { value: 500, suffix: "+", prefix: "", label: "Happy Clients" },
+  { value: 50, suffix: "+", prefix: "", label: "Team Members" },
+  { value: 15, suffix: "+", prefix: "", label: "Awards Won" },
+]
 
 export function Statistics() {
   const [isVisible, setIsVisible] = useState(false)

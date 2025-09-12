@@ -1,8 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
 
 export function Hero() {
   const [isLoaded, setIsLoaded] = useState(false)
