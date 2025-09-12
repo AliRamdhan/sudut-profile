@@ -3,7 +3,7 @@
 
 import React from "react";
 import {Hero} from "./_components/hero";
-import SliderPortfolio from "./_components/slider-portfolio";
+import SliderPortfolio from "./_components/slider-services";
 import { Statistics } from "./_components/statistics";
 import News from "./_components/news";
 import { Testimonials } from "./_components/testimonials";
