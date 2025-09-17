@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     shortcut: "/images/icon.png",
     apple: "/images/icon.png",
   },
+  verification: {
+    google: "VLSHYEXJQh8FpQ0nynod2CiahmoHNrDpqSl3kgltF-w",
+  },
 };
 
 export const viewport = {
